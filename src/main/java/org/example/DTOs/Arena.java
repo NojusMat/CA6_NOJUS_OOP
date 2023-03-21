@@ -67,7 +67,7 @@ public class Arena {
     public String toString()
     {
         return "Arena{" + "Arena ID=" + arena_ID + ", Arena Name=" + arena_name + ", City=" +city+", State=" + state +
-                  ",Capacity=" + capacity +'}';
+                  ", Capacity=" + capacity +'}';
     }
 
 }
