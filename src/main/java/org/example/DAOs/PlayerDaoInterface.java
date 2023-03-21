@@ -5,16 +5,17 @@ import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
 import java.util.List;
 
+
 public interface PlayerDaoInterface
 {
-//    public List<User> findAllUsers() throws DaoException;
-//
-//    public void addUser()throws DaoException;
-//
-//    public User updatePassword(String username, String password)throws DaoException;
-//    public List<User> findAllUsersLastNameContains( String lastName) throws DaoException;
-//
-//    public User findUserByUsernamePassword(String username, String password) throws DaoException;
+    public List<Player> findAllPlayers() throws DaoException;
+
+    public Player findPlayerById(int id )throws DaoException;
+
+    public void deletePlayerById()throws DaoException;
+
+    public Player addPlayer(String firstName, String lastName,String team, double height_in_Cm, int weight_in_Kg, float points_Per_Game)throws DaoException;
+
 
 }
 
