@@ -22,19 +22,6 @@ public class Player {
         this.weight_in_Kg = weight_in_Kg;
         this.points_Per_Game = points_Per_Game;
     }
-//    public Player(String firstName, String lastName, double  height_in_Cm, int  weight_in_Kg, float points_Per_Game)
-//    {
-//        this.id = 0;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.height_in_Cm = height_in_Cm;
-//        this.weight_in_Kg = weight_in_Kg;
-//        this.points_Per_Game = points_Per_Game;
-//    }
-//    public Player()
-//    {
-//    }
-
     public int getId()
     {
         return id;
