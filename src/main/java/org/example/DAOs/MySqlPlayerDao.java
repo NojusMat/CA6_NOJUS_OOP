@@ -57,4 +57,60 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
         }
         return playersList;     // may be empty
     }
+
+    @Override
+    public Player findPlayerById(int  id) throws DaoException
+    {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Player player = null;
+        try
+        {
+            connection = this.getConnection();
+
+            String query = "SELECT * FROM PLAYER WHERE ID = ?";
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next())
+            {
+
+                String firstName = resultSet.getString("FIRST_NAME");
+                String lastName = resultSet.getString("LAST_NAME");
+                String team = resultSet.getString("TEAM");
+                double height_in_Cm = resultSet.getDouble("HEIGHT_IN_CM");
+                float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
+                int weight_in_Kg = resultSet.getInt("WEIGHT_IN_KG");
+
+                player = new Player(id, firstName, lastName, team, height_in_Cm, points_Per_Game,weight_in_Kg);
+
+            }
+        } catch (SQLException e)
+        {
+            throw new DaoException("findPlayerById() " + e.getMessage());
+        } finally
+        {
+            try
+            {
+                if (resultSet != null)
+                {
+                    resultSet.close();
+                }
+                if (preparedStatement != null)
+                {
+                    preparedStatement.close();
+                }
+                if (connection != null)
+                {
+                    freeConnection(connection);
+                }
+            } catch (SQLException e)
+            {
+                throw new DaoException("findPlayerById() " + e.getMessage());
+            }
+        }
+        return player;     // reference to User object, or null value
+    }
 }
