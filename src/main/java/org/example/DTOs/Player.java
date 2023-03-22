@@ -8,11 +8,12 @@ public class Player {
     private String lastName;
     private String team;
     private double height_in_Cm;
-    private float points_Per_Game;
+
     private int weight_in_Kg ;
+    private float points_Per_Game;
 
 
-    public Player(int id, String firstName, String lastName,String team, double height_in_Cm, float points_Per_Game, int weight_in_Kg)
+    public Player(int id, String firstName, String lastName,String team, double height_in_Cm, int weight_in_Kg,float points_Per_Game)
     {
         this.id = id;
         this.firstName = firstName;
@@ -77,14 +78,16 @@ public class Player {
     }
 
 
-    public float getPoints_Per_Game() {return points_Per_Game;}
-
-    public void setPoints_Per_Game(float points_Per_Game) {this.points_Per_Game = points_Per_Game;}
-
 
     public int getWeight_in_Kg() {return weight_in_Kg;}
 
     public void setWeight_in_Kg(int weight_in_Kg) {this.weight_in_Kg = weight_in_Kg;}
+
+
+
+    public float getPoints_Per_Game() {return points_Per_Game;}
+
+    public void setPoints_Per_Game(float points_Per_Game) {this.points_Per_Game = points_Per_Game;}
 
 
 

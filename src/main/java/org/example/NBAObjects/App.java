@@ -53,7 +53,6 @@ public class App {
          catch( DaoException e )
     {
         e.printStackTrace();
-    }
-
+     }
     }
 }

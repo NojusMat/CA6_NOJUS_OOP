@@ -31,11 +31,12 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
                 String lastName = resultSet.getString("LAST_NAME");
                 String team = resultSet.getString("TEAM");
                 double height_in_Cm = resultSet.getDouble("HEIGHT_IN_CM");
-                float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
                 int weight_in_Kg = resultSet.getInt("WEIGHT_IN_KG");
+                float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
 
 
-                Player p = new Player(id, firstName, lastName, team, height_in_Cm, points_Per_Game,weight_in_Kg);
+
+                Player p = new Player(id, firstName, lastName, team, height_in_Cm,weight_in_Kg,points_Per_Game);
                 playersList.add(p);
             }
         } catch (SQLException e) {
@@ -81,10 +82,11 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
                 String lastName = resultSet.getString("LAST_NAME");
                 String team = resultSet.getString("TEAM");
                 double height_in_Cm = resultSet.getDouble("HEIGHT_IN_CM");
-                float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
                 int weight_in_Kg = resultSet.getInt("WEIGHT_IN_KG");
+                float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
 
-                player = new Player(id, firstName, lastName, team, height_in_Cm, points_Per_Game,weight_in_Kg);
+
+                player = new Player(id, firstName, lastName, team, height_in_Cm,weight_in_Kg,points_Per_Game);
 
             }
         } catch (SQLException e)
@@ -113,4 +115,50 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
         }
         return player;     // reference to User object, or null value
     }
+
+    @Override
+    public void addPlayer() throws DaoException {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
+        Player player = null;
+
+        try {
+            //Get connection object using the methods in the super class (MySqlDao.java)...
+            connection = this.getConnection();
+
+            String query = "INSERT INTO PLAYER (ID,FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            ps = connection.prepareStatement(query);
+
+            int id =16;
+            String firstName = "Tom";
+            String lastName = "Silver";
+            String team = "Portland Trail Blazers";
+            double height_in_Cm = 175.14;
+            float points_Per_Game= 43.02; //This needs to be changed
+            int weight_in_Kg =100;
+
+            ps.setInt( 1, id);
+            ps.setString( 2, firstName);
+            ps.setString( 3, lastName);
+            ps.setString( 4, team);
+            ps.setDouble( 5, height_in_Cm);
+            ps.setFloat( 6, points_Per_Game);
+            ps.setInt( 7, weight_in_Kg);
+
+            ps.executeUpdate();
+
+
+
+
+            // Execute the Prepared Statement and get a result set
+
+        }
+
+        catch (SQLException e)
+        {
+            throw new DaoException("addPlayer" + e.getMessage());
+        }
+    }
+
 }
