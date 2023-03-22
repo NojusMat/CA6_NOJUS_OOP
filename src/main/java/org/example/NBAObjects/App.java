@@ -54,5 +54,21 @@ public class App {
     {
         e.printStackTrace();
      }
-    }
+
+            //-----------------------ADD USER0-------
+
+            try {
+                System.out.println("\nCall: addUser()");
+                IPlayerDao.addPlayer();
+
+
+                System.out.println("Player has been added ");
+
+            }
+            catch( DaoException e )
+            {
+                e.printStackTrace();
+            }
+
+        }
 }

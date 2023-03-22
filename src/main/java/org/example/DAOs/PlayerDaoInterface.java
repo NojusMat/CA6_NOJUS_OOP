@@ -12,7 +12,7 @@ public interface PlayerDaoInterface
 
     public Player findPlayerById(int id)throws DaoException;
 
-    public Player addPlayer(int id,String firstName, String lastName,String team, double height_in_Cm, int weight_in_Kg, float points_Per_Game)throws DaoException;
+    public void addPlayer()throws DaoException;
 
 //    public void deletePlayerById()throws DaoException;
 
