@@ -12,7 +12,7 @@ public class Player {
     private int weight_in_Kg ;
 
 
-    public Player(int id, String firstName, String lastName,String team, double height_in_Cm, int weight_in_Kg, float points_Per_Game)
+    public Player(int id, String firstName, String lastName,String team, double height_in_Cm, float points_Per_Game, int weight_in_Kg)
     {
         this.id = id;
         this.firstName = firstName;

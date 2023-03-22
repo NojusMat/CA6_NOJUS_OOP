@@ -11,10 +11,10 @@ import java.util.List;
 public class App {
     public static void main(String[] args)
     {
-        Player IPlayerDao = new MySqlUserDao();  //"IUserDao" -> "I" stands for for
+        Player IPlayerDao = new MySqlPlayerDao();  //"IUserDao" -> "I" stands for for
 
 
-//--------------------------------FIND ALL USERS
+//-------------------------------FIND ALL USERS
         try
         {
             System.out.println("\nCall findAllPlayers()");
