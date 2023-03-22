@@ -11,8 +11,8 @@ import java.util.List;
 public class App {
     public static void main(String[] args)
     {
-        Player IPlayerDao = new MySqlPlayerDao();  //"IUserDao" -> "I" stands for for
 
+        PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
 
 //-------------------------------FIND ALL USERS
         try

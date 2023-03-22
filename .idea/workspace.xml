@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 1 - Adding it in the App class trying to link it beween the classes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 1 - 1.2 MySqlPlayerDao finished for selecting all players">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679484591632</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Feature 1 - 1.2 MySqlPlayerDao finished for selecting all players">
+      <created>1679512248928</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679512248928</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +115,7 @@
     <MESSAGE value="Arena class added" />
     <MESSAGE value="Features 1,2,3,4 added to interface.&#10;MySqlDao set up" />
     <MESSAGE value="Feature 1 - Adding it in the App class trying to link it beween the classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 1 - Adding it in the App class trying to link it beween the classes" />
+    <MESSAGE value="Feature 1 - 1.2 MySqlPlayerDao finished for selecting all players" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 1 - 1.2 MySqlPlayerDao finished for selecting all players" />
   </component>
 </project>
