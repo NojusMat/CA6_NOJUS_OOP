@@ -36,5 +36,26 @@ public class App {
         {
             e.printStackTrace();
         }
+
+
+    //--------------------------------FIND PLAYER BY ID
+        try {
+        System.out.println("\nCall: findPlayerById()");
+        int id = 15;
+        List <Player> players = IPlayerDao.findPlayerById(id);
+
+        if( players.isEmpty() )
+            System.out.println("There are no Users");
+        else {
+            for (Player player : players)
+                System.out.println("Player: " + player.toString());
+        }
+
+    }
+         catch( DaoException e )
+    {
+        e.printStackTrace();
+    }
+
     }
 }
