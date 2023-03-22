@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 2 - 2.1 find_player_by_id set up MySqlPlayerDao and uncommented it from the Interface">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 2 - 2.2 findPlayerById almost completly added to App but problem with getting the List">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679515478493</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Feature 2 - 2.2 findPlayerById almost completly added to App but problem with getting the List">
+      <created>1679516092945</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679516092945</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +159,7 @@
     <MESSAGE value="Feature 1 - 1.2 MySqlPlayerDao finished for selecting all players" />
     <MESSAGE value="Feature 1 - 1.3 find all players set up in APP just need to connect to database" />
     <MESSAGE value="Feature 2 - 2.1 find_player_by_id set up MySqlPlayerDao and uncommented it from the Interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 2 - 2.1 find_player_by_id set up MySqlPlayerDao and uncommented it from the Interface" />
+    <MESSAGE value="Feature 2 - 2.2 findPlayerById almost completly added to App but problem with getting the List" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 2 - 2.2 findPlayerById almost completly added to App but problem with getting the List" />
   </component>
 </project>

@@ -42,16 +42,14 @@ public class App {
         try {
         System.out.println("\nCall: findPlayerById()");
         int id = 15;
-        List <Player> players = IPlayerDao.findPlayerById(id);
+        Player player = IPlayerDao.findPlayerById(id);
 
-        if( players.isEmpty() )
-            System.out.println("There are no Users");
-        else {
-            for (Player player : players)
-                System.out.println("Player: " + player.toString());
+            if( player != null ) // null returned if userid and password not valid
+                System.out.println("Player found: " + player);
+            else
+                System.out.println("Player with that id was not found");
+
         }
-
-    }
          catch( DaoException e )
     {
         e.printStackTrace();
