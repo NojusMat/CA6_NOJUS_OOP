@@ -58,7 +58,7 @@ public class App {
             //-----------------------ADD USER0-------
 
             try {
-                System.out.println("\nCall: addUser()");
+                System.out.println("\nCall: addPlayer()");
                 IPlayerDao.addPlayer();
 
 

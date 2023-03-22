@@ -135,7 +135,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             String lastName = "Silver";
             String team = "Portland Trail Blazers";
             double height_in_Cm = 175.14;
-            float points_Per_Game= 43.02; //This needs to be changed
+            float points_Per_Game= (float) 19.23; //This needs to be changed
             int weight_in_Kg =100;
 
             ps.setInt( 1, id);
