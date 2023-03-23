@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import org.example.Exceptions.DaoException;
 
 
+
 public class MySqlDao {
     public Connection getConnection() throws DaoException
     {
