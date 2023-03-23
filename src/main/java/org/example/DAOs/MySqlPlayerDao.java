@@ -35,8 +35,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
                 float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
 
 
-
-                Player p = new Player(id, firstName, lastName, team, height_in_Cm,weight_in_Kg,points_Per_Game);
+                Player p = new Player(id, firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
                 playersList.add(p);
             }
         } catch (SQLException e) {
@@ -60,14 +59,12 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
     }
 
     @Override
-    public Player findPlayerById(int  id) throws DaoException
-    {
+    public Player findPlayerById(int id) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Player player = null;
-        try
-        {
+        try {
             connection = this.getConnection();
 
             String query = "SELECT * FROM PLAYER WHERE ID = ?";
@@ -75,8 +72,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             preparedStatement.setInt(1, id);
 
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next())
-            {
+            if (resultSet.next()) {
 
                 String firstName = resultSet.getString("FIRST_NAME");
                 String lastName = resultSet.getString("LAST_NAME");
@@ -86,30 +82,23 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
                 float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
 
 
-                player = new Player(id, firstName, lastName, team, height_in_Cm,weight_in_Kg,points_Per_Game);
+                player = new Player(id, firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
 
             }
-        } catch (SQLException e)
-        {
+        } catch (SQLException e) {
             throw new DaoException("findPlayerById() " + e.getMessage());
-        } finally
-        {
-            try
-            {
-                if (resultSet != null)
-                {
+        } finally {
+            try {
+                if (resultSet != null) {
                     resultSet.close();
                 }
-                if (preparedStatement != null)
-                {
+                if (preparedStatement != null) {
                     preparedStatement.close();
                 }
-                if (connection != null)
-                {
+                if (connection != null) {
                     freeConnection(connection);
                 }
-            } catch (SQLException e)
-            {
+            } catch (SQLException e) {
                 throw new DaoException("findPlayerById() " + e.getMessage());
             }
         }
@@ -130,36 +119,68 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             String query = "INSERT INTO PLAYER (ID,FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (?, ?, ?, ?, ?, ?, ?)";
             ps = connection.prepareStatement(query);
 
-            int id =16;
+            int id = 16;
             String firstName = "Tom";
             String lastName = "Silver";
             String team = "Portland Trail Blazers";
             double height_in_Cm = 175.14;
-            float points_Per_Game= (float) 19.23; //This needs to be changed
-            int weight_in_Kg =100;
+            float points_Per_Game = (float) 19.23; //This needs to be changed
+            int weight_in_Kg = 100;
 
-            ps.setInt( 1, id);
-            ps.setString( 2, firstName);
-            ps.setString( 3, lastName);
-            ps.setString( 4, team);
-            ps.setDouble( 5, height_in_Cm);
-            ps.setFloat( 6, points_Per_Game);
-            ps.setInt( 7, weight_in_Kg);
+            ps.setInt(1, id);
+            ps.setString(2, firstName);
+            ps.setString(3, lastName);
+            ps.setString(4, team);
+            ps.setDouble(5, height_in_Cm);
+            ps.setFloat(6, points_Per_Game);
+            ps.setInt(7, weight_in_Kg);
 
             ps.executeUpdate();
 
 
-
-
             // Execute the Prepared Statement and get a result set
 
-        }
-
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             throw new DaoException("addPlayer" + e.getMessage());
         }
     }
 
+    @Override
+    public void deletePlayerById(int id) throws DaoException {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
+        Player player = null;
 
+
+        try {
+            connection = this.getConnection();
+
+            String query = "DELETE * FROM PLAYER WHERE ID = ?";
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, id);
+
+            resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+
+
+            }
+        } catch (SQLException e) {
+            throw new DaoException("deletePlayerById() " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    freeConnection(connection);
+                }
+            } catch (SQLException e) {
+                throw new DaoException("deletePlayerById() " + e.getMessage());
+            }
+        }
+    }
 }

@@ -14,7 +14,7 @@ public interface PlayerDaoInterface
 
     public void addPlayer()throws DaoException;
 
-    public void deletePlayerById()throws DaoException;
+    public void deletePlayerById(int id)throws DaoException;
 
 
 }
