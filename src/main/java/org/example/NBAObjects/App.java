@@ -20,84 +20,110 @@ public class App {
             Scanner keyboard = new Scanner(System.in);
 
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
+            int choice;
+            do{
+                System.out.println("\nNBA MENU");
+                System.out.println("1.SEE ALL PLAYER");
+                System.out.println("2.FIND PLAYER");
+                System.out.println("3.ADD PLAYER");
+                System.out.println("4.DELETE PLAYER");
+                System.out.println("10.EXIT\n");
+
+                System.out.print("CHOICE:");
+
+
+                choice = keyboard.nextInt();
+
+                switch (choice) {
 
 //-------------------------------FIND ALL USERS
-            try {
-                System.out.println("\nCall findAllPlayers()");
-                List<Player> players = IPlayerDao.findAllPlayers();     // call a method in the DAO
+                    case 1:
+                        System.out.println("1.SEE ALL PLAYER");
+                    try {
+                        System.out.println("\nCall findAllPlayers()");
+                        List<Player> players = IPlayerDao.findAllPlayers();     // call a method in the DAO
 
-                if (players.isEmpty())
-                    System.out.println("There are no Players");
-                else {
-                    for (Player player : players)
-                        System.out.println("Player: " + player.toString());
+                        if (players.isEmpty())
+                            System.out.println("There are no Players");
+                        else {
+                            for (Player player : players)
+                                System.out.println("Player: " + player.toString());
+                        }
+                    } catch (DaoException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+
+                    //--------------------------------FIND PLAYER BY ID
+                    case 2:
+                    try {
+                        System.out.println("\nCall: findPlayerById()");
+                        System.out.print("Enter a players ID who you would like to find: ");
+                        int findId = keyboard.nextInt();
+                        Player player = IPlayerDao.findPlayerById(findId);
+
+                        if (player != null) // null returned if userid and password not valid
+                            System.out.println("Player found: " + player);
+                        else
+                            System.out.println("Player with that ID was not found");
+
+                    } catch (DaoException e) {
+                        e.printStackTrace();
+                    }
+                        break;
+
+                    //-----------------------ADD PLAYER-------
+                    case 3:
+                    try {
+
+                        System.out.println("\nCall: addPlayer()");
+
+                        System.out.println("Enter the Players First Name (string):");
+                        String addFName = keyboard.next();
+                        System.out.println("Enter the Players Last Name (string):");
+                        String addLName = keyboard.next();
+                        System.out.println("Enter the Players Team (string)");
+                        String addTeam = keyboard.next();
+                        System.out.println("Enter the Players Height in Cm (double):");
+                        double addHeight = keyboard.nextDouble();
+                        System.out.println("Enter the Players Points per Game(float):");
+                        float addPPG = keyboard.nextFloat();
+                        System.out.println("Enter the Players Weight in Kg (int):");
+                        int addWeight = keyboard.nextInt();
+
+
+                        IPlayerDao.insertPlayer(addFName, addLName, addTeam, addHeight, addPPG, addWeight);
+
+
+                    } catch (DaoException e) {
+                        e.printStackTrace();
+                    }
+                        break;
+                    //------------------------------ DELETE PLAYER
+                    case 4:
+                    try {
+                        System.out.println("\nCall: deletePlayerById()\n");
+
+                        System.out.println("Enter a players ID who you would like to delete");
+                        int DeleteId = keyboard.nextInt();
+                        IPlayerDao.deletePlayerById(DeleteId);
+
+                        System.out.println("Player has been Deleted ");
+
+                    } catch (DaoException e) {
+                        e.printStackTrace();
+                    }
+                        break;
+                    //------------------------------ EXIT PROGRAM
+                    case 10:
+                        System.out.println("EXITING");
+                      break;
+
+                    default:
+                        System.out.println("Invalid Choice.Please try again");
+                        break;
                 }
-            } catch (DaoException e) {
-                e.printStackTrace();
-            }
-
-
-            //--------------------------------FIND PLAYER BY ID
-            try {
-                System.out.println("\nCall: findPlayerById()");
-                 System.out.println("Enter a players ID who you would like to find ");
-                int findId = keyboard.nextInt();
-                Player player = IPlayerDao.findPlayerById(findId);
-
-                if (player != null) // null returned if userid and password not valid
-                    System.out.println("Player found: " + player);
-                else
-                    System.out.println("Player with that id was not found");
-
-            } catch (DaoException e) {
-                e.printStackTrace();
-            }
-
-            //-----------------------ADD PLAYER-------
-
-            try {
-
-                System.out.println("\nCall: addPlayer()");
-
-                System.out.println("Enter the Players First Name (string):");
-                String addFName = keyboard.next();
-                System.out.println("Enter the Players Last Name (string):");
-                String addLName = keyboard.next();
-                System.out.println("Enter the Players Team (string)");
-                String addTeam = keyboard.next();
-                System.out.println("Enter the Players Height in Cm (double):");
-                double addHeight = keyboard.nextDouble();
-                System.out.println("Enter the Players Points per Game(float):");
-                float addPPG = keyboard.nextFloat();
-                System.out.println("Enter the Players Weight in Kg (int):");
-                int addWeight = keyboard.nextInt();
-
-
-
-
-                IPlayerDao.addPlayer(addFName,addLName,addTeam,addHeight,addPPG,addWeight);
-
-
-                System.out.println("Player has been added ");
-
-            }
-            catch( DaoException e )
-            {
-                e.printStackTrace();
-            }
-            //------------------------------ DELETE PLAYER
-
-            try {
-                System.out.println("\nCall: deletePlayerById()\n");
-
-                System.out.println("Enter a players ID who you would like to delete");
-                int DeleteId = keyboard.nextInt();
-                IPlayerDao.deletePlayerById(DeleteId);
-
-                System.out.println("Player has been Deleted ");
-
-            } catch (DaoException e) {
-                e.printStackTrace();
-            }
-        }
+                System.out.println("\n");
+        }while(choice!=10);
+    }
 }

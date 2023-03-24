@@ -106,7 +106,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
     }
 
     @Override
-    public Player addPlayer(String firstName,String lastName,String team,double height_in_Cm,float points_Per_Game,int weight_in_Kg) throws DaoException {
+    public Player insertPlayer(String firstName,String lastName,String team,double height_in_Cm,float points_Per_Game,int weight_in_Kg) throws DaoException {
         Connection connection = null;
         PreparedStatement ps = null;
         ResultSet resultSet = null;
@@ -128,14 +128,30 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
 
             ps.executeUpdate();
 
+        }
+
 
             // Execute the Prepared Statement and get a result set
-
-        } catch (SQLException e) {
-            throw new DaoException("addPlayer" + e.getMessage());
+catch (SQLException e) {
+                throw new DaoException("insertPlayer() " + e.getMessage());
+            } finally {
+                try {
+                    if (resultSet != null) {
+                        resultSet.close();
+                    }
+                    if (ps != null) {
+                        ps.close();
+                    }
+                    if (connection != null) {
+                        freeConnection(connection);
+                    }
+                } catch (SQLException e) {
+                    throw new DaoException("insertPlayer() " + e.getMessage());
+                }
+            }
+            return player;     // reference to User object, or null value
         }
-        return player;
-    }
+
 
     @Override
     public void deletePlayerById(int id) throws DaoException {
