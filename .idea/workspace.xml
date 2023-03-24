@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 4 - 4.1 started on deletePlayerByID">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 4 - 4.2 delete almost fully set up in MySqlPlayerDao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679596198131</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Feature 4 - 4.2 delete almost fully set up in MySqlPlayerDao">
+      <created>1679596924743</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1679596924743</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,6 +210,7 @@
     <MESSAGE value="Feature 3 - 3.2 addPlayer set points_per_game to float check with lecturer" />
     <MESSAGE value="Feature 3 - 3.3 addPlayer set points_per_game to float check with lecturer" />
     <MESSAGE value="Feature 4 - 4.1 started on deletePlayerByID" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 4 - 4.1 started on deletePlayerByID" />
+    <MESSAGE value="Feature 4 - 4.2 delete almost fully set up in MySqlPlayerDao" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 4 - 4.2 delete almost fully set up in MySqlPlayerDao" />
   </component>
 </project>

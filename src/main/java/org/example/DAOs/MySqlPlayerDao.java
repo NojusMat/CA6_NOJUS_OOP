@@ -26,7 +26,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             //Using a PreparedStatement to execute SQL...
             resultSet = ps.executeQuery();
             while (resultSet.next()) {
-                int id = resultSet.getInt("PLAYER_ID");
+                int id = resultSet.getInt("ID");
                 String firstName = resultSet.getString("FIRST_NAME");
                 String lastName = resultSet.getString("LAST_NAME");
                 String team = resultSet.getString("TEAM");
@@ -119,7 +119,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             String query = "INSERT INTO PLAYER (ID,FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (?, ?, ?, ?, ?, ?, ?)";
             ps = connection.prepareStatement(query);
 
-            int id = 16;
+            int id = 20;
             String firstName = "Tom";
             String lastName = "Silver";
             String team = "Portland Trail Blazers";
@@ -164,6 +164,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             if (resultSet.next()) {
 
 
+                //Check This Works
             }
         } catch (SQLException e) {
             throw new DaoException("deletePlayerById() " + e.getMessage());
