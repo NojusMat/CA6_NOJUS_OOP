@@ -94,8 +94,8 @@ public class Player {
     @Override
     public String toString()
     {
-        return "Player{" + "ID=" + id + ", First Name=" + firstName + ", Last Name=" +", Team=" + team +
-                lastName + ", Height in Cm=" + height_in_Cm +", Weight in  Kg=" +weight_in_Kg+ ", Points Per Game=" + points_Per_Game+'}';
+        return "Player{" + "ID=" + id + ", First Name=" + firstName + ", Last Name=" + lastName+", Team=" + team +
+                ", Height in Cm=" + height_in_Cm +", Weight in  Kg=" +weight_in_Kg+ ", Points Per Game=" + points_Per_Game+'}';
     }
 
 }
