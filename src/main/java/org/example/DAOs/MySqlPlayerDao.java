@@ -106,7 +106,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
     }
 
     @Override
-    public void addPlayer() throws DaoException {
+    public Player addPlayer(String firstName,String lastName,String team,double height_in_Cm,float points_Per_Game,int weight_in_Kg) throws DaoException {
         Connection connection = null;
         PreparedStatement ps = null;
         ResultSet resultSet = null;
@@ -116,24 +116,15 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             //Get connection object using the methods in the super class (MySqlDao.java)...
             connection = this.getConnection();
 
-            String query = "INSERT INTO PLAYER (ID,FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO PLAYER (FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (?, ?, ?, ?, ?, ?)";
             ps = connection.prepareStatement(query);
 
-            int id = 20;
-            String firstName = "Tom";
-            String lastName = "Silver";
-            String team = "Portland Trail Blazers";
-            double height_in_Cm = 175.14;
-            float points_Per_Game = (float) 19.23; //This needs to be changed
-            int weight_in_Kg = 100;
-
-            ps.setInt(1, id);
-            ps.setString(2, firstName);
-            ps.setString(3, lastName);
-            ps.setString(4, team);
-            ps.setDouble(5, height_in_Cm);
-            ps.setFloat(6, points_Per_Game);
-            ps.setInt(7, weight_in_Kg);
+            ps.setString(1, firstName);
+            ps.setString(2, lastName);
+            ps.setString(3, team);
+            ps.setDouble(4, height_in_Cm);
+            ps.setFloat(5, points_Per_Game);
+            ps.setInt(6, weight_in_Kg);
 
             ps.executeUpdate();
 
@@ -143,6 +134,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
         } catch (SQLException e) {
             throw new DaoException("addPlayer" + e.getMessage());
         }
+        return player;
     }
 
     @Override

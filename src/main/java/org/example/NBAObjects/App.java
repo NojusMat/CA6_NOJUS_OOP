@@ -40,8 +40,9 @@ public class App {
             //--------------------------------FIND PLAYER BY ID
             try {
                 System.out.println("\nCall: findPlayerById()");
-                int id = 15;
-                Player player = IPlayerDao.findPlayerById(id);
+                 System.out.println("Enter a players ID who you would like to find ");
+                int findId = keyboard.nextInt();
+                Player player = IPlayerDao.findPlayerById(findId);
 
                 if (player != null) // null returned if userid and password not valid
                     System.out.println("Player found: " + player);
@@ -54,18 +55,36 @@ public class App {
 
             //-----------------------ADD PLAYER-------
 
-//            try {
-//                System.out.println("\nCall: addPlayer()");
-//                IPlayerDao.addPlayer();
-//
-//
-//                System.out.println("Player has been added ");
-//
-//            }
-//            catch( DaoException e )
-//            {
-//                e.printStackTrace();
-//            }
+            try {
+
+                System.out.println("\nCall: addPlayer()");
+
+                System.out.println("Enter the Players First Name (string):");
+                String addFName = keyboard.next();
+                System.out.println("Enter the Players Last Name (string):");
+                String addLName = keyboard.next();
+                System.out.println("Enter the Players Team (string)");
+                String addTeam = keyboard.next();
+                System.out.println("Enter the Players Height in Cm (double):");
+                double addHeight = keyboard.nextDouble();
+                System.out.println("Enter the Players Points per Game(float):");
+                float addPPG = keyboard.nextFloat();
+                System.out.println("Enter the Players Weight in Kg (int):");
+                int addWeight = keyboard.nextInt();
+
+
+
+
+                IPlayerDao.addPlayer(addFName,addLName,addTeam,addHeight,addPPG,addWeight);
+
+
+                System.out.println("Player has been added ");
+
+            }
+            catch( DaoException e )
+            {
+                e.printStackTrace();
+            }
             //------------------------------ DELETE PLAYER
 
             try {
