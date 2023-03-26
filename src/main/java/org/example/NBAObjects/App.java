@@ -93,7 +93,7 @@ public class App {
 
 
                         IPlayerDao.insertPlayer(addFName, addLName, addTeam, addHeight, addPPG, addWeight);
-                        System.out.println("NEW PLAYER: First Name:"+addFName+",Last Name:"+addLName+", Team:"+addTeam+", Height:"+addHeight+", Points per game:"+addPPG+", Weight:"+addWeight);
+                        System.out.println("NEW PLAYER First Name:"+addFName+",Last Name:"+addLName+", Team:"+addTeam+", Height:"+addHeight+", Points per game:"+addPPG+", Weight:"+addWeight);
 
                     } catch (DaoException e) {
                         e.printStackTrace();
