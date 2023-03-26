@@ -84,6 +84,8 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
 
                 player = new Player(id, firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
 
+
+
             }
         } catch (SQLException e) {
             throw new DaoException("findPlayerById() " + e.getMessage());
@@ -117,6 +119,8 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             connection = this.getConnection();
 
             String query = "INSERT INTO PLAYER (FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (?, ?, ?, ?, ?, ?)";
+            String query2 ="SELECT * FROM PLAYER ORDER BY ID DESC LIMIT1 "; // trying to show the last player added using descending order
+            ps = connection.prepareStatement(query);
             ps = connection.prepareStatement(query);
 
             ps.setString(1, firstName);
