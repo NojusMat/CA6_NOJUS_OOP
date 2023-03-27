@@ -199,4 +199,52 @@ catch (SQLException e) {
             }
         }
     }
+    @Override
+    public List<Player>  playerHeightComparator() throws DaoException {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
+        List<Player> playersList = new ArrayList<>();
+
+        try {
+            //Get connection object using the methods in the super class (MySqlDao.java)...
+            connection = this.getConnection();
+
+            String query = "SELECT * FROM PLAYER ORDER BY height_in_Cm ASC";
+            ps = connection.prepareStatement(query);
+
+            //Using a PreparedStatement to execute SQL...
+            resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("ID");
+                String firstName = resultSet.getString("FIRST_NAME");
+                String lastName = resultSet.getString("LAST_NAME");
+                String team = resultSet.getString("TEAM");
+                double height_in_Cm = resultSet.getDouble("HEIGHT_IN_CM");
+                int weight_in_Kg = resultSet.getInt("WEIGHT_IN_KG");
+                float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
+
+
+                Player p = new Player(id, firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
+                playersList.add(p);
+            }
+        } catch (SQLException e) {
+            throw new DaoException("playerHeightComparator() " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    freeConnection(connection);
+                }
+            } catch (SQLException e) {
+                throw new DaoException("playerHeightComparator() " + e.getMessage());
+            }
+        }
+        return playersList;
+    }
 }

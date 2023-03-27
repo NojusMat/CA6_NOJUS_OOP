@@ -16,6 +16,10 @@ public interface PlayerDaoInterface
 
     public void deletePlayerById(int id)throws DaoException;
 
+    public List<Player> playerHeightComparator() throws DaoException;
+
+
+
 
 }
 

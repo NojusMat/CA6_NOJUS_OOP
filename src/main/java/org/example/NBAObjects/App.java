@@ -136,13 +136,18 @@ public class App {
                                         System.out.println("\nCall: playerHeightComparator()\n");
 
                                         System.out.println("Players ordered By height\n");
-                                        List<Player> players = IPlayerDao.findAllPlayers();
+                                        List<Player> players = IPlayerDao.playerHeightComparator();
 
 
+                                        if (players.isEmpty())
+                                            System.out.println("There are no Players");
+                                        else {
+                                            for (Player player : players)
+                                                System.out.println("Player: " + player.toString());
+                                        }
                                     } catch (DaoException e) {
                                         e.printStackTrace();
                                     }
-
 
                                     break;
 
