@@ -21,12 +21,14 @@ public class App {
 
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
             int choice;
+            int filterchoice;
             do{
                 System.out.println("\nNBA MENU");
                 System.out.println("1.SEE ALL PLAYER");
                 System.out.println("2.FIND PLAYER");
                 System.out.println("3.ADD PLAYER");
                 System.out.println("4.DELETE PLAYER");
+                System.out.println("5.FILTERS");
                 System.out.println("10.EXIT\n");
 
                 System.out.print("CHOICE:");
@@ -114,6 +116,42 @@ public class App {
                         e.printStackTrace();
                     }
                         break;
+                    //------------------------------ FILTER
+                    case 5:
+                        do{
+                            System.out.println("\nFILTER MENU");
+                            System.out.println("1.FILTER BY HEIGHT");
+                            System.out.println("10.EXIT\n");
+
+                            System.out.print("CHOICE:");
+
+
+                            filterchoice = keyboard.nextInt();
+                            switch (filterchoice) {
+                                case 1:
+                                    System.out.println("HEIGHT");
+
+
+                                    try {
+                                        System.out.println("\nCall: playerHeightComparator()\n");
+
+                                        System.out.println("Players ordered By height\n");
+                                        List<Player> players = IPlayerDao.findAllPlayers();
+
+
+                                    } catch (DaoException e) {
+                                        e.printStackTrace();
+                                    }
+
+
+                                    break;
+
+                            }
+
+                            }while(filterchoice!=10);
+
+
+                            break;
                     //------------------------------ EXIT PROGRAM
                     case 10:
                         System.out.println("EXITING");
