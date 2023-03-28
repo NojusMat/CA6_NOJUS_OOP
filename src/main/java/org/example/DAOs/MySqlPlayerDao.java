@@ -150,8 +150,8 @@ catch (SQLException e) {
 
         try
         {
-            List<Player> allRecipes = findAllPlayers();
-            for(Player player : allRecipes)
+            List<Player> allPlayers = findAllPlayers();
+            for(Player player : allPlayers)
             {
                 if(filter.matches(player))
                 {
@@ -166,5 +166,31 @@ catch (SQLException e) {
 
         return filteredList;
     }
+
+
+    @Override
+    public boolean checkIdExists(int id) throws DaoException
+    {
+
+        String query = "SELECT * FROM PLAYER WHERE ID = ?";
+
+        try(Connection con = this.getConnection();
+            PreparedStatement ps = con.prepareStatement(query))
+        {
+            ps.setInt(1, id);
+
+            try(ResultSet rs = ps.executeQuery())
+            {
+                // If there are no elements in the ResultSet, it means the recipe does not exist.
+                return rs.next();
+            }
+
+        }
+        catch (SQLException sqle)
+        {
+            throw new DaoException("checkRecipeExists() " + sqle.getMessage());
+        }
+    }
+
 
 }

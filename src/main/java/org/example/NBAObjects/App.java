@@ -1,20 +1,16 @@
 package org.example.NBAObjects;
 
-import java.sql.*;
-
-import org.example.ComparePlayersByWeight;
 import org.example.DAOs.MySqlPlayerDao;
 import org.example.DAOs.PlayerDaoInterface;
 import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
 import java.util.HashSet;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 
 public class App {
+    
+    HashSet<Player> idList=new HashSet<Player>();
     public static void main(String[] args) {
         App app = new App();
         app.start();
@@ -22,7 +18,7 @@ public class App {
 
         public void start() {
             Scanner keyboard = new Scanner(System.in);
-
+            populateIDHashSet();
 
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
 
@@ -127,7 +123,7 @@ public class App {
                     case 5:
                         do{
                             System.out.println("\nFILTER MENU");
-                            System.out.println("1.FILTER BY HEIGHT");
+                            System.out.println("1.FILTER BY LAST NAME");
                             System.out.println("10.EXIT\n");
 
                             System.out.print("CHOICE:");
@@ -136,11 +132,8 @@ public class App {
                             filterchoice = keyboard.nextInt();
                             switch (filterchoice) {
                                 case 1:
-                                    System.out.println("HEIGHT");
+                                    System.out.println("LAST NAME");
 
-
-
-                                        Player.sort(new ComparePlayersByWeight());
 
 
                                     break;
@@ -162,5 +155,12 @@ public class App {
                 }
                 System.out.println("\n");
         }while(choice!=10);
+    }
+    private void populateIDHashSet()
+    {
+        for(Player player : idList)
+        {
+
+        }
     }
     }

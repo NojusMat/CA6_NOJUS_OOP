@@ -1,6 +1,6 @@
 package org.example.DTOs;
 
-import org.example.ComparePlayersByWeight;
+import java.util.Objects;
 
 public class Player implements Comparable<Player> {
 
@@ -25,9 +25,6 @@ public class Player implements Comparable<Player> {
         this.points_Per_Game = points_Per_Game;
     }
 
-    public static void sort(ComparePlayersByWeight comparePlayersByWeight) {
-
-    }
 
     public int getId()
     {
@@ -73,6 +70,7 @@ public class Player implements Comparable<Player> {
     }
 
 
+
     public double getHeight_in_Cm()
     {
         return height_in_Cm;
@@ -97,6 +95,8 @@ public class Player implements Comparable<Player> {
 
 
 
+
+
     @Override
     public String toString()
     {
@@ -105,8 +105,18 @@ public class Player implements Comparable<Player> {
         return "{" + "ID=" + id + ",| First Name=" + firstName + ",| Last Name=" + lastName+",| Team=" + team + ",| Height in Cm=" + height_in_Cm +",| Weight in  Kg=" +weight_in_Kg+ ",| Points Per Game=" + points_Per_Game+'}';
     }
 
+
     @Override
-    public int compareTo(Player p) {
-        return this.getWeight_in_Kg();
+    public int hashCode()
+    {
+        return Objects.hash(id, firstName, lastName, team, height_in_Cm,weight_in_Kg,points_Per_Game);
     }
+
+    @Override
+    public int compareTo(Player otherPlayer)
+    {
+        return this.id - otherPlayer.getId();
+    }
+
 }
+
