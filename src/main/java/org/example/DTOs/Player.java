@@ -1,6 +1,8 @@
 package org.example.DTOs;
 
 
+import java.sql.SQLOutput;
+
 public class Player {
 
     private int id;
@@ -94,8 +96,9 @@ public class Player {
     @Override
     public String toString()
     {
-        return "Player{" + "ID=" + id + ", First Name=" + firstName + ", Last Name=" + lastName+", Team=" + team +
-                ", Height in Cm=" + height_in_Cm +", Weight in  Kg=" +weight_in_Kg+ ", Points Per Game=" + points_Per_Game+'}';
+
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
+        return "{" + "ID=" + id + ",| First Name=" + firstName + ",| Last Name=" + lastName+",| Team=" + team + ",| Height in Cm=" + height_in_Cm +",| Weight in  Kg=" +weight_in_Kg+ ",| Points Per Game=" + points_Per_Game+'}';
     }
 
 }

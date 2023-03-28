@@ -2,6 +2,7 @@ package org.example.DAOs;
 
 import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
+import org.example.IFilter;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -40,20 +41,6 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             }
         } catch (SQLException e) {
             throw new DaoException("findAllPlayerresultSet() " + e.getMessage());
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                if (connection != null) {
-                    freeConnection(connection);
-                }
-            } catch (SQLException e) {
-                throw new DaoException("findAllPlayers() " + e.getMessage());
-            }
         }
         return playersList;     // may be empty
     }
@@ -89,20 +76,6 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             }
         } catch (SQLException e) {
             throw new DaoException("findPlayerById() " + e.getMessage());
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (preparedStatement != null) {
-                    preparedStatement.close();
-                }
-                if (connection != null) {
-                    freeConnection(connection);
-                }
-            } catch (SQLException e) {
-                throw new DaoException("findPlayerById() " + e.getMessage());
-            }
         }
         return player;     // reference to User object, or null value
     }
@@ -138,20 +111,6 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             // Execute the Prepared Statement and get a result set
 catch (SQLException e) {
                 throw new DaoException("insertPlayer() " + e.getMessage());
-            } finally {
-                try {
-                    if (resultSet != null) {
-                        resultSet.close();
-                    }
-                    if (ps != null) {
-                        ps.close();
-                    }
-                    if (connection != null) {
-                        freeConnection(connection);
-                    }
-                } catch (SQLException e) {
-                    throw new DaoException("insertPlayer() " + e.getMessage());
-                }
             }
             return player;     // reference to User object, or null value
         }
@@ -182,69 +141,30 @@ catch (SQLException e) {
 //            }
         } catch (SQLException e) {
             throw new DaoException("deletePlayerById() " + e.getMessage());
-        } finally
+        }
+
+    }@Override
+    public List<Player> filterPlayer(IFilter filter) throws DaoException
+    {
+        List<Player> filteredList = new ArrayList<>();
+
+        try
         {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
+            List<Player> allRecipes = findAllPlayers();
+            for(Player player : allRecipes)
+            {
+                if(filter.matches(player))
+                {
+                    filteredList.add(player);
                 }
-                if (ps != null) {
-                    ps.close();
-                }
-                if (connection != null) {
-                    freeConnection(connection);
-                }
-            } catch (SQLException e) {
-                throw new DaoException("deletePlayerById() " + e.getMessage());
             }
         }
-    }
-    @Override
-    public List<Player>  playerHeightComparator() throws DaoException {
-        Connection connection = null;
-        PreparedStatement ps = null;
-        ResultSet resultSet = null;
-        List<Player> playersList = new ArrayList<>();
-
-        try {
-            //Get connection object using the methods in the super class (MySqlDao.java)...
-            connection = this.getConnection();
-
-            String query = "SELECT * FROM PLAYER ORDER BY height_in_Cm ASC";
-            ps = connection.prepareStatement(query);
-
-            //Using a PreparedStatement to execute SQL...
-            resultSet = ps.executeQuery();
-            while (resultSet.next()) {
-                int id = resultSet.getInt("ID");
-                String firstName = resultSet.getString("FIRST_NAME");
-                String lastName = resultSet.getString("LAST_NAME");
-                String team = resultSet.getString("TEAM");
-                double height_in_Cm = resultSet.getDouble("HEIGHT_IN_CM");
-                int weight_in_Kg = resultSet.getInt("WEIGHT_IN_KG");
-                float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
-
-
-                Player p = new Player(id, firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
-                playersList.add(p);
-            }
-        } catch (SQLException e) {
-            throw new DaoException("playerHeightComparator() " + e.getMessage());
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                if (connection != null) {
-                    freeConnection(connection);
-                }
-            } catch (SQLException e) {
-                throw new DaoException("playerHeightComparator() " + e.getMessage());
-            }
+        catch (DaoException daoe)
+        {
+            System.out.println("filterPlayer() " + daoe.getMessage());
         }
-        return playersList;
+
+        return filteredList;
     }
+
 }

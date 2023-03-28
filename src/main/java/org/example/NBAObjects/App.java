@@ -5,9 +5,11 @@ import org.example.DAOs.MySqlPlayerDao;
 import org.example.DAOs.PlayerDaoInterface;
 import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
+import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.Set;
 
 
 public class App {
@@ -19,7 +21,9 @@ public class App {
         public void start() {
             Scanner keyboard = new Scanner(System.in);
 
+
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
+
             int choice;
             int filterchoice;
             do{
@@ -43,6 +47,7 @@ public class App {
                         System.out.println("1.SEE ALL PLAYER");
                     try {
                         System.out.println("\nCall findAllPlayers()");
+
                         List<Player> players = IPlayerDao.findAllPlayers();     // call a method in the DAO
 
                         if (players.isEmpty())
@@ -118,45 +123,45 @@ public class App {
                         break;
                     //------------------------------ FILTER
                     case 5:
-                        do{
-                            System.out.println("\nFILTER MENU");
-                            System.out.println("1.FILTER BY HEIGHT");
-                            System.out.println("10.EXIT\n");
+//                        do{
+//                            System.out.println("\nFILTER MENU");
+//                            System.out.println("1.FILTER BY HEIGHT");
+//                            System.out.println("10.EXIT\n");
+//
+//                            System.out.print("CHOICE:");
+//
+//
+//                            filterchoice = keyboard.nextInt();
+//                            switch (filterchoice) {
+//                                case 1:
+//                                    System.out.println("HEIGHT");
+//
+//
+//                                    try {
+//                                        System.out.println("\nCall: playerHeightComparator()\n");
+//
+//                                        System.out.println("Players ordered By height\n");
+//                                        List<Player> players = IPlayerDao.playerHeightComparator();
+//
+//
+//                                        if (players.isEmpty())
+//                                            System.out.println("There are no Players");
+//                                        else {
+//                                            for (Player player : players)
+//                                                System.out.println("Player: " + player.toString());
+//                                        }
+//                                    } catch (DaoException e) {
+//                                        e.printStackTrace();
+//                                    }
 
-                            System.out.print("CHOICE:");
+//                                    break;
+//
+//                            }
 
-
-                            filterchoice = keyboard.nextInt();
-                            switch (filterchoice) {
-                                case 1:
-                                    System.out.println("HEIGHT");
-
-
-                                    try {
-                                        System.out.println("\nCall: playerHeightComparator()\n");
-
-                                        System.out.println("Players ordered By height\n");
-                                        List<Player> players = IPlayerDao.playerHeightComparator();
-
-
-                                        if (players.isEmpty())
-                                            System.out.println("There are no Players");
-                                        else {
-                                            for (Player player : players)
-                                                System.out.println("Player: " + player.toString());
-                                        }
-                                    } catch (DaoException e) {
-                                        e.printStackTrace();
-                                    }
-
-                                    break;
-
-                            }
-
-                            }while(filterchoice!=10);
-
-
-                            break;
+//                            }while(filterchoice!=10);
+//
+//
+//                            break;
                     //------------------------------ EXIT PROGRAM
                     case 10:
                         System.out.println("EXITING");
@@ -169,4 +174,4 @@ public class App {
                 System.out.println("\n");
         }while(choice!=10);
     }
-}
+    }
