@@ -1,9 +1,8 @@
 package org.example.DTOs;
 
+import org.example.ComparePlayersByWeight;
 
-import java.sql.SQLOutput;
-
-public class Player {
+public class Player implements Comparable<Player> {
 
     private int id;
     private String firstName;
@@ -25,6 +24,11 @@ public class Player {
         this.weight_in_Kg = weight_in_Kg;
         this.points_Per_Game = points_Per_Game;
     }
+
+    public static void sort(ComparePlayersByWeight comparePlayersByWeight) {
+
+    }
+
     public int getId()
     {
         return id;
@@ -101,4 +105,8 @@ public class Player {
         return "{" + "ID=" + id + ",| First Name=" + firstName + ",| Last Name=" + lastName+",| Team=" + team + ",| Height in Cm=" + height_in_Cm +",| Weight in  Kg=" +weight_in_Kg+ ",| Points Per Game=" + points_Per_Game+'}';
     }
 
+    @Override
+    public int compareTo(Player p) {
+        return this.getWeight_in_Kg();
+    }
 }

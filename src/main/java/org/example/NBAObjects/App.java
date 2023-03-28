@@ -1,6 +1,8 @@
 package org.example.NBAObjects;
 
 import java.sql.*;
+
+import org.example.ComparePlayersByWeight;
 import org.example.DAOs.MySqlPlayerDao;
 import org.example.DAOs.PlayerDaoInterface;
 import org.example.DTOs.Player;
@@ -123,45 +125,32 @@ public class App {
                         break;
                     //------------------------------ FILTER
                     case 5:
-//                        do{
-//                            System.out.println("\nFILTER MENU");
-//                            System.out.println("1.FILTER BY HEIGHT");
-//                            System.out.println("10.EXIT\n");
-//
-//                            System.out.print("CHOICE:");
-//
-//
-//                            filterchoice = keyboard.nextInt();
-//                            switch (filterchoice) {
-//                                case 1:
-//                                    System.out.println("HEIGHT");
-//
-//
-//                                    try {
-//                                        System.out.println("\nCall: playerHeightComparator()\n");
-//
-//                                        System.out.println("Players ordered By height\n");
-//                                        List<Player> players = IPlayerDao.playerHeightComparator();
-//
-//
-//                                        if (players.isEmpty())
-//                                            System.out.println("There are no Players");
-//                                        else {
-//                                            for (Player player : players)
-//                                                System.out.println("Player: " + player.toString());
-//                                        }
-//                                    } catch (DaoException e) {
-//                                        e.printStackTrace();
-//                                    }
+                        do{
+                            System.out.println("\nFILTER MENU");
+                            System.out.println("1.FILTER BY HEIGHT");
+                            System.out.println("10.EXIT\n");
 
-//                                    break;
-//
-//                            }
+                            System.out.print("CHOICE:");
 
-//                            }while(filterchoice!=10);
-//
-//
-//                            break;
+
+                            filterchoice = keyboard.nextInt();
+                            switch (filterchoice) {
+                                case 1:
+                                    System.out.println("HEIGHT");
+
+
+
+                                        Player.sort(new ComparePlayersByWeight());
+
+
+                                    break;
+
+                            }
+
+                            }while(filterchoice!=10);
+
+
+                            break;
                     //------------------------------ EXIT PROGRAM
                     case 10:
                         System.out.println("EXITING");

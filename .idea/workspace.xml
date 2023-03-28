@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 5 5.2 MySqlPlayerDao set up prepared statement written">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Comparator/PlayerSorter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IFilter.java" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 5 5.3 changing filter to use a comparator">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ComparePlayersByHeight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
     </list>
@@ -250,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679933726084</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Feature 5 5.3 changing filter to use a comparator">
+      <created>1680024082706</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1680024082706</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,6 +293,7 @@
     <MESSAGE value="Changed added players displayed" />
     <MESSAGE value="Feature 5 5.1 addede filter by height in the menu" />
     <MESSAGE value="Feature 5 5.2 MySqlPlayerDao set up prepared statement written" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 5 5.2 MySqlPlayerDao set up prepared statement written" />
+    <MESSAGE value="Feature 5 5.3 changing filter to use a comparator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 5 5.3 changing filter to use a comparator" />
   </component>
 </project>
