@@ -11,12 +11,12 @@ import java.util.*;
 public class App {
     
     HashSet<Player> idList=new HashSet<Player>();
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DaoException {
         App app = new App();
         app.start();
     }
 
-        public void start() {
+        public void start() throws DaoException {
             Scanner keyboard = new Scanner(System.in);
             populateIDHashSet();
 
@@ -123,7 +123,7 @@ public class App {
                     case 5:
                         do{
                             System.out.println("\nFILTER MENU");
-                            System.out.println("1.FILTER BY LAST NAME");
+                            System.out.println("1.FILTER BY HEIGHT");
                             System.out.println("10.EXIT\n");
 
                             System.out.print("CHOICE:");
@@ -132,8 +132,13 @@ public class App {
                             filterchoice = keyboard.nextInt();
                             switch (filterchoice) {
                                 case 1:
-                                    System.out.println("LAST NAME");
+                                    System.out.println("HEIGHT IN ASCENDING ORDER");
+                                    List<Player> players = IPlayerDao.findAllPlayers();
+                                    Collections.sort(players);
 
+                                    System.out.println("\ncarList ArrayList after Collections.sort( carList )");
+                                    for( Player player : players )
+                                        System.out.println( player );
 
 
                                     break;

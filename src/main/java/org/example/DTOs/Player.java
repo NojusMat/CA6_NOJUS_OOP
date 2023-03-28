@@ -115,7 +115,12 @@ public class Player implements Comparable<Player> {
     @Override
     public int compareTo(Player otherPlayer)
     {
-        return this.id - otherPlayer.getId();
+        if( this.height_in_Cm < otherPlayer.height_in_Cm )        // will result in ascending order
+            return -1;
+        else if( this.height_in_Cm == otherPlayer.height_in_Cm)
+            return 0;
+        else
+            return 1;
     }
 
 }
