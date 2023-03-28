@@ -9,8 +9,6 @@ import java.util.*;
 
 
 public class App {
-    
-    HashSet<Player> idList=new HashSet<Player>();
     public static void main(String[] args) throws DaoException {
         App app = new App();
         app.start();
@@ -18,7 +16,7 @@ public class App {
 
         public void start() throws DaoException {
             Scanner keyboard = new Scanner(System.in);
-            populateIDHashSet();
+
 
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
 
@@ -160,12 +158,5 @@ public class App {
                 }
                 System.out.println("\n");
         }while(choice!=10);
-    }
-    private void populateIDHashSet()
-    {
-        for(Player player : idList)
-        {
-
-        }
     }
     }

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 6 6.1 checking if ID exists">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 5 5.5 Switched back to height used a simpler way of calling it">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -271,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680031732388</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Feature 5 5.5 Switched back to height used a simpler way of calling it">
+      <created>1680033525264</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680033525264</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -286,7 +292,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Features 1,2,3,4 added to interface.&#10;MySqlDao set up" />
     <MESSAGE value="Feature 1 - Adding it in the App class trying to link it beween the classes" />
     <MESSAGE value="Feature 1 - 1.2 MySqlPlayerDao finished for selecting all players" />
     <MESSAGE value="Feature 1 - 1.3 find all players set up in APP just need to connect to database" />
@@ -311,6 +316,7 @@
     <MESSAGE value="Feature 5 5.3 changing filter to use a comparator" />
     <MESSAGE value="Feature 5 5.4 switing to weight as the filter" />
     <MESSAGE value="Feature 6 6.1 checking if ID exists" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 6 6.1 checking if ID exists" />
+    <MESSAGE value="Feature 5 5.5 Switched back to height used a simpler way of calling it" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 5 5.5 Switched back to height used a simpler way of calling it" />
   </component>
 </project>
