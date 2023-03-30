@@ -170,39 +170,32 @@ catch (SQLException e) {
 
 
     @Override
-    public Player checkIdExists(int id) throws DaoException {
+    public void checkIdExists(int id) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Player player = null;
+        HashSet<String> idHashSet;
+
         try {
             connection = this.getConnection();
 
             String query = "SELECT * FROM PLAYER WHERE ID = ?";
-            HashSet<String> idHashSet = new HashSet<>();
+            idHashSet = new HashSet<>();
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, id);
 
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-
-                String firstName = resultSet.getString("FIRST_NAME");
-                String lastName = resultSet.getString("LAST_NAME");
-                String team = resultSet.getString("TEAM");
-                double height_in_Cm = resultSet.getDouble("HEIGHT_IN_CM");
-                int weight_in_Kg = resultSet.getInt("WEIGHT_IN_KG");
-                float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
-
-
-                player = new Player(id, firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
-
+                String value = resultSet.getString("id");
+                idHashSet.add(id);
 
 
             }
         } catch (SQLException e) {
-            throw new DaoException("findPlayerById() " + e.getMessage());
+            throw new DaoException("Checking For ID() " + e.getMessage());
         }
-        return player;     // reference to User object, or null value
+        System.out.println(idHashSet);
     }
 
 }
