@@ -8,8 +8,7 @@ import java.util.*;
 
 
 public class App {
-    private HashSet<Player>idHashSet = new HashSet<>();
-    private Set<Integer> cache;
+
     public static void main(String[] args) throws DaoException {
         App app = new App();
         app.start();
@@ -53,13 +52,8 @@ public class App {
                     try {
                         System.out.println("\nCall findAllPlayers()");
 
-                        cache =new HashSet<Integer>();
                         List<Player> players = IPlayerDao.findAllPlayers();     // call a method in the DAO
-                        for(Player player :players){
-                            cache.add(player.getId());
-                        }
 
-                        System.out.println("ids in cache"+cache);
                         if (players.isEmpty())
                             System.out.println("There are no Players");
                         else {
@@ -73,24 +67,34 @@ public class App {
 
                     //--------------------------------FIND PLAYER BY ID
                     case 2:
+
+                        HashSet<Integer>cache = new HashSet<Integer>();
+
                     try {
-                        System.out.println("\nCall: findPlayerById()");
-                        System.out.print("Enter a players ID who you would like to find: ");
-                        int findId = keyboard.nextInt();
-//
+                        cache = new HashSet<>();
+                        List<Player> players = IPlayerDao.findAllPlayers();
 
-
-                        if (cache.contains(findId)){
-
+                        // call a method in the DAO
+                        for(Player player :players){
+                            cache.add(player.getId());
                         }
+
+                        System.out.println("\nids in cache"+cache+"\n");
+                        System.out.print("Enter a players ID who you would like to find: ");
+
+
+                        int findId = keyboard.nextInt();
+                        Player player = IPlayerDao.findPlayerById(findId);
+
+                        if (cache.contains(findId)) // null returned if userid and password not valid
+                            System.out.println("Player found: " + player);
+
                         else{
                             System.out.println("That player does not exist");
                         }
 
-//                    } catch () {
-//                        e.printStackTrace();
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
+                    } catch (DaoException e) {
+                        e.printStackTrace();
                     }
 
                         break;

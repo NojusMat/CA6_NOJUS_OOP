@@ -6,6 +6,7 @@ import org.example.IFilter;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -65,7 +66,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
 
 
             resultSet = preparedStatement.executeQuery();
-            if ((resultSet !=null)) {
+            if ((resultSet.next())) {
 
                 String firstName = resultSet.getString("FIRST_NAME");
                 String lastName = resultSet.getString("LAST_NAME");
@@ -98,7 +99,6 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
 
             String query = "INSERT INTO PLAYER (FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (?, ?, ?, ?, ?, ?)";
             String query2 ="SELECT * FROM PLAYER ORDER BY ID DESC LIMIT1 "; // trying to show the last player added using descending order
-            ps = connection.prepareStatement(query);
             ps = connection.prepareStatement(query);
 
             ps.setString(1, firstName);
