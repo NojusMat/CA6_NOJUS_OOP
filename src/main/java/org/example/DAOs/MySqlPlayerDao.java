@@ -56,12 +56,16 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
         try {
             connection = this.getConnection();
 
+
+
             String query = "SELECT * FROM PLAYER WHERE ID = ?";
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, id);
 
+
+
             resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
+            if ((resultSet !=null)) {
 
                 String firstName = resultSet.getString("FIRST_NAME");
                 String lastName = resultSet.getString("LAST_NAME");
@@ -69,7 +73,6 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
                 double height_in_Cm = resultSet.getDouble("HEIGHT_IN_CM");
                 int weight_in_Kg = resultSet.getInt("WEIGHT_IN_KG");
                 float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
-
 
                 player = new Player(id, firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
 

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 6 6.6 created a new method that will print a player not found message">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 6 6.7 cycling through find all players to add all the ids at once to the hashset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
     </list>
@@ -329,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680182680580</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Feature 6 6.7 cycling through find all players to add all the ids at once to the hashset">
+      <created>1680184865121</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1680184865121</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -344,7 +350,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 3 - 3.1 addPlayer MySqlPlayerDao set up mostly slight problem with not recognising float" />
     <MESSAGE value="Feature 3 - 3.2 addPlayer has been added to app.java" />
     <MESSAGE value="Feature 3 - 3.2 addPlayer set points_per_game to float check with lecturer" />
     <MESSAGE value="Feature 3 - 3.3 addPlayer set points_per_game to float check with lecturer" />
@@ -369,6 +374,7 @@
     <MESSAGE value="Feature 6 6.4 trying to display the hashset" />
     <MESSAGE value="Feature 6 6.5 changing from converting string to int" />
     <MESSAGE value="Feature 6 6.6 created a new method that will print a player not found message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 6 6.6 created a new method that will print a player not found message" />
+    <MESSAGE value="Feature 6 6.7 cycling through find all players to add all the ids at once to the hashset" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 6 6.7 cycling through find all players to add all the ids at once to the hashset" />
   </component>
 </project>

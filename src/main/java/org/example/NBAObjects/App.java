@@ -15,7 +15,7 @@ public class App {
         app.start();
     }
 
-        public void start() throws DaoException {
+        public Player start() throws DaoException {
             Scanner keyboard = new Scanner(System.in);
 
 
@@ -59,6 +59,7 @@ public class App {
                             cache.add(player.getId());
                         }
 
+                        System.out.println("ids in cache"+cache);
                         if (players.isEmpty())
                             System.out.println("There are no Players");
                         else {
@@ -76,17 +77,22 @@ public class App {
                         System.out.println("\nCall: findPlayerById()");
                         System.out.print("Enter a players ID who you would like to find: ");
                         int findId = keyboard.nextInt();
-                        Player player = IPlayerDao.findPlayerById(findId);
+//
 
 
-                        if (player != null) // null returned if userid and password not valid
-                            System.out.println("Player found: " + player);
-                        else
-                            System.out.println("Player with that ID was not found");
+                        if (cache.contains(findId)){
 
-                    } catch (DaoException e) {
-                        e.printStackTrace();
+                        }
+                        else{
+                            System.out.println("That player does not exist");
+                        }
+
+//                    } catch () {
+//                        e.printStackTrace();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
                     }
+
                         break;
 
                     //-----------------------ADD PLAYER-------
@@ -173,5 +179,6 @@ public class App {
                 }
                 System.out.println("\n");
         }while(choice!=10);
-    }
+            return null;
+        }
 }
