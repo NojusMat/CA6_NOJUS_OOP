@@ -6,6 +6,7 @@ import org.example.IFilter;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 
@@ -169,28 +170,39 @@ catch (SQLException e) {
 
 
     @Override
-    public boolean checkIdExists(int id) throws DaoException
-    {
+    public Player checkIdExists(int id) throws DaoException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Player player = null;
+        try {
+            connection = this.getConnection();
 
-        String query = "SELECT * FROM PLAYER WHERE ID = ?";
+            String query = "SELECT * FROM PLAYER WHERE ID = ?";
+            HashSet<String> idHashSet = new HashSet<>();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
 
-        try(Connection con = this.getConnection();
-            PreparedStatement ps = con.prepareStatement(query))
-        {
-            ps.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
 
-            try(ResultSet rs = ps.executeQuery())
-            {
-                // If there are no elements in the ResultSet, it means the recipe does not exist.
-                return rs.next();
+                String firstName = resultSet.getString("FIRST_NAME");
+                String lastName = resultSet.getString("LAST_NAME");
+                String team = resultSet.getString("TEAM");
+                double height_in_Cm = resultSet.getDouble("HEIGHT_IN_CM");
+                int weight_in_Kg = resultSet.getInt("WEIGHT_IN_KG");
+                float points_Per_Game = resultSet.getFloat("POINTS_PER_GAME");
+
+
+                player = new Player(id, firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
+
+
+
             }
-
+        } catch (SQLException e) {
+            throw new DaoException("findPlayerById() " + e.getMessage());
         }
-        catch (SQLException sqle)
-        {
-            throw new DaoException("checkRecipeExists() " + sqle.getMessage());
-        }
+        return player;     // reference to User object, or null value
     }
-
 
 }
