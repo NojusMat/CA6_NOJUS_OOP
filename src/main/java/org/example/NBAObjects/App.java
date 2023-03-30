@@ -4,7 +4,6 @@ import org.example.DAOs.MySqlPlayerDao;
 import org.example.DAOs.PlayerDaoInterface;
 import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
-import java.util.HashSet;
 import java.util.*;
 
 
@@ -18,11 +17,17 @@ public class App {
             Scanner keyboard = new Scanner(System.in);
 
 
+
+
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
+
 
             int choice;
             int filterchoice;
             do{
+                IPlayerDao.checkIdExists(1);
+                System.out.println("\n");
+
                 System.out.println("\nNBA MENU");
                 System.out.println("1.SEE ALL PLAYER");
                 System.out.println("2.FIND PLAYER");
@@ -110,6 +115,7 @@ public class App {
                         System.out.println("Enter a players ID who you would like to delete");
                         int DeleteId = keyboard.nextInt();
                         IPlayerDao.deletePlayerById(DeleteId);
+
 
                         System.out.println("Player has been Deleted ");
 

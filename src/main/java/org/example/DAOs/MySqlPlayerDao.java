@@ -175,7 +175,7 @@ catch (SQLException e) {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Player player = null;
-        HashSet<String> idHashSet;
+        HashSet<Integer> idHashSet;
 
         try {
             connection = this.getConnection();
@@ -183,12 +183,12 @@ catch (SQLException e) {
             String query = "SELECT * FROM PLAYER WHERE ID = ?";
             idHashSet = new HashSet<>();
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, id);
+
 
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                String value = resultSet.getString("id");
-                idHashSet.add(id);
+                int value = resultSet.getInt("id");
+                idHashSet.add(value);
 
 
             }
