@@ -8,6 +8,8 @@ import java.util.*;
 
 
 public class App {
+    private HashSet<Player>idHashSet = new HashSet<>();
+    private Set<Integer> cache;
     public static void main(String[] args) throws DaoException {
         App app = new App();
         app.start();
@@ -51,7 +53,11 @@ public class App {
                     try {
                         System.out.println("\nCall findAllPlayers()");
 
+                        cache =new HashSet<Integer>();
                         List<Player> players = IPlayerDao.findAllPlayers();     // call a method in the DAO
+                        for(Player player :players){
+                            cache.add(player.getId());
+                        }
 
                         if (players.isEmpty())
                             System.out.println("There are no Players");
@@ -71,7 +77,7 @@ public class App {
                         System.out.print("Enter a players ID who you would like to find: ");
                         int findId = keyboard.nextInt();
                         Player player = IPlayerDao.findPlayerById(findId);
-                        checkPlayerFound(player);
+
 
                         if (player != null) // null returned if userid and password not valid
                             System.out.println("Player found: " + player);
@@ -168,18 +174,4 @@ public class App {
                 System.out.println("\n");
         }while(choice!=10);
     }
-    private void checkPlayerFound(Player player)
-    {
-        if(player != null)
-        {
-            player.displayPlayer();
-        }
-        else
-        {
-
-            System.out.println("Train ID does not exist. Please go to the Menu option to Display Trains " + "\n"
-                    + "and find one that is available.");
-        }
-    }
-
-    }
+}

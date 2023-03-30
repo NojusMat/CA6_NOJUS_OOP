@@ -1,10 +1,13 @@
 package org.example.DTOs;
 
 import java.util.Objects;
+import java.util.Set;
 
 public class Player implements Comparable<Player> {
 
     private int id;
+
+    private Set<Integer> cache;
     private String firstName;
     private String lastName;
     private String team;

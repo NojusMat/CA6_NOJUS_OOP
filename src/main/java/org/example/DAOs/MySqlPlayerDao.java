@@ -6,11 +6,12 @@ import org.example.IFilter;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
+
     @Override
     public List<Player> findAllPlayers() throws DaoException {
         Connection connection = null;
@@ -166,36 +167,6 @@ catch (SQLException e) {
         }
 
         return filteredList;
-    }
-
-
-    @Override
-    public void checkIdExists() throws DaoException {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        Player player = null;
-        HashSet<String> idHashSet;
-
-        try {
-            connection = this.getConnection();
-
-            String query = "SELECT * FROM PLAYER WHERE ID = ?";
-            idHashSet = new HashSet<>();
-            preparedStatement = connection.prepareStatement(query);
-
-
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                String value = resultSet.getString("id");
-                idHashSet.add(value);
-
-
-            }
-        } catch (SQLException e) {
-            throw new DaoException("Checking For ID() " + e.getMessage());
-        }
-        System.out.println(idHashSet);
     }
 
 }
