@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Player implements Comparable<Player> {
 
-    private int id;
+    private int id;  //declaring veriables
 
     private Set<Integer> cache;
     private String firstName;
@@ -32,7 +32,7 @@ public class Player implements Comparable<Player> {
     public int getId()
     {
         return id;
-    }
+    }       //setters and getters
 
     public void setId(int id)
     {
@@ -115,7 +115,7 @@ public class Player implements Comparable<Player> {
 
 
     @Override
-    public int hashCode()
+    public int hashCode()       //hashcode for player attributes
     {
         return Objects.hash(id, firstName, lastName, team, height_in_Cm,weight_in_Kg,points_Per_Game);
     }
