@@ -25,7 +25,9 @@ public class App {
             int choice;
             int filterchoice;
             do{
-                IPlayerDao.checkIdExists(1);
+
+
+
                 System.out.println("\n");
 
                 System.out.println("\nNBA MENU");
@@ -69,6 +71,7 @@ public class App {
                         System.out.print("Enter a players ID who you would like to find: ");
                         int findId = keyboard.nextInt();
                         Player player = IPlayerDao.findPlayerById(findId);
+                        checkPlayerFound(player);
 
                         if (player != null) // null returned if userid and password not valid
                             System.out.println("Player found: " + player);
@@ -165,4 +168,18 @@ public class App {
                 System.out.println("\n");
         }while(choice!=10);
     }
+    private void checkPlayerFound(Player player)
+    {
+        if(player != null)
+        {
+            player.displayPlayer();
+        }
+        else
+        {
+
+            System.out.println("Train ID does not exist. Please go to the Menu option to Display Trains " + "\n"
+                    + "and find one that is available.");
+        }
+    }
+
     }

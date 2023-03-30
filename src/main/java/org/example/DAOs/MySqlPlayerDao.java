@@ -170,12 +170,12 @@ catch (SQLException e) {
 
 
     @Override
-    public void checkIdExists(int id) throws DaoException {
+    public void checkIdExists() throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         Player player = null;
-        HashSet<Integer> idHashSet;
+        HashSet<String> idHashSet;
 
         try {
             connection = this.getConnection();
@@ -187,7 +187,7 @@ catch (SQLException e) {
 
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                int value = resultSet.getInt("id");
+                String value = resultSet.getString("id");
                 idHashSet.add(value);
 
 

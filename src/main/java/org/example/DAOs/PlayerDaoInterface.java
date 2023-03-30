@@ -20,7 +20,7 @@ public interface PlayerDaoInterface
 
     List<Player> filterPlayer(IFilter filter) throws DaoException;
 
-    public void checkIdExists(int id)throws DaoException;
+    public void checkIdExists()throws DaoException;
 
 
 }
