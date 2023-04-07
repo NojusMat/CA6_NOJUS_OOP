@@ -23,6 +23,14 @@ public class App {
         public Player start() throws DaoException {
             Scanner keyboard = new Scanner(System.in);
 
+            // Instantiate a Gson Parser
+            // The GSon parser classes have been loaded by Maven based on a dependency in the pom.xml file.
+//            Gson gsonParser = new Gson();
+//            String playerJsonString = gsonParser.toJson(player);
+//
+
+
+
 
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
 
@@ -49,6 +57,7 @@ public class App {
                     System.out.println("3.ADD PLAYER");
                     System.out.println("4.DELETE PLAYER");
                     System.out.println("5.FILTERS");
+                    System.out.println("6.CACHE");
                     System.out.println("10.EXIT\n");
 
                     System.out.print("CHOICE:");
@@ -80,7 +89,7 @@ public class App {
                         //--------------------------------FIND PLAYER BY ID
                         case 2:
                             try {
-                                System.out.println("\nids in cache" + cache + "\n");// showing what is in cache
+
                                 System.out.print("Enter a players ID who you would like to find: ");
 
 
@@ -176,9 +185,21 @@ public class App {
 
                                 }
 
-                            } while (filterchoice != 10);
+                            }
+                            while (filterchoice != 10);
 
+                            break;
 
+                        //------------------------------ CACHE
+                        case 6:
+                            try {
+
+                                System.out.println("\nCall: Cache()\n");
+                                System.out.println("\nPlayer IDS in cache" + cache + "\n");// showing what is in cache
+
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
                             break;
                         //------------------------------ EXIT PROGRAM
                         case 10:
