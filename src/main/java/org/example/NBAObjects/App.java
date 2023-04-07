@@ -207,8 +207,11 @@ public class App {
                                 System.out.println("\nCall: JSON ALL PLAYERS()\n");
 
                                 List<Player> allPlayers = IPlayerDao.findAllPlayers();     // call a method in the DAO
-                                Gson gson = new Gson();
-                                String json = gson.toJson(allPlayers);
+                                gsonParser = new Gson();
+                                String allPlayersJson = gsonParser.toJson(allPlayers);
+
+                                System.out.println("List of all players in json)");
+                                System.out.println(allPlayersJson);
 
 
 
