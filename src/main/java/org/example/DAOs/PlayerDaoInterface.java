@@ -22,6 +22,7 @@ public interface PlayerDaoInterface
 
     public String findAllPlayersJson()throws DaoException;
 
+    public String findPlayerByIdJson(int id)throws DaoException;
 
 
 }

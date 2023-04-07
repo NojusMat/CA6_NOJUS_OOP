@@ -54,6 +54,7 @@ public class App {
                     System.out.println("5.FILTERS");
                     System.out.println("6.CACHE");
                     System.out.println("7.JSON ALL PLAYERS");
+                    System.out.println("8.JSON FIND PLAYER BY ID");
                     System.out.println("10.EXIT\n");
 
                     System.out.print("CHOICE:");
@@ -207,6 +208,21 @@ public class App {
                                 System.out.println("\nCall: JSON ALL PLAYERS()\n");
 
                                 String findAllPlayersJson = IPlayerDao.findAllPlayersJson();
+
+
+
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+
+
+                            break;
+                        //------------------------------ JSON FIND PLAYER BY ID
+                        case 8:
+                            try {
+
+                                System.out.println("\nCall: FIND PLAYER BY ID()\n");
+
 
 
 

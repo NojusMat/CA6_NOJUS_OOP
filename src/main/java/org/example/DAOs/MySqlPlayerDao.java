@@ -191,4 +191,19 @@ catch (SQLException e) {
         return allPlayersJson;
     }
 
+    @Override
+    public String  findPlayerByIdJson(int id) throws DaoException {
+
+        Gson gsonParser = new Gson();
+        Player player = findPlayerById(id);
+
+        gsonParser = new Gson();
+        String findPlayerJson = gsonParser.toJson(player);
+
+//        System.out.println("List of all players in json)");
+//        System.out.println(findPlayerJson);
+
+        return findPlayerJson;
+    }
+
 }
