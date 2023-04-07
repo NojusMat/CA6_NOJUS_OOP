@@ -1,5 +1,6 @@
 package org.example.DAOs;
 
+import com.google.gson.Gson;
 import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
 import org.example.IFilter;
@@ -170,6 +171,24 @@ catch (SQLException e) {
         }
 
         return filteredList;
+    }
+
+    @Override
+    public String findAllPlayersJson() throws DaoException {
+
+            //Using a PreparedStatement to execute SQL...
+            Gson gsonParser = new Gson();
+
+             List<Player> players = findAllPlayers();
+
+            // call a method in the DAO
+            gsonParser = new Gson();
+            String allPlayersJson = gsonParser.toJson(players);
+
+            System.out.println("List of all players in json)");
+            System.out.println(allPlayersJson);
+
+        return allPlayersJson;
     }
 
 }
