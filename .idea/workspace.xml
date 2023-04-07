@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 6 6.9 calling find player and checking if its in the cache">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="added comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Comparator/PlayerSorter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/Cache.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680195282513</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="added comments">
+      <created>1680196573539</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1680196573539</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -363,7 +371,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 3 - 3.3 addPlayer set points_per_game to float check with lecturer" />
     <MESSAGE value="Feature 4 - 4.1 started on deletePlayerByID" />
     <MESSAGE value="Feature 4 - 4.2 delete almost fully set up in MySqlPlayerDao" />
     <MESSAGE value="Have database Connecting" />
@@ -388,6 +395,7 @@
     <MESSAGE value="Feature 6 6.7 cycling through find all players to add all the ids at once to the hashset" />
     <MESSAGE value="Feature 6 6.8 able to show all IDS That are currently in the database" />
     <MESSAGE value="Feature 6 6.9 calling find player and checking if its in the cache" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 6 6.9 calling find player and checking if its in the cache" />
+    <MESSAGE value="added comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="added comments" />
   </component>
 </project>

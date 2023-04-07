@@ -4,6 +4,12 @@ import org.example.DAOs.MySqlPlayerDao;
 import org.example.DAOs.PlayerDaoInterface;
 import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.*;
 
 
@@ -190,4 +196,39 @@ public class App {
                 throw new RuntimeException(e);
             }
         }
+
+    private static String fetchJsonFromAPI(String uri) throws IOException {
+
+        final int CONNECTION_OK = 200;  // code returned if connection is successful
+
+        URL url = new URL(uri);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        int responseCode = connection.getResponseCode();
+
+        if (responseCode == CONNECTION_OK)
+        {
+            // we have connected successfully, so now
+            // create an input buffer to read from the API stream
+            BufferedReader inBuffer = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream()));
+
+            String inputLine;
+
+            // create a String buffer to build up the JSON String
+            // that will be returned from the stream
+            StringBuffer strBuffer = new StringBuffer();
+
+            // read in all lines from stream until the stream
+            // has been emptied.
+            while ((inputLine = inBuffer.readLine()) != null) {
+                strBuffer.append(inputLine);
+            }
+            inBuffer.close();
+
+            return strBuffer.toString();  // return the JSON String
+        }
+
+        return null; // if connection failed
+    }
 }
+
