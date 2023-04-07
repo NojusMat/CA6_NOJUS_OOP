@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 7 7.2 displaying json still needs formatting">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 7 7.3 added findAllPlayersByJson method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -383,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680889386443</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Feature 7 7.3 added findAllPlayersByJson method">
+      <created>1680890977873</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1680890977873</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,7 +404,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Auto Increment working searching/add/delete using user input" />
     <MESSAGE value="Simple menu added" />
     <MESSAGE value="Feature 3 3.4 Displaying what has been added" />
     <MESSAGE value="New display added player" />
@@ -423,6 +428,7 @@
     <MESSAGE value="Feature 6 6.9.1 added see players cache to menu" />
     <MESSAGE value="Feature 7 7.1 trying to push all players into a json" />
     <MESSAGE value="Feature 7 7.2 displaying json still needs formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 7 7.2 displaying json still needs formatting" />
+    <MESSAGE value="Feature 7 7.3 added findAllPlayersByJson method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 7 7.3 added findAllPlayersByJson method" />
   </component>
 </project>
