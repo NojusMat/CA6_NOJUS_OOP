@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 8 8.1 added findPlayerByIdJson method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 8 8.2 Calling method and displaying player by id / needs validation">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -403,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680891766858</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Feature 8 8.2 Calling method and displaying player by id / needs validation">
+      <created>1680892585808</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1680892585808</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -418,7 +424,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New display added player" />
     <MESSAGE value="Changed added players displayed" />
     <MESSAGE value="Feature 5 5.1 addede filter by height in the menu" />
     <MESSAGE value="Feature 5 5.2 MySqlPlayerDao set up prepared statement written" />
@@ -443,6 +448,7 @@
     <MESSAGE value="Feature 7 7.3 added findAllPlayersByJson method" />
     <MESSAGE value="Feature 7 7.4 Pulling from method still needs styling" />
     <MESSAGE value="Feature 8 8.1 added findPlayerByIdJson method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 8 8.1 added findPlayerByIdJson method" />
+    <MESSAGE value="Feature 8 8.2 Calling method and displaying player by id / needs validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 8 8.2 Calling method and displaying player by id / needs validation" />
   </component>
 </project>

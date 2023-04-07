@@ -223,7 +223,14 @@ public class App {
                                 System.out.println("\nCall: FIND PLAYER BY ID()\n");
                                 System.out.print("Enter a players ID who you would like to find: ");
                                 int findIdjson = keyboard.nextInt();
-                                System.out.println(IPlayerDao.findPlayerByIdJson(findIdjson));
+
+
+                                if (cache.contains(findIdjson)) // null returned if userid and password not valid
+                                    System.out.println(IPlayerDao.findPlayerByIdJson(findIdjson));
+
+                                else {
+                                    System.out.println("That player does not exist");
+                                }
 
 
                             } catch (DaoException e) {
