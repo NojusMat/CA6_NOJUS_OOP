@@ -207,7 +207,7 @@ public class App {
 
                                 System.out.println("\nCall: JSON ALL PLAYERS()\n");
 
-                                String findAllPlayersJson = IPlayerDao.findAllPlayersJson();
+                                IPlayerDao.findAllPlayersJson();
 
 
 
@@ -220,16 +220,15 @@ public class App {
                         //------------------------------ JSON FIND PLAYER BY ID
                         case 8:
                             try {
-
                                 System.out.println("\nCall: FIND PLAYER BY ID()\n");
+                                System.out.print("Enter a players ID who you would like to find: ");
+                                int findIdjson = keyboard.nextInt();
+                                System.out.println(IPlayerDao.findPlayerByIdJson(findIdjson));
 
 
-
-
-                            } catch (Exception e) {
-                                throw new RuntimeException(e);
+                            } catch (DaoException e) {
+                                e.printStackTrace();
                             }
-
 
                             break;
                         //------------------------------ EXIT PROGRAM
