@@ -1,5 +1,6 @@
 package org.example.NBAObjects;
 
+import com.google.gson.Gson;
 import org.example.DAOs.MySqlPlayerDao;
 import org.example.DAOs.PlayerDaoInterface;
 import org.example.DTOs.Player;
@@ -25,10 +26,7 @@ public class App {
 
             // Instantiate a Gson Parser
             // The GSon parser classes have been loaded by Maven based on a dependency in the pom.xml file.
-//            Gson gsonParser = new Gson();
-//            String playerJsonString = gsonParser.toJson(player);
-//
-
+            Gson gsonParser = new Gson();
 
 
 
@@ -48,9 +46,6 @@ public class App {
                 int filterchoice;
                 do {
 
-
-                    System.out.println("\n");
-
                     System.out.println("\nNBA MENU");               //menu options
                     System.out.println("1.SEE ALL PLAYER");
                     System.out.println("2.FIND PLAYER");
@@ -58,6 +53,7 @@ public class App {
                     System.out.println("4.DELETE PLAYER");
                     System.out.println("5.FILTERS");
                     System.out.println("6.CACHE");
+                    System.out.println("7.JSON ALL PLAYERS");
                     System.out.println("10.EXIT\n");
 
                     System.out.print("CHOICE:");
@@ -197,9 +193,30 @@ public class App {
                                 System.out.println("\nCall: Cache()\n");
                                 System.out.println("\nPlayer IDS in cache" + cache + "\n");// showing what is in cache
 
+
+
+
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
+                            break;
+                        //------------------------------ JSON ALL PLAYERS
+                        case 7:
+                            try {
+
+                                System.out.println("\nCall: JSON ALL PLAYERS()\n");
+
+                                List<Player> allPlayers = IPlayerDao.findAllPlayers();     // call a method in the DAO
+                                Gson gson = new Gson();
+                                String json = gson.toJson(allPlayers);
+
+
+
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+
+
                             break;
                         //------------------------------ EXIT PROGRAM
                         case 10:
@@ -217,39 +234,6 @@ public class App {
                 throw new RuntimeException(e);
             }
         }
-
-    private static String fetchJsonFromAPI(String uri) throws IOException {
-
-        final int CONNECTION_OK = 200;  // code returned if connection is successful
-
-        URL url = new URL(uri);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        int responseCode = connection.getResponseCode();
-
-        if (responseCode == CONNECTION_OK)
-        {
-            // we have connected successfully, so now
-            // create an input buffer to read from the API stream
-            BufferedReader inBuffer = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
-
-            String inputLine;
-
-            // create a String buffer to build up the JSON String
-            // that will be returned from the stream
-            StringBuffer strBuffer = new StringBuffer();
-
-            // read in all lines from stream until the stream
-            // has been emptied.
-            while ((inputLine = inBuffer.readLine()) != null) {
-                strBuffer.append(inputLine);
-            }
-            inBuffer.close();
-
-            return strBuffer.toString();  // return the JSON String
-        }
-
-        return null; // if connection failed
-    }
 }
+
 
