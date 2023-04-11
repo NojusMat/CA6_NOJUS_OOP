@@ -51,7 +51,7 @@ public class App {
                 do {
 
                     System.out.println("\nNBA MENU");               //menu options
-                    System.out.println("1.SEE ALL PLAYER");
+                    System.out.println("1.SEE ALL INFORMATION");
                     System.out.println("2.FIND PLAYER");
                     System.out.println("3.ADD PLAYER");
                     System.out.println("4.DELETE PLAYER");
@@ -70,27 +70,48 @@ public class App {
 
 //-------------------------------FIND ALL USERS
                         case 1:
-                            System.out.println("1.SEE ALL PLAYER");
-                            try {
-                                System.out.println("\nCall findAllPlayers() and all teams");
+                            do {
+                                System.out.println("\nSEE ALL INFORMATION ON:");
+                                System.out.println("1.PLAYERS");
+                                System.out.println("2.TEAMS");
+                                System.out.println("10.EXIT\n");
 
-                                List<Player> allPlayers = IPlayerDao.findAllPlayers();     // call a method in the DAO
-                                List<Teams> findAllTeams =ITeamsDao.findAllTeams();
-
-                                for (Teams team : findAllTeams)
-                                    System.out.println("Team: " + team.toString());
+                                System.out.print("CHOICE:");
 
 
-                                if (allPlayers.isEmpty())
-                                    System.out.println("There are no Players");
-                                else {
-                                    for (Player player : allPlayers)
-                                        System.out.println("Player: " + player.toString());
 
+
+                                filterchoice = keyboard.nextInt();
+                                switch (filterchoice) {
+                                    case 1:
+
+                                        try {
+                                            System.out.println("\nALL PLAYERS");
+                                            List<Player> allPlayers = IPlayerDao.findAllPlayers();     // call a method in the DAO
+                                            if (allPlayers.isEmpty())
+                                                System.out.println("There are no Players");
+                                            else {
+                                                for (Player player : allPlayers)
+                                                    System.out.println("Player: " + player.toString());
+
+                                            }
+                                        } catch (DaoException e) {
+                                            e.printStackTrace();
+                                        }
+
+
+                                        break;
+                                    case 2:
+                                        System.out.println("\nALL TEAMS");
+                                        List<Teams> findAllTeams =ITeamsDao.findAllTeams();
+                                        for (Teams team : findAllTeams)
+                                            System.out.println("Team: " + team.toString());
+
+                                        break;
                                 }
-                            } catch (DaoException e) {
-                                e.printStackTrace();
+
                             }
+                            while (filterchoice != 10);
                             break;
 
                         //--------------------------------FIND PLAYER BY ID
@@ -102,6 +123,11 @@ public class App {
 
                                 int findId = keyboard.nextInt();
                                 Player player = IPlayerDao.findPlayerById(findId);
+
+                                System.out.print("Enter a teams Divison who you would like to find: ");
+                                String findTeam = keyboard.next();
+                                Teams teams = ITeamsDao.findTeamsByDivision(findTeam);
+                                System.out.println("Teams found: " + teams);//display player
 
                                 if (cache.contains(findId)) // null returned if userid and password not valid
                                     System.out.println("Player found: " + player);//display player

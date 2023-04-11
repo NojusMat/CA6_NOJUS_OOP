@@ -45,6 +45,8 @@ public class Teams {
     @Override
     public String toString()
     {
+
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
         return "Team{" + "Team name=" + team + ", City=" + team_city +
                 ", Conference=" + conference +" State="+ team_state+" Division="+division+" Arena ID="+arena_ID+"}";
     }
