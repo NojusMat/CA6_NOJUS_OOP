@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 8 8.3 added validation to findByJson">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/NBAObjects/AppTest.java" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="added sql code for arena and team">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlTeamsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL code for tables/Player.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Teams.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -71,9 +67,9 @@
       <recent name="org.example.NBAObjects" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.DAOs" />
       <recent name="org.example" />
       <recent name="org.example.Exceptions" />
-      <recent name="org.example.DAOs" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.AppTest.findAllPlayers">
@@ -458,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680893140112</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="added sql code for arena and team">
+      <created>1681213977408</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1681213977408</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,7 +476,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 5 5.1 addede filter by height in the menu" />
     <MESSAGE value="Feature 5 5.2 MySqlPlayerDao set up prepared statement written" />
     <MESSAGE value="Feature 5 5.3 changing filter to use a comparator" />
     <MESSAGE value="Feature 5 5.4 switing to weight as the filter" />
@@ -498,7 +500,8 @@
     <MESSAGE value="Feature 8 8.1 added findPlayerByIdJson method" />
     <MESSAGE value="Feature 8 8.2 Calling method and displaying player by id / needs validation" />
     <MESSAGE value="Feature 8 8.3 added validation to findByJson" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 8 8.3 added validation to findByJson" />
+    <MESSAGE value="added sql code for arena and team" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sql code for arena and team" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$App.ic" NAME="App Coverage Results" MODIFIED="1681158801566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
