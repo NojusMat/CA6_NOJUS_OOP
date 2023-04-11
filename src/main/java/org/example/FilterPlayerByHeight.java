@@ -5,7 +5,8 @@ import org.example.DTOs.Player;
 
 public class FilterPlayerByHeight implements IFilter
 {
-    private double minRating, maxRating;
+    private final double minRating;
+    private final double maxRating;
 
     public FilterPlayerByHeight(double minRating, double maxRating)
     {

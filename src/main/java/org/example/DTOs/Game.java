@@ -6,7 +6,7 @@ public class Game {
     private String homeTeam_name;
     private String awayTeam_name;
     private int homeTeam_score;
-    private int awayTeam_score;
+    private final int awayTeam_score;
 
     public Game(int game_ID, String homeTeam_name, String awayTeam_name,int homeTeam_score, int awayTeam_score)
     {

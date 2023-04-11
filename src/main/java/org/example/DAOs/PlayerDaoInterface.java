@@ -10,19 +10,19 @@ import java.util.List;
 
 public interface PlayerDaoInterface
 {
-    public List<Player> findAllPlayers() throws DaoException;
+    List<Player> findAllPlayers() throws DaoException;
 
-    public Player findPlayerById(int id)throws DaoException;
+    Player findPlayerById(int id)throws DaoException;
 
-    public Player insertPlayer(String firstName,String lastName,String team,double height_in_Cm,float points_Per_Game,int weight_in_Kg)throws DaoException;
+    Player insertPlayer(String firstName,String lastName,String team,double height_in_Cm,float points_Per_Game,int weight_in_Kg)throws DaoException;
 
-    public void deletePlayerById(int id)throws DaoException;
+    void deletePlayerById(int id)throws DaoException;
 
     List<Player> filterPlayer(IFilter filter) throws DaoException;
 
-    public String findAllPlayersJson()throws DaoException;
+    String findAllPlayersJson()throws DaoException;
 
-    public String findPlayerByIdJson(int id)throws DaoException;
+    String findPlayerByIdJson(int id)throws DaoException;
 
 
 }

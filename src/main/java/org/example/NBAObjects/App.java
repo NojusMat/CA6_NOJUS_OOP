@@ -54,7 +54,7 @@ public class App {
                     System.out.println("1.SEE ALL INFORMATION");
                     System.out.println("2.FIND ");
                     System.out.println("3.ADD");
-                    System.out.println("4.DELETE PLAYER");
+                    System.out.println("4.DELETE");
                     System.out.println("5.FILTERS");
                     System.out.println("6.CACHE");
                     System.out.println("7.JSON ALL PLAYERS");
@@ -243,26 +243,62 @@ public class App {
                             break;
                         //------------------------------ DELETE PLAYER
                         case 4:
-                            try {
-                                System.out.println("\nCall: deletePlayerById()\n");
 
-                                System.out.println("Enter a players ID who you would like to delete");
-                                int DeleteId = keyboard.nextInt();
+                            do {
+                                System.out.println("\nDELETE:");
+                                System.out.println("1.PLAYER");
+                                System.out.println("2.TEAM");
+                                System.out.println("10.EXIT\n");
+
+                                System.out.print("CHOICE:");
 
 
-                                if (cache.contains(DeleteId)) // checking if the id exists
-                                {
-                                    IPlayerDao.deletePlayerById(DeleteId);              //deleting chosen player
 
-                                    System.out.println("Player has been Deleted ");
 
+                                filterchoice = keyboard.nextInt();
+                                switch (filterchoice) {
+                                    case 1:
+
+                                        try {
+                                            System.out.println("\nCall: DELETE PLAYER\n");
+
+                                            System.out.println("Enter a players ID who you would like to delete");
+                                            int DeleteId = keyboard.nextInt();
+
+
+                                            if (cache.contains(DeleteId)) // checking if the id exists
+                                            {
+                                                IPlayerDao.deletePlayerById(DeleteId);              //deleting chosen player
+
+                                                System.out.println("Player has been Deleted ");
+
+                                            }
+                                            else {
+                                                System.out.println("Player with this ID does not exist");
+                                            }
+                                        } catch (DaoException e) {
+                                            e.printStackTrace();
+                                        }
+
+                                        break;
+                                    case 2:
+                                        try {
+                                            System.out.println("\nCall: DELETE TEAM \n");
+
+                                            System.out.println("Enter the team name youd like to delete");
+                                            String DeleteId = keyboard.next();
+                                            ITeamsDao.deleteTeamByName(DeleteId);              //deleting chosen player
+                                            System.out.println("Player has been Deleted ");
+
+                                } catch (DaoException e) {
+                                    e.printStackTrace();
                                 }
-                                else {
-                                    System.out.println("Player with this ID does not exist");
+                                        break;
                                 }
-                            } catch (DaoException e) {
-                                e.printStackTrace();
+
                             }
+                            while (filterchoice != 10);
+
                             break;
                         //------------------------------ FILTER
                         case 5:
@@ -275,19 +311,14 @@ public class App {
 
 
                                 filterchoice = keyboard.nextInt();
-                                switch (filterchoice) {
-                                    case 1:
-                                        System.out.println("HEIGHT IN ASCENDING ORDER");
-                                        List<Player> filterPlayers = IPlayerDao.findAllPlayers();  // displaying all players
-                                        Collections.sort(filterPlayers);                            //adding a sort of height
+                                if (filterchoice == 1) {
+                                    System.out.println("HEIGHT IN ASCENDING ORDER");
+                                    List<Player> filterPlayers = IPlayerDao.findAllPlayers();  // displaying all players
+                                    Collections.sort(filterPlayers);                            //adding a sort of height
 
-                                        System.out.println("\ncarList ArrayList after Collections.sort( carList )");
-                                        for (Player player : filterPlayers)
-                                            System.out.println(player);
-
-
-                                        break;
-
+                                    System.out.println("\ncarList ArrayList after Collections.sort( carList )");
+                                    for (Player player : filterPlayers)
+                                        System.out.println(player);
                                 }
 
                             }

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Finding Team by (String)Division">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Adding team working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlTeamsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlTeamsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,13 +117,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Features 1,2,3,4 added to interface.&#10;MySqlDao set up">
-      <created>1679439762720</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1679439762720</updated>
     </task>
     <task id="LOCAL-00005" summary="Feature 1 - Adding it in the App class trying to link it beween the classes">
       <created>1679484591632</created>
@@ -462,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681223280604</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Adding team working">
+      <created>1681227916841</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1681227916841</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -477,7 +476,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 6 6.1 checking if ID exists" />
     <MESSAGE value="Feature 5 5.5 Switched back to height used a simpler way of calling it" />
     <MESSAGE value="Feature 6 6.1 created Cache Class" />
     <MESSAGE value="Feature 6 6.2 created Cache Class" />
@@ -502,7 +500,8 @@
     <MESSAGE value="team interface added" />
     <MESSAGE value="Displaying all Teams" />
     <MESSAGE value="Finding Team by (String)Division" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finding Team by (String)Division" />
+    <MESSAGE value="Adding team working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding team working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$App.ic" NAME="App Coverage Results" MODIFIED="1681158801566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

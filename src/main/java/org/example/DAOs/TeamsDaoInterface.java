@@ -9,13 +9,13 @@ import java.util.List;
 
 public interface TeamsDaoInterface
 {
-    public List<Teams> findAllTeams() throws DaoException;
+    List<Teams> findAllTeams() throws DaoException;
 
-    public Teams findTeamsByCity(String team_city)throws DaoException;
+    Teams findTeamsByCity(String team_city)throws DaoException;
 
-    public Teams insertTeam(String team,String team_city,String conference,String division,int arena_ID)throws DaoException;
+    Teams insertTeam(String team,String team_city,String conference,String division,int arena_ID)throws DaoException;
 
-    public void deleteTeamByName(String team)throws DaoException;
+    void deleteTeamByName(String team)throws DaoException;
 
 //    public String findAllPlayersJson()throws DaoException;
 //
