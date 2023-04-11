@@ -42,6 +42,8 @@ public class Arena {
     @Override
     public String toString()
     {
+
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
         return "Arena{" + "Arena ID=" + arena_ID + ", Arena Name=" + arena_name +
                   ", Capacity=" + capacity +'}';
     }

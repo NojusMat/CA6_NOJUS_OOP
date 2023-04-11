@@ -42,5 +42,10 @@ public class Teams {
 
     public int getArena_ID(){return arena_ID;}
     public void setArena_ID(int arena_ID){this.arena_ID = arena_ID;}  // do you set from a child class a primary of a parent class?
-
+    @Override
+    public String toString()
+    {
+        return "Team{" + "Team name=" + team + ", City=" + team_city +
+                ", Conference=" + conference +" State="+ team_state+" Division="+division+" Arena ID="+arena_ID+"}";
+    }
 }

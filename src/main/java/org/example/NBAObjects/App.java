@@ -2,8 +2,11 @@ package org.example.NBAObjects;
 
 import com.google.gson.Gson;
 import org.example.DAOs.MySqlPlayerDao;
+import org.example.DAOs.MySqlTeamsDao;
 import org.example.DAOs.PlayerDaoInterface;
+import org.example.DAOs.TeamsDaoInterface;
 import org.example.DTOs.Player;
+import org.example.DTOs.Teams;
 import org.example.Exceptions.DaoException;
 
 import java.io.BufferedReader;
@@ -31,6 +34,7 @@ public class App {
 
 
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
+            TeamsDaoInterface ITeamsDao = new MySqlTeamsDao();
 
             HashSet<Integer> cache = new HashSet<Integer>();     //hashset used for collecting the player ID
 
@@ -68,15 +72,21 @@ public class App {
                         case 1:
                             System.out.println("1.SEE ALL PLAYER");
                             try {
-                                System.out.println("\nCall findAllPlayers()");
+                                System.out.println("\nCall findAllPlayers() and all teams");
 
                                 List<Player> allPlayers = IPlayerDao.findAllPlayers();     // call a method in the DAO
+                                List<Teams> findAllTeams =ITeamsDao.findAllTeams();
+
+                                for (Teams team : findAllTeams)
+                                    System.out.println("Team: " + team.toString());
+
 
                                 if (allPlayers.isEmpty())
                                     System.out.println("There are no Players");
                                 else {
                                     for (Player player : allPlayers)
                                         System.out.println("Player: " + player.toString());
+
                                 }
                             } catch (DaoException e) {
                                 e.printStackTrace();

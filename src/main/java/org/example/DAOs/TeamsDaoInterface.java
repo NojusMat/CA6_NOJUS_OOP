@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface TeamsDaoInterface
 {
-    public List<Teams> findAllPlayers() throws DaoException;
+    public List<Teams> findAllTeams() throws DaoException;
 
     public Teams findTeamsByDivision(String division)throws DaoException;
 

@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="added sql code for arena and team">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlTeamsDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="team interface added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlTeamsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlTeamsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Teams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Teams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,7 @@
       <recent name="org.example.Exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.findAllPlayers">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.NBAObjects.App" />
       <module name="CA6_NOJUS" />
@@ -104,8 +107,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.findAllPlayers" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.AppTest.findAllPlayers" />
       </list>
     </recent_temporary>
   </component>
@@ -117,13 +120,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Game class added">
-      <created>1679435426070</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1679435426070</updated>
     </task>
     <task id="LOCAL-00002" summary="Arena class added">
       <created>1679436275181</created>
@@ -461,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681213977408</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="team interface added">
+      <created>1681220748318</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1681220748318</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -476,7 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 5 5.2 MySqlPlayerDao set up prepared statement written" />
     <MESSAGE value="Feature 5 5.3 changing filter to use a comparator" />
     <MESSAGE value="Feature 5 5.4 switing to weight as the filter" />
     <MESSAGE value="Feature 6 6.1 checking if ID exists" />
@@ -501,7 +503,8 @@
     <MESSAGE value="Feature 8 8.2 Calling method and displaying player by id / needs validation" />
     <MESSAGE value="Feature 8 8.3 added validation to findByJson" />
     <MESSAGE value="added sql code for arena and team" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sql code for arena and team" />
+    <MESSAGE value="team interface added" />
+    <option name="LAST_COMMIT_MESSAGE" value="team interface added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$App.ic" NAME="App Coverage Results" MODIFIED="1681158801566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
