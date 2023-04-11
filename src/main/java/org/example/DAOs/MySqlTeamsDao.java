@@ -46,7 +46,7 @@ public class MySqlTeamsDao extends MySqlDao implements TeamsDaoInterface {
     }
 
     @Override
-    public Teams findTeamsByDivision(String division) throws DaoException {
+    public Teams findTeamsByCity(String team_city) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -56,26 +56,26 @@ public class MySqlTeamsDao extends MySqlDao implements TeamsDaoInterface {
 
 
 
-            String query = "SELECT * FROM TEAMS WHERE DIVISION = ?";
+            String query = "SELECT * FROM TEAMS WHERE team_city = ?";
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, division);
+            preparedStatement.setString(1, team_city);
 
             resultSet = preparedStatement.executeQuery();
             if ((resultSet.next())) {
 
                 String team = resultSet.getString("team");
-                String team_city = resultSet.getString("team_city");
                 String team_state = resultSet.getString("team_state");
                 String conference = resultSet.getString("conference");
+                String division = resultSet.getString("division");
                 int arena_ID = resultSet.getInt("arena_ID");
 
-                teams = new Teams(team, team_city, team_state, team, conference, arena_ID);
+                teams = new Teams(team, team_state, team, conference,division, arena_ID);
 
 
 
             }
         } catch (SQLException e) {
-            throw new DaoException("findTeamsByDivision() " + e.getMessage());
+            throw new DaoException("findTeamsByCity() " + e.getMessage());
         }
         return teams;     // reference to User object, or null value
 
@@ -83,7 +83,34 @@ public class MySqlTeamsDao extends MySqlDao implements TeamsDaoInterface {
 
     @Override
     public Teams insertTeam(String team, String team_city, String conference, String division, int arena_ID) throws DaoException {
-        return null;
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
+        Teams teams = null;
+
+        try {
+            //Get connection object using the methods in the super class (MySqlDao.java)...
+            connection = this.getConnection();
+
+            String query = "INSERT INTO TEAMS (team,team_city,conference,division,arena_ID) VALUES ( ?, ?, ?, ?, ?)";
+            ps = connection.prepareStatement(query);
+
+            ps.setString(1, team);
+            ps.setString(2, team_city);
+            ps.setString(3, conference);
+            ps.setString(4, division);
+            ps.setFloat(5, arena_ID);
+
+            ps.executeUpdate();
+
+        }
+
+
+        // Execute the Prepared Statement and get a result set
+        catch (SQLException e) {
+            throw new DaoException("insertTeam() " + e.getMessage());
+        }
+        return teams;     // reference to User object, or null value
     }
 
     @Override

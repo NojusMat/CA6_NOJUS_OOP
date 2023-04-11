@@ -52,8 +52,8 @@ public class App {
 
                     System.out.println("\nNBA MENU");               //menu options
                     System.out.println("1.SEE ALL INFORMATION");
-                    System.out.println("2.FIND PLAYER");
-                    System.out.println("3.ADD PLAYER");
+                    System.out.println("2.FIND ");
+                    System.out.println("3.ADD");
                     System.out.println("4.DELETE PLAYER");
                     System.out.println("5.FILTERS");
                     System.out.println("6.CACHE");
@@ -114,60 +114,132 @@ public class App {
                             while (filterchoice != 10);
                             break;
 
-                        //--------------------------------FIND PLAYER BY ID
+                        //--------------------------------FIND
                         case 2:
-                            try {
+                            do {
+                                System.out.println("\nFIND INFORMATION USING THE FOLLOWING:");
+                                System.out.println("1.PLAYERS BY ID");
+                                System.out.println("2.TEAMS BY DIVISION");
+                                System.out.println("10.EXIT\n");
 
-                                System.out.print("Enter a players ID who you would like to find: ");
+                                System.out.print("CHOICE:");
+
+                                filterchoice = keyboard.nextInt();
+                                switch (filterchoice) {
+                                    case 1:
+
+                                        try {
+
+                                            System.out.print("Enter a players ID who you would like to find: ");
 
 
-                                int findId = keyboard.nextInt();
-                                Player player = IPlayerDao.findPlayerById(findId);
+                                            int findId = keyboard.nextInt();
+                                            Player player = IPlayerDao.findPlayerById(findId);
+                                            if (cache.contains(findId)) // null returned if userid and password not valid
+                                                System.out.println("Player found: " + player);//display player
 
-                                System.out.print("Enter a teams Divison who you would like to find: ");
-                                String findTeam = keyboard.next();
-                                Teams teams = ITeamsDao.findTeamsByDivision(findTeam);
-                                System.out.println("Teams found: " + teams);//display player
 
-                                if (cache.contains(findId)) // null returned if userid and password not valid
-                                    System.out.println("Player found: " + player);//display player
+                                            else {
+                                                System.out.println("That player does not exist");
+                                            }
 
-                                else {
-                                    System.out.println("That player does not exist");
+                                        } catch (DaoException e) {
+                                            e.printStackTrace();
+                                        }
+
+                                        break;
+                                    case 2:
+                                        System.out.print("Enter a teams City who you would like to find: ");
+                                        String findTeamCity = keyboard.next();
+                                        Teams teams = ITeamsDao.findTeamsByCity(findTeamCity);
+
+                                        if(teams !=null)
+                                        System.out.println("Team in the city of "+findTeamCity+": " + teams);//display player
+                                        else {
+                                            System.out.println("No Teams in this city of:"+findTeamCity);
+
+                                        }
+
+
+                                        break;
                                 }
 
-                            } catch (DaoException e) {
-                                e.printStackTrace();
                             }
+                            while (filterchoice != 10);
 
                             break;
 
-                        //-----------------------ADD PLAYER-------
+                        //-----------------------ADD -------
                         case 3:
-                            try {
 
-                                System.out.println("\nCall: addPlayer()");
+                            do {
+                                System.out.println("\nADD:");
+                                System.out.println("1.PLAYER");
+                                System.out.println("2.TEAM");
+                                System.out.println("10.EXIT\n");
 
-                                System.out.println("Enter the Players First Name (string):");
-                                String addFName = keyboard.next();
-                                System.out.println("Enter the Players Last Name (string):");
-                                String addLName = keyboard.next();
-                                System.out.println("Enter the Players Team (string)");
-                                String addTeam = keyboard.next();
-                                System.out.println("Enter the Players Height in Cm (double):");
-                                double addHeight = keyboard.nextDouble();
-                                System.out.println("Enter the Players Points per Game(float):");
-                                float addPPG = keyboard.nextFloat();
-                                System.out.println("Enter the Players Weight in Kg (int):");
-                                int addWeight = keyboard.nextInt();
+                                System.out.print("CHOICE:");
 
 
-                                IPlayerDao.insertPlayer(addFName, addLName, addTeam, addHeight, addPPG, addWeight);// adds the users chosen atributes to player
-                                System.out.println("NEW PLAYER First Name:" + addFName + ",Last Name:" + addLName + ", Team:" + addTeam + ", Height:" + addHeight + ", Points per game:" + addPPG + ", Weight:" + addWeight);// displaying added player
 
-                            } catch (DaoException e) {
-                                e.printStackTrace();
+
+                                filterchoice = keyboard.nextInt();
+                                switch (filterchoice) {
+                                    case 1:
+
+                                        try {
+
+                                            System.out.println("\nCall: ADD PLAYER()");
+                                            System.out.println("Enter the Players First Name (string):");
+                                            String addFName = keyboard.next();
+                                            System.out.println("Enter the Players Last Name (string):");
+                                            String addLName = keyboard.next();
+                                            System.out.println("Enter the Players Team (string)");
+                                            String addTeam = keyboard.next();
+                                            System.out.println("Enter the Players Height in Cm (double):");
+                                            double addHeight = keyboard.nextDouble();
+                                            System.out.println("Enter the Players Points per Game(float):");
+                                            float addPPG = keyboard.nextFloat();
+                                            System.out.println("Enter the Players Weight in Kg (int):");
+                                            int addWeight = keyboard.nextInt();
+                                            IPlayerDao.insertPlayer(addFName, addLName, addTeam, addHeight, addPPG, addWeight);// adds the users chosen atributes to player
+                                            System.out.println("NEW PLAYER First Name:" + addFName + ",Last Name:" + addLName + ", Team:" + addTeam + ", Height:" + addHeight + ", Points per game:" + addPPG + ", Weight:" + addWeight);// displaying added player
+
+
+                                        } catch (DaoException e) {
+                                            e.printStackTrace();
+                                        }
+
+
+                                        break;
+                                    case 2:
+                                        try {
+
+                                            System.out.println("\nCall: ADD TEAM()");
+                                            System.out.println("Enter the Team Name (string):");
+                                            String addTeamName = keyboard.next();
+                                            System.out.println("Enter the Team City (string):");
+                                            String addTeamCity = keyboard.next();
+                                            System.out.println("Enter the Conference (string)");
+                                            String addConference = keyboard.next();
+                                            System.out.println("Enter the Division (string):");
+                                            String addDivision = keyboard.next();
+                                            System.out.println("Enter the Arena ID (int):");
+                                            int ArenaID = keyboard.nextInt();
+
+                                            ITeamsDao.insertTeam(addTeamName, addTeamCity, addConference, addDivision, ArenaID);// adds the users chosen atributes to player
+                                            System.out.println("NEW Team: Team Name:" + addTeamName + ",Team City:" + addTeamCity + ", Conference:" + addConference + ", Division:" + addDivision + ", Arena ID:" + ArenaID);// displaying added player
+
+
+                                        } catch (DaoException e) {
+                                            e.printStackTrace();
+                                        }
+                                        break;
+                                }
+
                             }
+                            while (filterchoice != 10);
+
                             break;
                         //------------------------------ DELETE PLAYER
                         case 4:

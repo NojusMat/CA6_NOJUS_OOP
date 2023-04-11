@@ -11,7 +11,7 @@ public interface TeamsDaoInterface
 {
     public List<Teams> findAllTeams() throws DaoException;
 
-    public Teams findTeamsByDivision(String division)throws DaoException;
+    public Teams findTeamsByCity(String team_city)throws DaoException;
 
     public Teams insertTeam(String team,String team_city,String conference,String division,int arena_ID)throws DaoException;
 
