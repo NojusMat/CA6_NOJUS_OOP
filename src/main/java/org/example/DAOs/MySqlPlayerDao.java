@@ -98,7 +98,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             //Get connection object using the methods in the super class (MySqlDao.java)...
             connection = this.getConnection();
 
-            String query = "INSERT INTO PLAYER (FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO PLAYER (FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (0,?, ?, ?, ?, ?, ?)";
             String query2 ="SELECT * FROM PLAYER ORDER BY ID DESC LIMIT1 "; // trying to show the last player added using descending order
             ps = connection.prepareStatement(query);
 

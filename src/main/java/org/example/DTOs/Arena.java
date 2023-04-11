@@ -3,16 +3,12 @@ package org.example.DTOs;
 public class Arena {
     private int arena_ID;
     private String arena_name;
-    private String city;
-    private String state;
     private int capacity;
 
-    public Arena(int arena_ID, String arena_name, String city,String team,String state, int capacity)
+    public Arena(int arena_ID, String arena_name, int capacity)
     {
         this.arena_ID = arena_ID;
         this.arena_name = arena_name;
-        this.city = city;
-        this.state=state;
         this.capacity = capacity;
     }
 
@@ -34,26 +30,6 @@ public class Arena {
         this.arena_name = arena_name;
     }
 
-    public String getCity()
-    {
-        return city;
-    }
-    public void setCity(String city)
-    {
-        this.city = city;
-    }
-
-
-    public String getState()
-    {
-        return state;
-    }
-    public void setState(String state)
-    {
-        this.arena_name = state;
-    }
-
-
     public int getCapacity()
     {
         return capacity;
@@ -66,7 +42,7 @@ public class Arena {
     @Override
     public String toString()
     {
-        return "Arena{" + "Arena ID=" + arena_ID + ", Arena Name=" + arena_name + ", City=" +city+", State=" + state +
+        return "Arena{" + "Arena ID=" + arena_ID + ", Arena Name=" + arena_name +
                   ", Capacity=" + capacity +'}';
     }
 

@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 8 8.2 Calling method and displaying player by id / needs validation">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 8 8.3 added validation to findByJson">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/NBAObjects/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL code for tables/Player.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Teams.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +23,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -32,18 +39,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/wwwno/OneDrive/Desktop/OOP_CA5_Prithvi_Muvvala_GD2a&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/wwwno/OneDrive/Desktop/Year2/JAVA TESTING",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wwwno\OneDrive - Dundalk Institute of Technology\YEAR 2\CA6_NOJUS\src\main\SQL code for tables" />
+      <recent name="C:\Users\wwwno\OneDrive - Dundalk Institute of Technology\YEAR 2\CA6_NOJUS\.idea" />
+      <recent name="C:\Users\wwwno\OneDrive - Dundalk Institute of Technology\YEAR 2\CA6_NOJUS\src" />
+      <recent name="C:\Users\wwwno\OneDrive - Dundalk Institute of Technology\YEAR 2\CA6_NOJUS\src\main\java" />
+      <recent name="C:\Users\wwwno\OneDrive - Dundalk Institute of Technology\YEAR 2\CA6_NOJUS\target" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="org.example.DTOs" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.NBAObjects" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example" />
@@ -51,7 +76,7 @@
       <recent name="org.example.DAOs" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AppTest.findAllPlayers">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.NBAObjects.App" />
       <module name="CA6_NOJUS" />
@@ -65,8 +90,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppTest.findAllPlayers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.NBAObjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.NBAObjects" />
+      <option name="MAIN_CLASS_NAME" value="org.example.NBAObjects.AppTest" />
+      <option name="METHOD_NAME" value="findAllPlayers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTest.findAllPlayers" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -409,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680892585808</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Feature 8 8.3 added validation to findByJson">
+      <created>1680893140112</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1680893140112</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -424,7 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed added players displayed" />
     <MESSAGE value="Feature 5 5.1 addede filter by height in the menu" />
     <MESSAGE value="Feature 5 5.2 MySqlPlayerDao set up prepared statement written" />
     <MESSAGE value="Feature 5 5.3 changing filter to use a comparator" />
@@ -449,6 +497,12 @@
     <MESSAGE value="Feature 7 7.4 Pulling from method still needs styling" />
     <MESSAGE value="Feature 8 8.1 added findPlayerByIdJson method" />
     <MESSAGE value="Feature 8 8.2 Calling method and displaying player by id / needs validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 8 8.2 Calling method and displaying player by id / needs validation" />
+    <MESSAGE value="Feature 8 8.3 added validation to findByJson" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 8 8.3 added validation to findByJson" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CA6_NOJUS$App.ic" NAME="App Coverage Results" MODIFIED="1681158801566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.NBAObjects.*</FILTER>
+    </SUITE>
   </component>
 </project>
