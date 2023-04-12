@@ -1,6 +1,6 @@
 package org.example.DTOs;
 
-public class Arena {
+public class Arena implements Comparable<Arena>{
     private int arena_ID;
     private String arena_name;
     private int capacity;
@@ -48,4 +48,14 @@ public class Arena {
                   ", Capacity=" + capacity +'}';
     }
 
+    @Override
+    public int compareTo(Arena otherArena)
+    {
+        if( this.capacity > otherArena.capacity )        // will result in ascending order
+            return -1;
+        else if( this.capacity == otherArena.capacity)
+            return 0;
+        else
+            return 1;
+    }
 }

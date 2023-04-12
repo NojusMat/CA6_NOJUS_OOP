@@ -54,7 +54,7 @@ public class App {
                     System.out.println("2.FIND ");
                     System.out.println("3.ADD");
                     System.out.println("4.DELETE");
-                    System.out.println("5.FILTERS");
+                    System.out.println("5.FILTERS/SORT");
                     System.out.println("6.CACHE");
                     System.out.println("7.JSON ALL PLAYERS");
                     System.out.println("8.JSON FIND PLAYER BY ID");
@@ -326,30 +326,48 @@ public class App {
                             break;
                         //------------------------------ FILTER
                         case 5:
+
+
                             do {
                                 System.out.println("\nFILTER MENU");
                                 System.out.println("1.FILTER BY HEIGHT");
+                                System.out.println("2.SORT BY CAPACITY");
                                 System.out.println("10.EXIT\n");
 
                                 System.out.print("CHOICE:");
 
 
                                 filterchoice = keyboard.nextInt();
-                                if (filterchoice == 1) {
-                                    System.out.println("HEIGHT IN ASCENDING ORDER");
-                                    List<Player> filterPlayers = IPlayerDao.findAllPlayers();  // displaying all players
-                                    Collections.sort(filterPlayers);                            //adding a sort of height
+                                switch (filterchoice) {
+                                    case 1:
 
-                                    System.out.println("\ncarList ArrayList after Collections.sort( carList )");
-                                    for (Player player : filterPlayers)
-                                        System.out.println(player);
+                                        System.out.println("HEIGHT IN ASCENDING ORDER");
+                                        List<Player> filterPlayers = IPlayerDao.findAllPlayers();  // displaying all players
+                                        Collections.sort(filterPlayers);                            //adding a sort of height
+
+                                        System.out.println("\nPlayerList ArrayList after Collections.sort( Player List )");
+                                        for (Player player : filterPlayers)
+                                            System.out.println(player);
+
+                                        break;
+                                    case 2:
+
+                                            System.out.println("\nSORT BY CAPACITY  (DESCENDING) \n");
+
+                                        List<Arena> filterArenaCapacity = IArenaDao.findAllArenas();  // displaying all players
+                                        Collections.sort(filterArenaCapacity);                            //adding a sort of height
+
+                                        System.out.println("\nArena sorted using capacity )");
+                                        for (Arena arena : filterArenaCapacity)
+                                            System.out.println(arena);
+
+                                        break;
                                 }
 
                             }
                             while (filterchoice != 10);
 
                             break;
-
                         //------------------------------ CACHE
                         case 6:
                             try {

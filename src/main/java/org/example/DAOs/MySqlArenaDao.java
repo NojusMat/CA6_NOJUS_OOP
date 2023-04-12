@@ -1,8 +1,10 @@
 package org.example.DAOs;
 
 import org.example.DTOs.Arena;
+import org.example.DTOs.Player;
 import org.example.DTOs.Teams;
 import org.example.Exceptions.DaoException;
+import org.example.IFilter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -81,6 +83,31 @@ public class MySqlArenaDao extends MySqlDao implements ArenaDaoInterface {
         }
         return teamArena.toString();     // reference to User object, or null value
     }
+
+    @Override
+    public List<Arena> filterArenaCapacity(IFilter filter) throws DaoException
+    {
+        List<Arena> filteredList = new ArrayList<>();
+
+        try
+        {
+            List<Arena> allArenas = findAllArenas();
+            for(Arena arena : allArenas)
+            {
+                if(filter.matches(arena))
+                {
+                    filteredList.add(arena);
+                }
+            }
+        }
+        catch (DaoException daoe)
+        {
+            System.out.println("filterPlayer() " + daoe.getMessage());
+        }
+
+        return filteredList;
+    }
+
 
 
 }
