@@ -5,8 +5,8 @@ CREATE TABLE Player ( id int NOT NULL AUTO_INCREMENT,
     height_in_Cm DECIMAL(13, 2) NOT NULL,
 	 weight_in_Kg INT NOT NULL,
     points_Per_Game FLOAT  NOT NULL,
-    PRIMARY KEY(id)
-   
+    PRIMARY KEY(id),
+   	FOREIGN KEY(team) REFERENCES Teams(team)
 );
 
 INSERT INTO Player VALUES
