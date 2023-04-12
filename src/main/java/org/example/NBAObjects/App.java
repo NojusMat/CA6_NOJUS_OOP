@@ -1,10 +1,8 @@
 package org.example.NBAObjects;
 
 import com.google.gson.Gson;
-import org.example.DAOs.MySqlPlayerDao;
-import org.example.DAOs.MySqlTeamsDao;
-import org.example.DAOs.PlayerDaoInterface;
-import org.example.DAOs.TeamsDaoInterface;
+import org.example.DAOs.*;
+import org.example.DTOs.Arena;
 import org.example.DTOs.Player;
 import org.example.DTOs.Teams;
 import org.example.Exceptions.DaoException;
@@ -35,6 +33,7 @@ public class App {
 
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
             TeamsDaoInterface ITeamsDao = new MySqlTeamsDao();
+            ArenaDaoInterface IArenaDao = new MySqlArenaDao();
 
             HashSet<Integer> cache = new HashSet<Integer>();     //hashset used for collecting the player ID
 
@@ -74,6 +73,7 @@ public class App {
                                 System.out.println("\nSEE ALL INFORMATION ON:");
                                 System.out.println("1.PLAYERS");
                                 System.out.println("2.TEAMS");
+                                System.out.println("3.ARENAS");
                                 System.out.println("10.EXIT\n");
 
                                 System.out.print("CHOICE:");
@@ -108,7 +108,15 @@ public class App {
                                             System.out.println("Team: " + team.toString());
 
                                         break;
-                                }
+
+                                case 3:
+                                    System.out.println("\nALL ARENAS");
+                                    List<Arena> findAllArenas =IArenaDao.findAllArenas();
+                                    for (Arena arena : findAllArenas)
+                                        System.out.println("Arena: " + arena.toString());
+
+                                    break;
+                            }
 
                             }
                             while (filterchoice != 10);
@@ -120,6 +128,7 @@ public class App {
                                 System.out.println("\nFIND INFORMATION USING THE FOLLOWING:");
                                 System.out.println("1.PLAYERS BY ID");
                                 System.out.println("2.TEAMS BY DIVISION");
+                                System.out.println("3.USING ARENA ID FIND TEAM");
                                 System.out.println("10.EXIT\n");
 
                                 System.out.print("CHOICE:");
@@ -157,6 +166,21 @@ public class App {
                                         System.out.println("Team in the city of "+findTeamCity+": " + teams);//display player
                                         else {
                                             System.out.println("No Teams in this city of:"+findTeamCity);
+
+                                        }
+
+
+                                        break;
+
+                                    case 3:
+                                        System.out.print("Enter Arena ID to display what team plays in it : ");
+                                        int findByArenaID = keyboard.nextInt();
+                                        String teamArena = IArenaDao.findTeamsByArena(findByArenaID);
+
+                                        if(teamArena !=null)
+                                            System.out.println("Team with the arena id "+findByArenaID+": " + teamArena);//display player
+                                        else {
+                                            System.out.println("No Teams plays in a arena with the arena code:"+findByArenaID);
 
                                         }
 
