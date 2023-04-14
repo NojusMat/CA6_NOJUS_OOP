@@ -200,6 +200,7 @@ public class App {
                                 System.out.println("\nADD:");
                                 System.out.println("1.PLAYER");
                                 System.out.println("2.TEAM");
+                                System.out.println("3.ARENA");
                                 System.out.println("10.EXIT\n");
 
                                 System.out.print("CHOICE:");
@@ -253,6 +254,24 @@ public class App {
 
                                             ITeamsDao.insertTeam(addTeamName, addTeamCity, addConference, addDivision, ArenaID);// adds the users chosen atributes to player
                                             System.out.println("NEW Team: Team Name:" + addTeamName + ",Team City:" + addTeamCity + ", Conference:" + addConference + ", Division:" + addDivision + ", Arena ID:" + ArenaID);// displaying added player
+
+
+                                        } catch (DaoException e) {
+                                            e.printStackTrace();
+                                        }
+                                        break;
+                                    case 3:
+                                        try {
+                                            System.out.println("\nCall: ADD ARENA()");
+                                            System.out.println("Enter the Arena ID (int):");
+                                            int addArenaid = keyboard.nextInt();
+                                            System.out.println("Enter the Arena name (string):");
+                                            String addArenaName = keyboard.next();
+                                            System.out.println("Enter the Capacity (int)");
+                                            int addArenaCapacity = keyboard.nextInt();
+
+                                            IArenaDao.insertArena(addArenaid, addArenaName, addArenaCapacity);
+                                            System.out.println("NEW Arena: Arena ID:" + addArenaid + ",Arena Name:" + addArenaName + ", Arena Capacity:" +addArenaCapacity);
 
 
                                         } catch (DaoException e) {

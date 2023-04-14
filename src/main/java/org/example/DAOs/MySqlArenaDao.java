@@ -108,6 +108,36 @@ public class MySqlArenaDao extends MySqlDao implements ArenaDaoInterface {
         return filteredList;
     }
 
+    @Override
+    public Arena insertArena(int arena_ID, String arena_name, int capacity) throws DaoException {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
+        Arena arena = null;
+
+        try {
+            //Get connection object using the methods in the super class (MySqlDao.java)...
+            connection = this.getConnection();
+
+            String query = "INSERT INTO ARENA (arena_ID,arena_name,capacity) VALUES ( ?, ?, ?)";
+            ps = connection.prepareStatement(query);
+
+            ps.setInt(1, arena_ID);
+            ps.setString(2, arena_name);
+            ps.setInt(3, capacity);
+
+            ps.executeUpdate();
+
+        }
+
+
+        // Execute the Prepared Statement and get a result set
+        catch (SQLException e) {
+            throw new DaoException("insertArena() " + e.getMessage());
+        }
+        return arena;     // reference to User object, or null value
+    }
+
 
 
 }

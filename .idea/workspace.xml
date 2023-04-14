@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Displaying all arenas find team using arena id still broken">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Sort Arena by capacity (decending)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/ArenaDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/ArenaDaoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlArenaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlArenaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/NBAObjects/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/NBAObjects/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,20 +38,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/wwwno/OneDrive/Desktop/Year2/JAVA TESTING&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/wwwno/OneDrive/Desktop/Year2/JAVA TESTING",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.tabs"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -88,6 +90,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.NBAObjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.NBAObjects" />
+      <option name="MAIN_CLASS_NAME" value="org.example.NBAObjects.AppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppTest.findAllPlayers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CA6_NOJUS" />
       <extension name="coverage">
@@ -104,9 +121,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppTest.insertPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.NBAObjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.NBAObjects" />
+      <option name="MAIN_CLASS_NAME" value="org.example.NBAObjects.AppTest" />
+      <option name="METHOD_NAME" value="insertPlayer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.AppTest.insertPlayer" />
+        <item itemvalue="JUnit.AppTest" />
         <item itemvalue="JUnit.AppTest.findAllPlayers" />
       </list>
     </recent_temporary>
@@ -119,13 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Feature 2 - 2.1 find_player_by_id set up MySqlPlayerDao and uncommented it from the Interface">
-      <created>1679515478493</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1679515478493</updated>
     </task>
     <task id="LOCAL-00009" summary="Feature 2 - 2.2 findPlayerById almost completly added to App but problem with getting the List">
       <created>1679516092945</created>
@@ -463,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681308688174</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Sort Arena by capacity (decending)">
+      <created>1681310601241</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1681310601241</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -478,7 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 6 6.3 adding a hashset to MySqlPlayerDao" />
     <MESSAGE value="Feature 6 6.4 trying to display the hashset" />
     <MESSAGE value="Feature 6 6.5 changing from converting string to int" />
     <MESSAGE value="Feature 6 6.6 created a new method that will print a player not found message" />
@@ -503,10 +537,14 @@
     <MESSAGE value="Deleting teams works needs set to check if exists" />
     <MESSAGE value="Added forigne keys to sql tables" />
     <MESSAGE value="Displaying all arenas find team using arena id still broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Displaying all arenas find team using arena id still broken" />
+    <MESSAGE value="Sort Arena by capacity (decending)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sort Arena by capacity (decending)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CA6_NOJUS$App.ic" NAME="App Coverage Results" MODIFIED="1681158801566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1681510266191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.NBAObjects.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CA6_NOJUS$App.ic" NAME="App Coverage Results" MODIFIED="1681510448789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.NBAObjects.*</FILTER>
     </SUITE>
   </component>
