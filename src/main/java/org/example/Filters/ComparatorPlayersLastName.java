@@ -2,7 +2,7 @@ package org.example.Filters;
 
 
 
-import org.example.DTOs.Player;
+import org.example.DTOsTest.Player;
 
 import java.util.Comparator;
 

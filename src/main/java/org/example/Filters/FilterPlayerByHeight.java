@@ -1,7 +1,7 @@
 package org.example.Filters;
 
 
-import org.example.DTOs.Player;
+import org.example.DTOsTest.Player;
 
 public class FilterPlayerByHeight implements IFilter
 {

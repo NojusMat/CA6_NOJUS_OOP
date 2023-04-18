@@ -1,4 +1,4 @@
-package org.example.DTOs;
+package org.example.DTOsTest;
 
 public class Game {
 

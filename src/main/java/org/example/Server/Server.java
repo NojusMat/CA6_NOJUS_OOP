@@ -66,7 +66,7 @@ public class Server
                 }
                 else
                 {
-                    out.print("I'm sorry i don't understand :(\n");
+                    out.print("I'm sorry i don't understand \n");
                 }
                 out.flush();  // force the response to be sent
                 socket.close();

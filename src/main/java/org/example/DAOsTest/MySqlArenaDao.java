@@ -1,7 +1,7 @@
-package org.example.DAOs;
+package org.example.DAOsTest;
 
-import org.example.DTOs.Arena;
-import org.example.DTOs.Teams;
+import org.example.DTOsTest.Arena;
+import org.example.DTOsTest.Teams;
 import org.example.Exceptions.DaoException;
 import org.example.Filters.IFilter;
 

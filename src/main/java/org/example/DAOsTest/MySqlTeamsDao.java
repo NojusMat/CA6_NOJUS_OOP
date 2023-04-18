@@ -1,8 +1,6 @@
-package org.example.DAOs;
+package org.example.DAOsTest;
 
-import com.google.gson.Gson;
-import org.example.DTOs.Player;
-import org.example.DTOs.Teams;
+import org.example.DTOsTest.Teams;
 import org.example.Exceptions.DaoException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

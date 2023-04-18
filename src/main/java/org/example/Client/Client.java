@@ -21,12 +21,11 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.List;
 import java.util.Scanner;
-import com.google.gson.Gson;
-import org.example.DAOs.*;
-import org.example.DTOs.Arena;
-import org.example.DTOs.Player;
-import org.example.DTOs.Teams;
+
+import org.example.DAOsTest.*;
+import org.example.DTOsTest.Player;
 import org.example.Exceptions.DaoException;
 
 public class Client 
@@ -47,7 +46,9 @@ public class Client
             
             System.out.println("Client message: The Client is running and has connected to the server");
 
-            System.out.println("enter (displayid)”");
+            System.out.println("WELCOME \n Select one of the following options by typing what is in the brackets:”");
+            System.out.println("Display By ID :(displayid)”");
+            System.out.println("Display All ID :(displayall)”");
             String command = in.nextLine();
             
             OutputStream os = socket.getOutputStream();
@@ -63,6 +64,14 @@ public class Client
                 System.out.println("Enter a players id ");
                 int findIdjson = in.nextInt();
                     System.out.println(IPlayerDao.findPlayerByIdJson(findIdjson));
+
+            }
+           else if(command.startsWith("displayall"))   //we expect the server to return a time (in milliseconds)
+            {
+                System.out.println("Display All Players");
+                List<Player> allPlayers = IPlayerDao.findAllPlayers();
+                for (Player player : allPlayers)
+                    System.out.println("Player: " + player.toString());
 
             }
             else                            // the user has entered the Echo command or an invalidcommand

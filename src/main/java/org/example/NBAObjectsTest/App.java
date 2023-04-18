@@ -1,17 +1,12 @@
-package org.example.NBAObjects;
+package org.example.NBAObjectsTest;
 
 import com.google.gson.Gson;
-import org.example.DAOs.*;
-import org.example.DTOs.Arena;
-import org.example.DTOs.Player;
-import org.example.DTOs.Teams;
+import org.example.DAOsTest.*;
+import org.example.DTOsTest.Arena;
+import org.example.DTOsTest.Player;
+import org.example.DTOsTest.Teams;
 import org.example.Exceptions.DaoException;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.*;
 
 

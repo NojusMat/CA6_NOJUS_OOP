@@ -1,4 +1,4 @@
-package org.example.DTOs;
+package org.example.DTOsTest;
 
 public class Arena implements Comparable<Arena>{
     private int arena_ID;

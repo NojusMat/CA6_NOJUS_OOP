@@ -1,4 +1,4 @@
-package org.example.DTOs;
+package org.example.DTOsTest;
 
 import java.util.Objects;
 import java.util.Set;
@@ -34,10 +34,10 @@ public class Player implements Comparable<Player> {
         return id;
     }       //setters and getters
 
-    public void setId(int id)
-    {
-        this.id = id;
-    }
+//    public void setId(int id)
+//    {
+//        this.id = id;
+//    }
 
 
     public String getFirstName()

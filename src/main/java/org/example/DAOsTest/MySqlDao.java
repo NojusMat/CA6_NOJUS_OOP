@@ -1,4 +1,4 @@
-package org.example.DAOs;
+package org.example.DAOsTest;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
