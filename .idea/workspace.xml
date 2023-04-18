@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Added insert new arena">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlPlayerDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ComparatorPlayersLastName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Filters/ComparatorPlayersLastName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/ArenaDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/ArenaDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlArenaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlArenaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FilterPlayerByHeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Filters/FilterPlayerByHeight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Filters/IFilter.java" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 9 9.1 Server and client set up and able to call try 2">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,20 +163,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Feature 2 - 2.3 findPlayerById changed from a list to a single player">
-      <created>1679519619052</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1679519619052</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Feature 3 - 3.1 addPlayer MySqlPlayerDao set up mostly slight problem with not recognising float">
-      <created>1679521385489</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1679521385489</updated>
     </task>
     <task id="LOCAL-00012" summary="Feature 3 - 3.2 addPlayer has been added to app.java">
       <created>1679522110949</created>
@@ -517,7 +493,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681512036876</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Feature 9 9.1 Server and client set up and able to call">
+      <created>1681819041170</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1681819041171</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Feature 9 9.1 Server and client set up and able to call try 2">
+      <created>1681819058555</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1681819058555</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -532,8 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 6 6.5 changing from converting string to int" />
-    <MESSAGE value="Feature 6 6.6 created a new method that will print a player not found message" />
     <MESSAGE value="Feature 6 6.7 cycling through find all players to add all the ids at once to the hashset" />
     <MESSAGE value="Feature 6 6.8 able to show all IDS That are currently in the database" />
     <MESSAGE value="Feature 6 6.9 calling find player and checking if its in the cache" />
@@ -557,7 +545,9 @@
     <MESSAGE value="Displaying all arenas find team using arena id still broken" />
     <MESSAGE value="Sort Arena by capacity (decending)" />
     <MESSAGE value="Added insert new arena" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added insert new arena" />
+    <MESSAGE value="Feature 9 9.1 Server and client set up and able to call" />
+    <MESSAGE value="Feature 9 9.1 Server and client set up and able to call try 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 9 9.1 Server and client set up and able to call try 2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1681510266191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

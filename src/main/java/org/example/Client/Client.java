@@ -65,7 +65,7 @@ public class Client
                     System.out.println(IPlayerDao.findPlayerByIdJson(findIdjson));
 
             }
-            else                            // the user has entered the Echo command or an invalid command
+            else                            // the user has entered the Echo command or an invalidcommand
             {
                 String input = inStream.nextLine();
                 System.out.println("Client message: Response from server: \"" + input + "\"");
