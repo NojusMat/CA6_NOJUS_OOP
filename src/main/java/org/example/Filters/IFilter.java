@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Filters;
 
 /**
  * This interface defines a method named matches(), and we can add classes that implement this

@@ -3,13 +3,11 @@ package org.example.DAOs;
 import com.google.gson.Gson;
 import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
-import org.example.IFilter;
+import org.example.Filters.IFilter;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
@@ -185,7 +183,7 @@ catch (SQLException e) {
             gsonParser = new Gson();
             String allPlayersJson = gsonParser.toJson(players);
 
-            System.out.println("List of all players in json)");
+            System.out.println("List of all players in json()");
             System.out.println(allPlayersJson);
 
         return allPlayersJson;
@@ -200,8 +198,9 @@ catch (SQLException e) {
         gsonParser = new Gson();
         String findPlayerJson = gsonParser.toJson(player);
 
-//        System.out.println("List of all players in json)");
-//        System.out.println(findPlayerJson);
+
+        System.out.println("findPlayerByIdJson()");
+//       System.out.println(findPlayerJson);
 
         return findPlayerJson;
     }
