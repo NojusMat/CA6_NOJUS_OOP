@@ -1,6 +1,8 @@
 package org.example.DAOsTest;
 
+import com.google.gson.Gson;
 import org.example.DTOsTest.Arena;
+import org.example.DTOsTest.Player;
 import org.example.DTOsTest.Teams;
 import org.example.Exceptions.DaoException;
 import org.example.Filters.IFilter;
@@ -137,6 +139,59 @@ public class MySqlArenaDao extends MySqlDao implements ArenaDaoInterface {
         return arena;     // reference to User object, or null value
     }
 
+    @Override
+    public void deleteArenaByArenaID(int arena_ID) throws DaoException {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
+
+
+        try {
+            connection = this.getConnection();
+
+            String query = "DELETE FROM ARENA WHERE ARENA_ID = ?";
+            ps = connection.prepareStatement(query);
+
+            ps.setInt(1, arena_ID);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new DaoException("deletePlayerById() " + e.getMessage());
+        }
+
+    }
+
+    @Override
+    public String findAllArenasJson() throws DaoException {
+        //Using a PreparedStatement to execute SQL...
+        Gson gsonParser = new Gson();
+
+        List<Arena> arenaList = new ArrayList<>();
+
+        // call a method in the DAO
+        gsonParser = new Gson();
+        String allArenasJson = gsonParser.toJson(arenaList);
+
+        System.out.println("List of all arenas in json()");
+        System.out.println(allArenasJson);
+
+        return allArenasJson;
+
+    }
+
+//    @Override
+//    public String findArenaByJsonArenaID(int arena_ID) throws DaoException {
+//
+//        Gson gsonParser = new Gson();
+//        Arena arena = findTeamsByArena(arena_ID);
+//
+//        gsonParser = new Gson();
+//        String findArenaJson = gsonParser.toJson(arena);
+//
+//
+//        System.out.println("findArenaByJsonArenaID()");
+//
+//        return findArenaJson;
+//    }
 
 
 }

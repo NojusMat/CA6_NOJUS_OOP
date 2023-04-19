@@ -17,16 +17,16 @@
  */
 package org.example.Client;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.List;
 import org.example.DAOsTest.*;
 import org.example.DTOsTest.Player;
 import org.example.Exceptions.DaoException;
+
+import static java.lang.System.out;
 
 public class Client 
 {
@@ -39,45 +39,59 @@ public class Client
     
     public void start()
     {
-        PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
+
         Scanner in = new Scanner(System.in);
         try {
-            Socket socket = new Socket("10.108.132.193", 8080);  // connect to server socket
-            
-            System.out.println("Client message: The Client is running and has connected to the server");
-
-            System.out.println("WELCOME \n Select one of the following options by typing what is in the brackets:”");
-            System.out.println("Display By ID :(displayid)”");
-            System.out.println("Display All ID :(displayall)”");
-            String command = in.nextLine();
-            
+            Socket socket = new Socket("10.108.2.76", 8080);  // connect to server socket
             OutputStream os = socket.getOutputStream();
-            PrintWriter out = new PrintWriter(os, true);
-
-            out.write(command+"\n");  // write command to socket, and newline terminator
-            out.flush();              // flush (force) the command over the socket
-            
+            InputStream inputStream = socket.getInputStream();
+            PrintWriter socketWriter = new PrintWriter(os, true);   // true => auto flush buffers
             Scanner inStream = new Scanner(socket.getInputStream());  // wait for, and retrieve the reply
-            
+
+            Reader reader = new InputStreamReader(inputStream);
+
+            BufferedReader bufferedReader = new BufferedReader(reader);
+//            Gson gson = new G
+
+            out.println("Client message: The Client is running and has connected to the server");
+
+            out.println("WELCOME \n Select one of the following options by typing what is in the brackets:”");
+
+            out.println("\nNBA MENU");               //menu options
+            out.println("1.SEE ALL PLAYERS");
+            out.println("2.FIND PLAYER");
+            out.println("3.ADD PLAYER");
+            out.println("4.DELETE");
+            out.println("10.EXIT\n");
+            String command = in.nextLine();
+
+
+
             if(command.startsWith("displayid"))   //we expect the server to return a time (in milliseconds)
             {
-                System.out.println("Enter a players id ");
-                int findIdjson = in.nextInt();
-                    System.out.println(IPlayerDao.findPlayerByIdJson(findIdjson));
+                out.println("Enter a players id: ");
+                String id = in.nextLine();
+
+                String commmand = "DISPLAY_PLAYER_BY_ID" + " " + id;
+
+                socketWriter.write(command);  // write command to socket, and newline terminator
+                socketWriter.flush();              // flush (force) the command over the socke
+
+                // send request to server
 
             }
            else if(command.startsWith("displayall"))   //we expect the server to return a time (in milliseconds)
             {
-                System.out.println("Display All Players");
-                List<Player> allPlayers = IPlayerDao.findAllPlayers();
-                for (Player player : allPlayers)
-                    System.out.println("Player: " + player.toString());
+                out.println("Display All Players");
+               // List<Player> allPlayers = IPlayerDao.findAllPlayers();
+               // for (Player player : allPlayers)
+                 //   System.out.println("Player: " + player.toString());
 
             }
             else                            // the user has entered the Echo command or an invalidcommand
             {
                 String input = inStream.nextLine();
-                System.out.println("Client message: Response from server: \"" + input + "\"");
+                out.println("Client message: Response from server: \"" + input + "\"");
             }
             
             out.close();
@@ -85,9 +99,7 @@ public class Client
             socket.close();
             
         } catch (IOException e) {
-            System.out.println("Client message: IOException: "+e);
-        } catch (DaoException e) {
-            throw new RuntimeException(e);
+            out.println("Client message: IOException: "+e);
         }
     }
 }

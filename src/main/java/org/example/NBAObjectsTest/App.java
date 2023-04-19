@@ -279,13 +279,14 @@ public class App {
                             while (filterchoice != 10);
 
                             break;
-                        //------------------------------ DELETE PLAYER
+                        //------------------------------ DELETE
                         case 4:
 
                             do {
                                 System.out.println("\nDELETE:");
                                 System.out.println("1.PLAYER");
                                 System.out.println("2.TEAM");
+                                System.out.println("3.ARENA");
                                 System.out.println("10.EXIT\n");
 
                                 System.out.print("CHOICE:");
@@ -331,6 +332,30 @@ public class App {
                                 } catch (DaoException e) {
                                     e.printStackTrace();
                                 }
+                                        break;
+                                    case 3:
+
+                                        try {
+                                            System.out.println("\nCall: ARENA PLAYER\n");
+
+                                            System.out.println("Enter a ARENA ID that you would like to delete");
+                                            int DeleteId = keyboard.nextInt();
+
+
+                                            if (cache.contains(DeleteId)) // checking if the id exists
+                                            {
+                                                IArenaDao.deleteArenaByArenaID(DeleteId);              //deleting chosen player
+
+                                                System.out.println("Player has been Deleted ");
+
+                                            }
+                                            else {
+                                                System.out.println("Player with this ID does not exist");
+                                            }
+                                        } catch (DaoException e) {
+                                            e.printStackTrace();
+                                        }
+
                                         break;
                                 }
 

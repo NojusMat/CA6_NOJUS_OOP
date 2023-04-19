@@ -21,4 +21,9 @@ public class FilterPlayerByHeight implements IFilter
 
         return player.getHeight_in_Cm() >= minRating && player.getHeight_in_Cm() <= maxRating;
     }
+
+    @Override
+    public boolean matches(Player player) {
+        return false;
+    }
 }

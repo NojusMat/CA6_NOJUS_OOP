@@ -17,8 +17,10 @@ public interface ArenaDaoInterface
 
     Arena insertArena(int arena_ID, String arena_name, int capacity)throws DaoException;
 
+    void deleteArenaByArenaID(int arena_ID)throws DaoException;
+    String findAllArenasJson()throws DaoException;
 
-
+//    String findArenaByJsonArenaID(int id)throws DaoException;
 
 }
 

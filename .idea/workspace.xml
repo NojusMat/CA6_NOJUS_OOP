@@ -4,31 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 9 9.1 Server and client set up and able to call try 3">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ClientTest/ClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/ArenaTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/PlayerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/TeamsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/NBAObjectsTest/AppTest.java" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 10 10.1 added to client DisplayAllPlayers / attempted to do junit testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/ArenaDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/ArenaDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlArenaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlArenaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlTeamsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlTeamsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/PlayerDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/TeamsDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Arena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Teams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Teams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Filters/ComparatorPlayersLastName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Filters/ComparatorPlayersLastName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/ArenaDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/ArenaDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlArenaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlArenaDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Filters/FilterPlayerByHeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Filters/FilterPlayerByHeight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Filters/IFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Filters/IFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlPlayerDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlPlayerDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/NBAObjects/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlPlayerDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlPlayerDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,34 +84,9 @@
       <recent name="org.example.Exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.testfindPlayer">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Client.Client" />
-      <module name="CA6_NOJUS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.ClientTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
-      <module name="CA6_NOJUS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.Server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MySqlPlayerDaoTest.insertPlayer">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.NBAObjectsTest.App" />
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
@@ -134,40 +94,68 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.NBAObjects" />
-      <option name="MAIN_CLASS_NAME" value="org.example.NBAObjectsTest.AppTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySqlPlayerDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.DAOsTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlPlayerDaoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.insertPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MySqlPlayerDaoTest.filterPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.NBAObjectsTest.*" />
+          <option name="PATTERN" value="org.example.DAOsTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.NBAObjects" />
-      <option name="MAIN_CLASS_NAME" value="org.example.NBAObjectsTest.AppTest" />
+      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlPlayerDaoTest" />
+      <option name="METHOD_NAME" value="filterPlayer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySqlPlayerDaoTest.insertPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.DAOsTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlPlayerDaoTest" />
       <option name="METHOD_NAME" value="insertPlayer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.testfindPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MySqlPlayerDaoTest.testFindPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.NBAObjectsTest.*" />
+          <option name="PATTERN" value="org.example.DAOsTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.NBAObjects" />
-      <option name="MAIN_CLASS_NAME" value="org.example.NBAObjectsTest.AppTest" />
-      <option name="METHOD_NAME" value="testfindPlayer" />
+      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlPlayerDaoTest" />
+      <option name="METHOD_NAME" value="testFindPlayer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.testfindPlayer" />
-        <item itemvalue="JUnit.AppTest" />
-        <item itemvalue="JUnit.AppTest.insertPlayer" />
-        <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.MySqlPlayerDaoTest.insertPlayer" />
+        <item itemvalue="JUnit.MySqlPlayerDaoTest" />
+        <item itemvalue="JUnit.MySqlPlayerDaoTest.filterPlayer" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.MySqlPlayerDaoTest.testFindPlayer" />
       </list>
     </recent_temporary>
   </component>
@@ -191,13 +179,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Feature 3 - 3.3 addPlayer set points_per_game to float check with lecturer">
-      <created>1679522492783</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1679522492783</updated>
     </task>
     <task id="LOCAL-00014" summary="Feature 4 - 4.1 started on deletePlayerByID">
       <created>1679596198131</created>
@@ -535,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681819780802</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Feature 10 10.1 added to client DisplayAllPlayers / attempted to do junit testing">
+      <created>1681854312115</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1681854312115</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -550,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 6 6.8 able to show all IDS That are currently in the database" />
     <MESSAGE value="Feature 6 6.9 calling find player and checking if its in the cache" />
     <MESSAGE value="added comments" />
     <MESSAGE value="added a fetchJsonFromAPI method" />
@@ -575,7 +562,8 @@
     <MESSAGE value="Feature 9 9.1 Server and client set up and able to call" />
     <MESSAGE value="Feature 9 9.1 Server and client set up and able to call try 2" />
     <MESSAGE value="Feature 9 9.1 Server and client set up and able to call try 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 9 9.1 Server and client set up and able to call try 3" />
+    <MESSAGE value="Feature 10 10.1 added to client DisplayAllPlayers / attempted to do junit testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 10 10.1 added to client DisplayAllPlayers / attempted to do junit testing" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest_insertPlayer.ic" NAME="AppTest.insertPlayer Coverage Results" MODIFIED="1681820723516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
