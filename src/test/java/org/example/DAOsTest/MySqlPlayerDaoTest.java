@@ -53,7 +53,7 @@ public class MySqlPlayerDaoTest {
     }
 
 //    @Test
-//    void insertPlayer() {
+//    void testInsertPlayer() {
 //        System.out.println("TEST InsertPlayer");
 //        try {
 //            String firstname = "Bob";
@@ -78,7 +78,7 @@ public class MySqlPlayerDaoTest {
 //    }
 
     @Test
-    void deletePlayerById() {
+    void testDeletePlayerById() {
         System.out.println("TEST delete player");
         try {
             int player_id = 1;
@@ -90,7 +90,7 @@ public class MySqlPlayerDaoTest {
     }
 
     @Test
-    void filterPlayer() {
+    void testFilterPlayer() {
         System.out.println("Test Filter Player");
         try {
             List<Player> playersList = PlayerDao.filterPlayer(new IFilter() {
@@ -113,7 +113,7 @@ public class MySqlPlayerDaoTest {
 
 
     @Test
-    void findAllPlayersJson() {
+    void testFindAllPlayersJson() {
         System.out.println("Test of all players in json()");
         try {
             String playerJson = PlayerDao.findAllPlayersJson();
@@ -126,7 +126,7 @@ public class MySqlPlayerDaoTest {
 
 
 //    @Test
-//    void findPlayerByIdJson() {
+//    void testFindPlayerByIdJson() {
 //        System.out.println("TEST findPlayerByIdJson");
 //        try{
 //            int player_id=2;
