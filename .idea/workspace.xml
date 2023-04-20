@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Partial Testing for MySqlTeamsDao Finished">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlArenaDaoTest.java" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Partial Testing for MySqArenaDao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Filters/IFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Filters/IFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/PlayerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,26 +78,13 @@
       <recent name="org.example.Exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MySqlPlayerDaoTest.testFindAllPlayersJson">
+  <component name="RunManager" selected="JUnit.PlayerTest">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Client.Client" />
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.Client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
-      <module name="CA6_NOJUS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,13 +139,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.DTOsTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.DTOsTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.DTOsTest.PlayerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.MySqlPlayerDaoTest.testFindAllPlayersJson" />
         <item itemvalue="JUnit.MySqlArenaDaoTest.testdeleteArenaByArenaID" />
         <item itemvalue="JUnit.MySqlArenaDaoTest" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -175,13 +172,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Have database Connecting">
-      <created>1679656727712</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1679656727713</updated>
     </task>
     <task id="LOCAL-00017" summary="Feature 4 Deleting Works">
       <created>1679661830977</created>
@@ -519,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681942021086</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Partial Testing for MySqArenaDao">
+      <created>1682023215701</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1682023215702</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -534,7 +531,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added a fetchJsonFromAPI method" />
     <MESSAGE value="Feature 6 6.9.1 added see players cache to menu" />
     <MESSAGE value="Feature 7 7.1 trying to push all players into a json" />
     <MESSAGE value="Feature 7 7.2 displaying json still needs formatting" />
@@ -559,7 +555,8 @@
     <MESSAGE value="Feature 10 10.1 added to client DisplayAllPlayers / attempted to do junit testing" />
     <MESSAGE value="Testing for MySqlPlayerDao Mostly finished Still missing 3 tests" />
     <MESSAGE value="Partial Testing for MySqlTeamsDao Finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Partial Testing for MySqlTeamsDao Finished" />
+    <MESSAGE value="Partial Testing for MySqArenaDao" />
+    <option name="LAST_COMMIT_MESSAGE" value="Partial Testing for MySqArenaDao" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest_insertPlayer.ic" NAME="AppTest.insertPlayer Coverage Results" MODIFIED="1681820723516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
