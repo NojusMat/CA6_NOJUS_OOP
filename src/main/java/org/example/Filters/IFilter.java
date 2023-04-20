@@ -18,5 +18,6 @@ public interface IFilter
     boolean matches(Object other);
 
     boolean matches(Player player);
+
 }
 

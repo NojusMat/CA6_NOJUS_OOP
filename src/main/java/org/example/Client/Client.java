@@ -19,90 +19,67 @@ package org.example.Client;
 
 import java.io.*;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Scanner;
 import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import org.example.DAOsTest.*;
 import org.example.DTOsTest.Player;
 import org.example.Exceptions.DaoException;
 
 import static java.lang.System.out;
 
-public class Client 
-{
-    public static void main(String[] args)
-    {
+public class Client{
 
-        Client client = new Client();
-        client.start();
-    }
-    
-    public void start()
-    {
+        private static final Scanner keyboard = new Scanner(System.in);
 
-        Scanner in = new Scanner(System.in);
-        try {
-            Socket socket = new Socket("10.108.2.76", 8080);  // connect to server socket
-            OutputStream os = socket.getOutputStream();
-            InputStream inputStream = socket.getInputStream();
-            PrintWriter socketWriter = new PrintWriter(os, true);   // true => auto flush buffers
-            Scanner inStream = new Scanner(socket.getInputStream());  // wait for, and retrieve the reply
-
-            Reader reader = new InputStreamReader(inputStream);
-
-            BufferedReader bufferedReader = new BufferedReader(reader);
-//            Gson gson = new G
-
-            out.println("Client message: The Client is running and has connected to the server");
-
-            out.println("WELCOME \n Select one of the following options by typing what is in the brackets:”");
-
-            out.println("\nNBA MENU");               //menu options
-            out.println("1.SEE ALL PLAYERS");
-            out.println("2.FIND PLAYER");
-            out.println("3.ADD PLAYER");
-            out.println("4.DELETE");
-            out.println("10.EXIT\n");
-            String command = in.nextLine();
-
-
-
-            if(command.startsWith("displayid"))   //we expect the server to return a time (in milliseconds)
-            {
-                out.println("Enter a players id: ");
-                String id = in.nextLine();
-
-                String commmand = "DISPLAY_PLAYER_BY_ID" + " " + id;
-
-                socketWriter.write(command);  // write command to socket, and newline terminator
-                socketWriter.flush();              // flush (force) the command over the socke
-
-                // send request to server
-
-            }
-           else if(command.startsWith("displayall"))   //we expect the server to return a time (in milliseconds)
-            {
-                out.println("Display All Players");
-               // List<Player> allPlayers = IPlayerDao.findAllPlayers();
-               // for (Player player : allPlayers)
-                 //   System.out.println("Player: " + player.toString());
-
-            }
-            else                            // the user has entered the Echo command or an invalidcommand
-            {
-                String input = inStream.nextLine();
-                out.println("Client message: Response from server: \"" + input + "\"");
-            }
-            
-            out.close();
-            inStream.close();
-            socket.close();
-            
-        } catch (IOException e) {
-            out.println("Client message: IOException: "+e);
+        public static void main(String[] args)
+        {
+            Client client = new Client();
+            client.start();
         }
-    }
+
+        public void start()
+        {
+            Scanner in = new Scanner(System.in);
+            try {
+                Socket socket = new Socket("localhost", 8080);  // connect to server socket
+                OutputStream outputStream = socket.getOutputStream();
+                InputStream inputStream = socket.getInputStream();
+
+                Writer writer = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
+                Reader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                Gson gson = new GsonBuilder().disableHtmlEscaping().create();
+                PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
+
+                System.out.println("Client message: The Client is running and has connected to the server");
+                System.out.println( "Please enter your choice" );
+                System.out.println( "1. Find all players" );
+                int choice = keyboard.nextInt();
+                switch (choice) {
+                    case 1:
+                        System.out.println("Find all players");
+                        String sqlFindAllPlayers = "FIND_ALL_PLAYERS\n";
+                        writer.write(sqlFindAllPlayers);
+                        writer.flush();
+                        String response = bufferedReader.readLine();
+                        System.out.println(response);
+                        break;
+
+                    default:
+                        System.out.println("Invalid choice");
+                        break;
+                }
+
+            } catch (IOException e) {
+                System.out.println("Client message: IOException: "+e);
+            }
+        }
 }
 
-
-//  LocalTime time = LocalTime.parse(timeString); // Parse String -> convert to LocalTime object if required

@@ -18,42 +18,63 @@
  * based on the client's request.
  */
 package org.example.Server;
+
+/**
+ * SERVER  - MULTITHREADED                                         March 2021
+ * <p>
+ * Server accepts client connections, creates a ClientHandler to handle the
+ * Client communication, creates a socket and passes the socket to the handler,
+ * runs the handler in a separate Thread.
+ * <p>
+ * <p>
+ * The handler reads requests from clients, and sends replies to clients, all in
+ * accordance with the rules of the protocol. as specified in
+ * "ClientServerBasic" sample program
+ * <p>
+ * The following PROTOCOL is implemented:
+ * <p>
+ * If ( the Server receives the request "Time", from a Client ) then : the
+ * server will send back the current time
+ * <p>
+ * If ( the Server receives the request "Echo message", from a Client ) then :
+ * the server will send back the message
+ * <p>
+ * If ( the Server receives the request it does not recognize ) then : the
+ * server will send back the message "Sorry, I don't understand"
+ * <p>
+ * This is an example of a simple protocol, where the server's response is based
+ * on the client's request.
+ *
+ *  Each client is handled by a ClientHandler running in a separate worker Thread
+ *  which allows the Server to continually listen for and handle multiple clients
+ */
+
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import org.example.DAOsTest.MySqlPlayerDao;
 import org.example.DAOsTest.PlayerDaoInterface;
 import org.example.DTOsTest.Player;
 import org.example.Exceptions.DaoException;
-
-import java.util.ArrayList;
-import java.util.List;
-import javax.management.Query;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.time.LocalTime;
-import java.util.Scanner;
-
-
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.lang.reflect.Type;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.time.LocalTime;
+import java.util.List;
 
 public class Server
+{  public static void main(String[] args)
 {
-    public static void main(String[] args)
-    {
-        Server server = new Server();
-        server.start();
-    }
+    Server server = new Server();
+    server.start();
+}
 
     public void start()
     {
@@ -70,6 +91,7 @@ public class Server
                 Socket socket = ss.accept();    // listen (and wait) for a connection, accept the connection,
                 // and open a new socket to communicate with the client
                 clientNumber++;
+
 
                 System.out.println("Server: Client " + clientNumber + " has connected.");
 
@@ -119,44 +141,46 @@ public class Server
         @Override
         public void run()
         {
-            Gson gson = new GsonBuilder().disableHtmlEscaping().create();
-            String message;
-            MySqlPlayerDao serverDao = new MySqlPlayerDao();
-            PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
-
-            try
-            {
-                while ((message = socketReader.readLine()) != null)
+                Gson gson = new GsonBuilder().disableHtmlEscaping().create();
+                String message;
+                MySqlPlayerDao serverDao = new MySqlPlayerDao();
+                try
                 {
-                    System.out.println("Server: (ClientHandler): Read command from client " + clientNumber + ": " + message);
-
-                    if (message.startsWith("displayAll"))
+                    while ((message = socketReader.readLine()) != null)
                     {
-                        System.out.println("Recived Messgae"+message);
-                        List<Player> playersList =serverDao.findAllPlayers();
-                        String jsonPlayers = gson.toJson(playersList);
-                        System.out.println(jsonPlayers);
-                        socketWriter.println(jsonPlayers);
+                        System.out.println("Server: (ClientHandler): Read command from client " + clientNumber + ": " + message);
+                        if (message.startsWith("FIND_ALL_PLAYERS"))
+                        {
+                            System.out.println("Received message: " + message); // debug statement
 
-                    }
+                            List<Player> players = serverDao.findAllPlayers();
 
-                    else
-                    {
-                        socketWriter.println("I'm sorry I don't understand :(");
+                            String jsonPlayers = gson.toJson(players);
+                            // System.out.println(jsonPlayers);
+
+                            // Convert JSON to object
+                            Type playerListType = new TypeToken<List<Player>>(){}.getType();
+                            List<Player> playerList = gson.fromJson(jsonPlayers, playerListType);
+
+                            // Display object
+                            for (Player player : playerList) {
+                                System.out.println(player.toString());
+                            }
+
+                            socketWriter.println(jsonPlayers);
+                        }
+                        else if (message.startsWith("Find Player By id:"))
+                        {
+
+                        }
                     }
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (DaoException e) {
+                    throw new RuntimeException(e);
                 }
-
-                socket.close();
-
-            } catch (IOException ex)
-            {
-                ex.printStackTrace();
-            } catch (DaoException e) {
-                throw new RuntimeException(e);
+                System.out.println("Server: (ClientHandler): Client " + clientNumber + " disconnected");
             }
-            System.out.println("Server: (ClientHandler): Handler for Client " + clientNumber + " is terminating .....");
         }
     }
-
-}
-

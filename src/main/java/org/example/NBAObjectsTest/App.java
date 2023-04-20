@@ -27,6 +27,7 @@ public class App {
 
 
             PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
+
             TeamsDaoInterface ITeamsDao = new MySqlTeamsDao();
             ArenaDaoInterface IArenaDao = new MySqlArenaDao();
 
@@ -39,6 +40,7 @@ public class App {
                 for (Player player : players) {   // call a method in the DAO
                     cache.add(player.getId());    //adds players id to the cache
                 }
+
 
                 int choice;   // users menu choice
                 int filterchoice;
@@ -81,7 +83,7 @@ public class App {
                                     case 1:
 
                                         try {
-                                            System.out.println("\nALL PLAYERS");
+                                            System.out.println("\nFind PLAYERS");
                                             List<Player> allPlayers = IPlayerDao.findAllPlayers();     // call a method in the DAO
                                             if (allPlayers.isEmpty())
                                                 System.out.println("There are no Players");

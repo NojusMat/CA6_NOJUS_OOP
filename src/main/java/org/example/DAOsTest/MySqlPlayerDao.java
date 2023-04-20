@@ -40,6 +40,7 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
 
                 Player p = new Player(id, firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
                 playersList.add(p);
+
             }
         } catch (SQLException e) {
             throw new DaoException("findAllPlayerresultSet() " + e.getMessage());
@@ -182,6 +183,7 @@ catch (SQLException e) {
             // call a method in the DAO
             gsonParser = new Gson();
             String allPlayersJson = gsonParser.toJson(players);
+
 
             System.out.println("List of all players in json()");
             System.out.println(allPlayersJson);

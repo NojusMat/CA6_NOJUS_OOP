@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Testing for MySqlPlayerDao Mostly finished Still missing 3 tests">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlTeamsDaoTest.java" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Partial Testing for MySqlTeamsDao Finished">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlArenaDaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlPlayerDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlPlayerDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlPlayerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Filters/IFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Filters/IFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,8 +83,34 @@
       <recent name="org.example.Exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MySqlTeamsDaoTest.testFindTeamsByCity">
-    <configuration name="MySqlTeamsDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MySqlPlayerDaoTest.testFindAllPlayersJson">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Client.Client" />
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySqlArenaDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
@@ -89,13 +119,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlTeamsDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlArenaDaoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MySqlTeamsDaoTest.TestfindAllTeams" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MySqlArenaDaoTest.testdeleteArenaByArenaID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
@@ -104,14 +134,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlTeamsDaoTest" />
-      <option name="METHOD_NAME" value="TestfindAllTeams" />
+      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlArenaDaoTest" />
+      <option name="METHOD_NAME" value="testdeleteArenaByArenaID" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MySqlTeamsDaoTest.testDeleteTeamByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MySqlPlayerDaoTest.testFindAllPlayersJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
@@ -120,40 +150,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlTeamsDaoTest" />
-      <option name="METHOD_NAME" value="testDeleteTeamByName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MySqlTeamsDaoTest.testFindTeamsByCity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CA6_NOJUS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.DAOsTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlTeamsDaoTest" />
-      <option name="METHOD_NAME" value="testFindTeamsByCity" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MySqlTeamsDaoTest.testinsertTeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CA6_NOJUS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.DAOsTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlTeamsDaoTest" />
-      <option name="METHOD_NAME" value="testinsertTeam" />
+      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlPlayerDaoTest" />
+      <option name="METHOD_NAME" value="testFindAllPlayersJson" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MySqlTeamsDaoTest.testFindTeamsByCity" />
-        <item itemvalue="JUnit.MySqlTeamsDaoTest.testinsertTeam" />
-        <item itemvalue="JUnit.MySqlTeamsDaoTest.testDeleteTeamByName" />
-        <item itemvalue="JUnit.MySqlTeamsDaoTest.TestfindAllTeams" />
-        <item itemvalue="JUnit.MySqlTeamsDaoTest" />
+        <item itemvalue="JUnit.MySqlPlayerDaoTest.testFindAllPlayersJson" />
+        <item itemvalue="JUnit.MySqlArenaDaoTest.testdeleteArenaByArenaID" />
+        <item itemvalue="JUnit.MySqlArenaDaoTest" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -177,13 +175,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Feature 4 - 4.2 delete almost fully set up in MySqlPlayerDao">
-      <created>1679596924743</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1679596924743</updated>
     </task>
     <task id="LOCAL-00016" summary="Have database Connecting">
       <created>1679656727712</created>
@@ -521,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681937470864</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Partial Testing for MySqlTeamsDao Finished">
+      <created>1681942021085</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1681942021086</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -536,7 +534,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added comments" />
     <MESSAGE value="added a fetchJsonFromAPI method" />
     <MESSAGE value="Feature 6 6.9.1 added see players cache to menu" />
     <MESSAGE value="Feature 7 7.1 trying to push all players into a json" />
@@ -561,7 +558,8 @@
     <MESSAGE value="Feature 9 9.1 Server and client set up and able to call try 3" />
     <MESSAGE value="Feature 10 10.1 added to client DisplayAllPlayers / attempted to do junit testing" />
     <MESSAGE value="Testing for MySqlPlayerDao Mostly finished Still missing 3 tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing for MySqlPlayerDao Mostly finished Still missing 3 tests" />
+    <MESSAGE value="Partial Testing for MySqlTeamsDao Finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Partial Testing for MySqlTeamsDao Finished" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest_insertPlayer.ic" NAME="AppTest.insertPlayer Coverage Results" MODIFIED="1681820723516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
