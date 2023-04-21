@@ -56,11 +56,15 @@ public class Client{
 
                 BufferedReader bufferedReader = new BufferedReader(reader);
                 Gson gson = new GsonBuilder().disableHtmlEscaping().create();
-                PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
+
 
                 System.out.println("Client message: The Client is running and has connected to the server");
                 System.out.println( "Please enter your choice" );
                 System.out.println( "1. Find all players" );
+                System.out.println( "2. Find player by id" );
+                System.out.println( "1. Find all players" );
+                System.out.println( "1. Find all players" );
+
                 int choice = keyboard.nextInt();
                 switch (choice) {
                     case 1:

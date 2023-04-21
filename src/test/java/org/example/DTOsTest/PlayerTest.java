@@ -18,7 +18,6 @@ public class PlayerTest {
         cache.add(1);
         cache.add(2);
         player = new Player(1, "John", "Doe", "Team A", 185.4, 80, 20.5f);
-
     }
 
     @Test
@@ -109,10 +108,8 @@ public class PlayerTest {
         Player playerWithSameAttributes = new Player(1, "John", "Doe", "Team A", 185.4, 80, 20.5f);
         assertEquals(player.hashCode(), playerWithSameAttributes.hashCode());
     }
-
+}
 //    @Test
 //    public void testToString() {
 //        String expected = "{ID=1,| First Name=John,| Last Name=Doe,| Team=Team A,| Height in Cm=185.4,| Weight in  Kg=80,| Points Per Game=20.5}";
-//        assertEquals
-//    }
-}
+//        assertEquals}

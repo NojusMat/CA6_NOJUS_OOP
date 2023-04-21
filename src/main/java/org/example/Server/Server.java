@@ -167,7 +167,7 @@ public class Server
                                 System.out.println(player.toString());
                             }
 
-                            socketWriter.println(jsonPlayers);
+                            socketWriter.println(playerList);
                         }
                         else if (message.startsWith("Find Player By id:"))
                         {

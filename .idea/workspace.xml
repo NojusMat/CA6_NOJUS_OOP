@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Partial Testing for MySqArenaDao">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="testing for player DTO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/PlayerTest.java" afterDir="false" />
     </list>
@@ -78,7 +78,7 @@
       <recent name="org.example.Exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Client.Client" />
       <module name="CA6_NOJUS" />
@@ -92,49 +92,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MySqlArenaDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.DAOsTest.*" />
+          <option name="PATTERN" value="org.example.Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlArenaDaoTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MySqlArenaDaoTest.testdeleteArenaByArenaID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Server (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.DAOsTest.*" />
+          <option name="PATTERN" value="org.example.Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlArenaDaoTest" />
-      <option name="METHOD_NAME" value="testdeleteArenaByArenaID" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MySqlPlayerDaoTest.testFindAllPlayersJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.DAOsTest.*" />
+          <option name="PATTERN" value="org.example.Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DAOsTest.MySqlPlayerDaoTest" />
-      <option name="METHOD_NAME" value="testFindAllPlayersJson" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -156,11 +148,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlayerTest" />
-        <item itemvalue="JUnit.MySqlPlayerDaoTest.testFindAllPlayersJson" />
-        <item itemvalue="JUnit.MySqlArenaDaoTest.testdeleteArenaByArenaID" />
-        <item itemvalue="JUnit.MySqlArenaDaoTest" />
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server (2)" />
+        <item itemvalue="Application.Server (1)" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.PlayerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -172,13 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Feature 4 Deleting Works">
-      <created>1679661830977</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1679661830977</updated>
     </task>
     <task id="LOCAL-00018" summary="Auto Increment working searching/add/delete using user input">
       <created>1679681870008</created>
@@ -516,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682023215702</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="testing for player DTO">
+      <created>1682024243092</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1682024243092</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -531,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 6 6.9.1 added see players cache to menu" />
     <MESSAGE value="Feature 7 7.1 trying to push all players into a json" />
     <MESSAGE value="Feature 7 7.2 displaying json still needs formatting" />
     <MESSAGE value="Feature 7 7.3 added findAllPlayersByJson method" />
@@ -556,7 +547,8 @@
     <MESSAGE value="Testing for MySqlPlayerDao Mostly finished Still missing 3 tests" />
     <MESSAGE value="Partial Testing for MySqlTeamsDao Finished" />
     <MESSAGE value="Partial Testing for MySqArenaDao" />
-    <option name="LAST_COMMIT_MESSAGE" value="Partial Testing for MySqArenaDao" />
+    <MESSAGE value="testing for player DTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing for player DTO" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest_insertPlayer.ic" NAME="AppTest.insertPlayer Coverage Results" MODIFIED="1681820723516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
