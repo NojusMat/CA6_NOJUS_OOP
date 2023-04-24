@@ -66,8 +66,10 @@ import java.io.PrintWriter;
 import java.lang.reflect.Type;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.SQLOutput;
 import java.time.LocalTime;
 import java.util.List;
+
 
 public class Server
 {  public static void main(String[] args)
@@ -151,29 +153,28 @@ public class Server
                         System.out.println("Server: (ClientHandler): Read command from client " + clientNumber + ": " + message);
                         if (message.startsWith("FIND_ALL_PLAYERS"))
                         {
-                            System.out.println("Received message: " + message); // debug statement
-
+//                            System.out.println("Received message: " + message); // debug statement
                             List<Player> players = serverDao.findAllPlayers();
-
-                            String jsonPlayers = gson.toJson(players);
-                            // System.out.println(jsonPlayers);
-
-                            // Convert JSON to object
-                            Type playerListType = new TypeToken<List<Player>>(){}.getType();
-                            List<Player> playerList = gson.fromJson(jsonPlayers, playerListType);
-
                             // Display object
-                            for (Player player : playerList) {
+                            for (Player player : players) {
                                 System.out.println(player.toString());
                             }
-
-                            socketWriter.println(playerList);
+                            String jsonPlayers = gson.toJson(players);
+                            socketWriter.println(jsonPlayers); // send to server
                         }
-                        else if (message.startsWith("Find Player By id:"))
+                        else if (message.startsWith("FIND_PLAYER_ID"))
                         {
+                            //System.out.println("Received message: " + message.split(id));
+//                            Player player = serverDao.findPlayerById(id);
+//                            System.out.println(player.toString());
+//                            String jsonPlayer = gson.toJson(player);
+//                            socketWriter.println(jsonPlayer);
 
                         }
+                        else if (message.startsWith("EXIT"))
+                            break;  // exit the while loop;
                     }
+
                     socket.close();
                 } catch (IOException e) {
                     e.printStackTrace();
