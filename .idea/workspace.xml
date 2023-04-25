@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 9 9.2 (try 3)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,13 +164,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Changed added players displayed">
-      <created>1679870143734</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1679870143734</updated>
     </task>
     <task id="LOCAL-00023" summary="Feature 5 5.1 addede filter by height in the menu">
       <created>1679933240208</created>
@@ -508,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682423251587</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Feature 9 9.2 (try 3)">
+      <created>1682423461107</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1682423461107</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -521,9 +521,23 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 8 8.2 Calling method and displaying player by id / needs validation" />
     <MESSAGE value="Feature 8 8.3 added validation to findByJson" />
     <MESSAGE value="added sql code for arena and team" />
     <MESSAGE value="team interface added" />
@@ -548,7 +562,8 @@
     <MESSAGE value="Feature 9 9.2" />
     <MESSAGE value="Feature 9 9.2 displaying find player by ID fully working" />
     <MESSAGE value="Feature 9 9.2 displaying find player by ID fully working ( github upload try 2 )" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 9 9.2 displaying find player by ID fully working ( github upload try 2 )" />
+    <MESSAGE value="Feature 9 9.2 (try 3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 9 9.2 (try 3)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest_insertPlayer.ic" NAME="AppTest.insertPlayer Coverage Results" MODIFIED="1681820723516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
