@@ -49,7 +49,7 @@ public class Client{
         {Scanner in = new Scanner(System.in);
             Gson gson = new Gson();
             try {
-                Socket socket = new Socket("localhost", 8080);  // connect to server socket
+                Socket socket = new Socket("localhost", 8078);  // connect to server socket
 
                 System.out.println("Client message: The Client is running and has connected to the server");
 
@@ -104,11 +104,8 @@ public class Client{
                         System.out.println(player.toString());
                     }
                 }
-
                      else if (choice.startsWith("ADD_PLAYER")) {
                         System.out.println("Adding a player:");
-
-
                     System.out.println("\nCall: ADD PLAYER()");
                     System.out.println("Enter the Players First Name (string):");
                     String addFName = keyboard.next();
@@ -123,21 +120,18 @@ public class Client{
                     System.out.println("Enter the Players Weight in Kg (int):");
                     int addWeight = keyboard.nextInt();
 
-
-                    int findId = keyboard.nextInt();
-
-                        String command ="FIND_PLAYER_BY_ID" + " "+ findId;
+                    String command ="ADD_PLAYER" + " "+ addFName+ " "+ addLName+ " "+ addTeam+ " "+ addHeight+ " "+ addPPG+ " "+ addWeight;
                         socketWriter.write(command+"\n");// write command to socket, and newline terminator
                         socketWriter.flush();// flush (force) the command over the socket
                         String response = inStream.nextLine();
                         Player player = gson.fromJson(response,Player.class);
 
                         if(player == null){
-                            System.out.println("Player with the ID:"+findId+" does not exist");
+                            System.out.println("That player dosnt exist");
                         }
                         else{
 
-                            System.out.println(" Find Player with id:"+findId);
+                            System.out.println("NEW PLAYER First Name:" + addFName + ",Last Name:" + addLName + ", Team:" + addTeam + ", Height:" + addHeight + ", Points per game:" + addPPG + ", Weight:" + addWeight);// displaying added player
                             System.out.println(player.toString());
                         }
 

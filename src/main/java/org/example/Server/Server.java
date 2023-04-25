@@ -82,7 +82,7 @@ public class Server
     {
         try
         {
-            ServerSocket ss = new ServerSocket(8080);  // set up ServerSocket to listen for connections on port 8080
+            ServerSocket ss = new ServerSocket(8078);  // set up ServerSocket to listen for connections on port 8079
 
             System.out.println("Server: Server started. Listening for connections on port 8080...");
 
@@ -193,7 +193,7 @@ public class Server
 
                             Player player = serverDao.insertPlayer(addFirstName, addLastName, addTeam, addHeight, addPPG, addWeight);
                             if(player == null){
-                                socketWriter.println("Player was not able to be addede");
+                                socketWriter.println("Player was not able to be added");
                             }
                             else{
                                 System.out.println(player.toString());
@@ -203,6 +203,13 @@ public class Server
 
 
                             }
+                        }
+
+                        else if (message.startsWith("DELETE_PLAYER")) {
+                            String[] splitMessage = message.split(" ");
+                            int deletePlayer = Integer.parseInt(splitMessage[1]);
+                            serverDao.deletePlayerById(deletePlayer);
+                            System.out.println("The player with the ID:"+deletePlayer);
                         }
                         else if (message.startsWith("EXIT"))
                             break;  // exit the while loop;

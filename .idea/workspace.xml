@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 9 9.2 (try 4)">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 11 -11.1 add player added to server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" afterDir="false" />
@@ -82,7 +82,7 @@
       <recent name="org.example.Exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Client.Client" />
       <module name="CA6_NOJUS" />
@@ -109,7 +109,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Server (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
       <module name="CA6_NOJUS" />
       <extension name="coverage">
@@ -150,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.Server (2)" />
-        <item itemvalue="Application.Server (4)" />
+        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server (1)" />
+        <item itemvalue="Application.Server (4)" />
+        <item itemvalue="Application.Server (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -166,13 +166,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Feature 5 5.2 MySqlPlayerDao set up prepared statement written">
-      <created>1679933726084</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1679933726084</updated>
     </task>
     <task id="LOCAL-00025" summary="Feature 5 5.3 changing filter to use a comparator">
       <created>1680024082706</created>
@@ -510,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682433913561</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Feature 11 -11.1 add player added to server">
+      <created>1682444900654</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1682444900654</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -540,7 +540,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added sql code for arena and team" />
     <MESSAGE value="team interface added" />
     <MESSAGE value="Displaying all Teams" />
     <MESSAGE value="Finding Team by (String)Division" />
@@ -565,7 +564,8 @@
     <MESSAGE value="Feature 9 9.2 displaying find player by ID fully working ( github upload try 2 )" />
     <MESSAGE value="Feature 9 9.2 (try 3)" />
     <MESSAGE value="Feature 9 9.2 (try 4)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 9 9.2 (try 4)" />
+    <MESSAGE value="Feature 11 -11.1 add player added to server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 11 -11.1 add player added to server" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest_insertPlayer.ic" NAME="AppTest.insertPlayer Coverage Results" MODIFIED="1681820723516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
