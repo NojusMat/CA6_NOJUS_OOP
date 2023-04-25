@@ -162,14 +162,23 @@ public class Server
                             String jsonPlayers = gson.toJson(players);
                             socketWriter.println(jsonPlayers); // send to server
                         }
-                        else if (message.startsWith("FIND_PLAYER_ID"))
+                        else if (message.startsWith("FIND_PLAYER_BY_ID"))
                         {
-                            //System.out.println("Received message: " + message.split(id));
-//                            Player player = serverDao.findPlayerById(id);
-//                            System.out.println(player.toString());
-//                            String jsonPlayer = gson.toJson(player);
-//                            socketWriter.println(jsonPlayer);
+                            String[] splitMessage = message.split(" ");
+                            int findId = Integer.parseInt(splitMessage[1]);
 
+                            Player player = serverDao.findPlayerById(findId);
+                            if(player == null){
+                                socketWriter.println("Player with the id:"+findId+" dosnt exist");
+                            }
+                            else{
+                                System.out.println(player.toString());
+                                String jsonPlayerID = gson.toJson(player);
+
+                                socketWriter.println(jsonPlayerID);
+
+
+                            }
                         }
                         else if (message.startsWith("EXIT"))
                             break;  // exit the while loop;

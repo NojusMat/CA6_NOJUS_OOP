@@ -21,6 +21,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 import java.util.List;
@@ -46,31 +47,36 @@ public class Client{
 
         public void start()
         {Scanner in = new Scanner(System.in);
-
+            Gson gson = new Gson();
             try {
                 Socket socket = new Socket("localhost", 8080);  // connect to server socket
 
                 System.out.println("Client message: The Client is running and has connected to the server");
 
-                System.out.println("Please enter a command:FIND_ALL_PLAYERS \n>");
-                String command = in.nextLine();
+                System.out.println( "Please enter your choice" );
+                System.out.println( "1. FIND_ALL_PLAYERS" );
+                System.out.println( "2. FIND_PLAYER_BY_ID" );
+                System.out.println( "3. Delete players" );
+                System.out.println( "4. Add players" );
+                String choice = in.nextLine();
 
                 OutputStream os = socket.getOutputStream();
-                PrintWriter out = new PrintWriter(os, true);
+                PrintWriter socketWriter = new PrintWriter(os, true);
 
-                out.write(command+"\n");  // write command to socket, and newline terminator
-                out.flush();              // flush (force) the command over the socket
+//
+                socketWriter.flush();              // flush (force) the command over the socket
 
                 Scanner inStream = new Scanner(socket.getInputStream());  // wait for, and retrieve the reply
                 // wait for, and retrieve the reply
-                if(command.startsWith("FIND_ALL_PLAYERS"))   //we expect the server to return a time
+                if(choice.startsWith("FIND_ALL_PLAYERS"))   //we expect the server to return a time
                 {
-
+                    String command ="FIND_ALL_PLAYERS";
+                    socketWriter.write(command+"\n");// write command to socket, and newline terminator
+                    socketWriter.flush();// flush (force) the command over the socket
                     String input = inStream.nextLine();
 //                    System.out.println("Client message: Response from server: \"" + input + "\"");
                     System.out.println("DISPLAYING ALL PLAYERS:");
                     Type playerListType = new TypeToken<List<Player>>(){}.getType();
-                    Gson gson = new Gson();
                     List<Player> playerList = gson.fromJson(input, playerListType);
 //
                     // Display object
@@ -79,9 +85,24 @@ public class Client{
                         System.out.println(player.toString());
 
                     }
-                }
-                else                            // the user has entered the Echo command or an invalid command
-                {
+                } else if (choice.startsWith("FIND_PLAYER_BY_ID")) {
+                    System.out.println("Enter a players ID:");
+                    int findId = keyboard.nextInt();
+
+                    String command ="FIND_PLAYER_BY_ID" + " "+ findId;
+                    socketWriter.write(command+"\n");// write command to socket, and newline terminator
+                    socketWriter.flush();// flush (force) the command over the socket
+                    String response = inStream.nextLine();
+                    Player player = gson.fromJson(response,Player.class);
+
+                    if(player == null){
+                        System.out.println("Player with the ID:"+findId+" does not exist");
+                    }
+                    else{
+
+                        System.out.println(" Find Player with id:"+findId);
+                        System.out.println(player.toString());
+                    }
 
                 }
 

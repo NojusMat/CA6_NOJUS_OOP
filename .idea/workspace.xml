@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 10 10.2 displaying all players">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 10 10.3 displaying all players converting from json back to object">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" afterDir="false" />
@@ -109,7 +109,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Server (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
       <module name="CA6_NOJUS" />
       <extension name="coverage">
@@ -151,10 +151,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Server (2)" />
         <item itemvalue="Application.Server (4)" />
         <item itemvalue="Application.Server (1)" />
-        <item itemvalue="Application.Server (3)" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -166,13 +166,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Simple menu added">
-      <created>1679683332501</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1679683332501</updated>
     </task>
     <task id="LOCAL-00020" summary="Feature 3 3.4 Displaying what has been added">
       <created>1679693367074</created>
@@ -510,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682072173397</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Feature 10 10.3 displaying all players converting from json back to object">
+      <created>1682371647775</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1682371647776</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -525,7 +525,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feature 7 7.2 displaying json still needs formatting" />
     <MESSAGE value="Feature 7 7.3 added findAllPlayersByJson method" />
     <MESSAGE value="Feature 7 7.4 Pulling from method still needs styling" />
     <MESSAGE value="Feature 8 8.1 added findPlayerByIdJson method" />
@@ -550,7 +549,8 @@
     <MESSAGE value="Partial Testing for MySqArenaDao" />
     <MESSAGE value="testing for player DTO" />
     <MESSAGE value="Feature 10 10.2 displaying all players" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 10 10.2 displaying all players" />
+    <MESSAGE value="Feature 10 10.3 displaying all players converting from json back to object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 10 10.3 displaying all players converting from json back to object" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest_insertPlayer.ic" NAME="AppTest.insertPlayer Coverage Results" MODIFIED="1681820723516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
