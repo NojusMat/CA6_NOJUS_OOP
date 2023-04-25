@@ -66,6 +66,7 @@ public class Client{
 //
                 socketWriter.flush();              // flush (force) the command over the socket
 
+
                 Scanner inStream = new Scanner(socket.getInputStream());  // wait for, and retrieve the reply
                 // wait for, and retrieve the reply
                 if(choice.startsWith("FIND_ALL_PLAYERS"))   //we expect the server to return a time

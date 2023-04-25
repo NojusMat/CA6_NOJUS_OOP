@@ -184,6 +184,7 @@ public class Server
                             break;  // exit the while loop;
                     }
 
+
                     socket.close();
                 } catch (IOException e) {
                     e.printStackTrace();
