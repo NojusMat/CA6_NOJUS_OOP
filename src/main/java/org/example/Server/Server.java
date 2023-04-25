@@ -180,6 +180,30 @@ public class Server
 
                             }
                         }
+                        else if (message.startsWith("ADD_PLAYER"))
+                        {
+                            String[] splitMessage = message.split(" ");
+                            String  addFirstName = (splitMessage[1]);
+                            String  addLastName = (splitMessage[2]);
+                            String  addTeam = (splitMessage[3]);
+                            double  addHeight = Double.parseDouble(splitMessage[4]);
+                            float  addPPG = Float.parseFloat(splitMessage[5]);
+                            int  addWeight = Integer.parseInt(splitMessage[6]);
+
+
+                            Player player = serverDao.insertPlayer(addFirstName, addLastName, addTeam, addHeight, addPPG, addWeight);
+                            if(player == null){
+                                socketWriter.println("Player was not able to be addede");
+                            }
+                            else{
+                                System.out.println(player.toString());
+                                String addPlayerJson = gson.toJson(player);
+
+                                socketWriter.println(addPlayerJson);
+
+
+                            }
+                        }
                         else if (message.startsWith("EXIT"))
                             break;  // exit the while loop;
                     }

@@ -57,7 +57,7 @@ public class Client{
                 System.out.println( "1. FIND_ALL_PLAYERS" );
                 System.out.println( "2. FIND_PLAYER_BY_ID" );
                 System.out.println( "3. Delete players" );
-                System.out.println( "4. Add players" );
+                System.out.println( "4. ADD_PLAYER" );
                 String choice = in.nextLine();
 
                 OutputStream os = socket.getOutputStream();
@@ -90,20 +90,56 @@ public class Client{
                     System.out.println("Enter a players ID:");
                     int findId = keyboard.nextInt();
 
-                    String command ="FIND_PLAYER_BY_ID" + " "+ findId;
-                    socketWriter.write(command+"\n");// write command to socket, and newline terminator
+                    String command = "FIND_PLAYER_BY_ID" + " " + findId;
+                    socketWriter.write(command + "\n");// write command to socket, and newline terminator
                     socketWriter.flush();// flush (force) the command over the socket
                     String response = inStream.nextLine();
-                    Player player = gson.fromJson(response,Player.class);
+                    Player player = gson.fromJson(response, Player.class);
 
-                    if(player == null){
-                        System.out.println("Player with the ID:"+findId+" does not exist");
-                    }
-                    else{
+                    if (player == null) {
+                        System.out.println("Player with the ID:" + findId + " does not exist");
+                    } else {
 
-                        System.out.println(" Find Player with id:"+findId);
+                        System.out.println(" Find Player with id:" + findId);
                         System.out.println(player.toString());
                     }
+                }
+
+                     else if (choice.startsWith("ADD_PLAYER")) {
+                        System.out.println("Adding a player:");
+
+
+                    System.out.println("\nCall: ADD PLAYER()");
+                    System.out.println("Enter the Players First Name (string):");
+                    String addFName = keyboard.next();
+                    System.out.println("Enter the Players Last Name (string):");
+                    String addLName = keyboard.next();
+                    System.out.println("Enter the Players Team (string)");
+                    String addTeam = keyboard.next();
+                    System.out.println("Enter the Players Height in Cm (double):");
+                    double addHeight = keyboard.nextDouble();
+                    System.out.println("Enter the Players Points per Game(float):");
+                    float addPPG = keyboard.nextFloat();
+                    System.out.println("Enter the Players Weight in Kg (int):");
+                    int addWeight = keyboard.nextInt();
+
+
+                    int findId = keyboard.nextInt();
+
+                        String command ="FIND_PLAYER_BY_ID" + " "+ findId;
+                        socketWriter.write(command+"\n");// write command to socket, and newline terminator
+                        socketWriter.flush();// flush (force) the command over the socket
+                        String response = inStream.nextLine();
+                        Player player = gson.fromJson(response,Player.class);
+
+                        if(player == null){
+                            System.out.println("Player with the ID:"+findId+" does not exist");
+                        }
+                        else{
+
+                            System.out.println(" Find Player with id:"+findId);
+                            System.out.println(player.toString());
+                        }
 
                 }
 
