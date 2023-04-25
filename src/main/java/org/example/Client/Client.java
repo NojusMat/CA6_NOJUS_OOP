@@ -56,7 +56,7 @@ public class Client{
                 System.out.println( "Please enter your choice" );
                 System.out.println( "1. FIND_ALL_PLAYERS" );
                 System.out.println( "2. FIND_PLAYER_BY_ID" );
-                System.out.println( "3. Delete players" );
+                System.out.println( "3. DELETE_PLAYER" );
                 System.out.println( "4. ADD_PLAYER" );
                 String choice = in.nextLine();
 
@@ -134,7 +134,26 @@ public class Client{
                             System.out.println("NEW PLAYER First Name:" + addFName + ",Last Name:" + addLName + ", Team:" + addTeam + ", Height:" + addHeight + ", Points per game:" + addPPG + ", Weight:" + addWeight);// displaying added player
                             System.out.println(player.toString());
                         }
+                }
 
+
+
+                else if (choice.startsWith("DELETE_PLAYER")) {
+                    System.out.println("Enter a players ID you would like to delete:");
+                    int deleteByID = keyboard.nextInt();
+
+                    String command = "DELETE_PLAYER" + " " + deleteByID;
+                    socketWriter.write(command + "\n");// write command to socket, and newline terminator
+                    socketWriter.flush();// flush (force) the command over the socket
+                    String response = inStream.nextLine();
+                    System.out.println(" Player with the ID:" + deleteByID+" has been deleted");
+//                    if (player == null) {
+//                        System.out.println("Player with the ID:" + deleteByID + " does not exist");
+//                    } else {
+//
+//
+//                        System.out.println(player.toString());
+//                    }
                 }
 
                 out.close();

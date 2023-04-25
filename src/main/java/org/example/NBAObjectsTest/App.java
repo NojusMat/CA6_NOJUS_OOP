@@ -224,6 +224,7 @@ public class App {
                                             float addPPG = keyboard.nextFloat();
                                             System.out.println("Enter the Players Weight in Kg (int):");
                                             int addWeight = keyboard.nextInt();
+
                                             IPlayerDao.insertPlayer(addFName, addLName, addTeam, addHeight, addPPG, addWeight);// adds the users chosen atributes to player
                                             System.out.println("NEW PLAYER First Name:" + addFName + ",Last Name:" + addLName + ", Team:" + addTeam + ", Height:" + addHeight + ", Points per game:" + addPPG + ", Weight:" + addWeight);// displaying added player
 

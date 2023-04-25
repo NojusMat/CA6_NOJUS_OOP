@@ -209,7 +209,8 @@ public class Server
                             String[] splitMessage = message.split(" ");
                             int deletePlayer = Integer.parseInt(splitMessage[1]);
                             serverDao.deletePlayerById(deletePlayer);
-                            System.out.println("The player with the ID:"+deletePlayer);
+//                            System.out.println("The player with the ID:"+deletePlayer);
+                            socketWriter.println("The player with the ID:"+deletePlayer);
                         }
                         else if (message.startsWith("EXIT"))
                             break;  // exit the while loop;
