@@ -51,13 +51,16 @@ public class Client{
             try {
                 Socket socket = new Socket("localhost", 8078);  // connect to server socket
 
+
                 System.out.println("Client message: The Client is running and has connected to the server");
 
-                System.out.println( "Please enter your choice" );
+                System.out.println( "Please enter your choice (copy the text)" );
                 System.out.println( "1. FIND_ALL_PLAYERS" );
                 System.out.println( "2. FIND_PLAYER_BY_ID" );
                 System.out.println( "3. DELETE_PLAYER" );
                 System.out.println( "4. ADD_PLAYER" );
+                System.out.println( "5. EXIT" );
+                System.out.print( "CHOICE:" );
                 String choice = in.nextLine();
 
                 OutputStream os = socket.getOutputStream();
@@ -69,6 +72,7 @@ public class Client{
 
                 Scanner inStream = new Scanner(socket.getInputStream());  // wait for, and retrieve the reply
                 // wait for, and retrieve the reply
+
                 if(choice.startsWith("FIND_ALL_PLAYERS"))   //we expect the server to return a time
                 {
                     String command ="FIND_ALL_PLAYERS";
@@ -120,20 +124,20 @@ public class Client{
                     System.out.println("Enter the Players Weight in Kg (int):");
                     int addWeight = keyboard.nextInt();
 
-                    String command ="ADD_PLAYER" + " "+ addFName+ " "+ addLName+ " "+ addTeam+ " "+ addHeight+ " "+ addPPG+ " "+ addWeight;
+                        String command ="ADD_PLAYER" + " "+ addFName+ " "+ addLName+ " "+ addTeam+ " "+ addHeight+ " "+ addPPG+ " "+ addWeight;
                         socketWriter.write(command+"\n");// write command to socket, and newline terminator
                         socketWriter.flush();// flush (force) the command over the socket
-                        String response = inStream.nextLine();
-                        Player player = gson.fromJson(response,Player.class);
+                        String response = inStream.next();
+//                        Player player = gson.fromJson(response,Player.class);
 
-                        if(player == null){
-                            System.out.println("That player dosnt exist");
-                        }
-                        else{
+//                        if(player == null){
+//                            System.out.println("Player was not added");
+//                        }
+//                        else{
 
                             System.out.println("NEW PLAYER First Name:" + addFName + ",Last Name:" + addLName + ", Team:" + addTeam + ", Height:" + addHeight + ", Points per game:" + addPPG + ", Weight:" + addWeight);// displaying added player
-                            System.out.println(player.toString());
-                        }
+//                            System.out.println(player.toString());
+//                        }
                 }
 
 
@@ -147,18 +151,13 @@ public class Client{
                     socketWriter.flush();// flush (force) the command over the socket
                     String response = inStream.nextLine();
                     System.out.println(" Player with the ID:" + deleteByID+" has been deleted");
-//                    if (player == null) {
-//                        System.out.println("Player with the ID:" + deleteByID + " does not exist");
-//                    } else {
-//
-//
-//                        System.out.println(player.toString());
-//                    }
                 }
-
-                out.close();
-                inStream.close();
-                socket.close();
+                else if(choice.startsWith("Exit")){
+                    out.println("GoodBye");
+                    out.close();
+                    inStream.close();
+                    socket.close();
+                }
 
             } catch (IOException e) {
                 System.out.println("Client message: IOException: "+e);

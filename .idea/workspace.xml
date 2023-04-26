@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 12 -12.1 delete added to server">
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 12 -12.2 delete added to client and working">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/Server/ServerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SQL code for tables/Player.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL code for tables/Player.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SQL code for tables/Team.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL code for tables/Team.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlPlayerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" afterDir="false" />
     </list>
@@ -20,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -70,11 +75,11 @@
       <recent name="org.example.DTOs" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.Server" />
       <recent name="org.example.DAOsTest" />
       <recent name="org.example.Client" />
       <recent name="org.example.DTOs" />
       <recent name="org.example.NBAObjects" />
-      <recent name="org.example.DAOs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example.Client" />
@@ -84,20 +89,7 @@
       <recent name="org.example.Exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.NBAObjectsTest.App" />
-      <module name="CA6_NOJUS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.NBAObjectsTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Client.Client" />
       <module name="CA6_NOJUS" />
@@ -137,7 +129,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Server (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
       <module name="CA6_NOJUS" />
       <extension name="coverage">
@@ -152,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server (1)" />
-        <item itemvalue="Application.Server (3)" />
         <item itemvalue="Application.Server (2)" />
+        <item itemvalue="Application.Server (1)" />
+        <item itemvalue="Application.Server (4)" />
+        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -168,13 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Feature 5 5.4 switing to weight as the filter">
-      <created>1680026422054</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1680026422054</updated>
     </task>
     <task id="LOCAL-00027" summary="Feature 6 6.1 checking if ID exists">
       <created>1680031732388</created>
@@ -512,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682447818344</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Feature 12 -12.2 delete added to client and working">
+      <created>1682449346179</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1682449346179</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -542,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Displaying all Teams" />
     <MESSAGE value="Finding Team by (String)Division" />
     <MESSAGE value="Adding team working" />
     <MESSAGE value="Deleting teams works needs set to check if exists" />
@@ -567,7 +571,8 @@
     <MESSAGE value="Feature 9 9.2 (try 4)" />
     <MESSAGE value="Feature 11 -11.1 add player added to server" />
     <MESSAGE value="Feature 12 -12.1 delete added to server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 12 -12.1 delete added to server" />
+    <MESSAGE value="Feature 12 -12.2 delete added to client and working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 12 -12.2 delete added to client and working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest_insertPlayer.ic" NAME="AppTest.insertPlayer Coverage Results" MODIFIED="1681820723516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

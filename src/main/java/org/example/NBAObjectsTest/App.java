@@ -32,13 +32,18 @@ public class App {
             ArenaDaoInterface IArenaDao = new MySqlArenaDao();
 
             HashSet<Integer> cache = new HashSet<Integer>();     //hashset used for collecting the player ID
-
+                HashSet<Integer> cacheArena = new HashSet<Integer>();
             try {
                 cache = new HashSet<>();
 
                 List<Player> players = IPlayerDao.findAllPlayers();
                 for (Player player : players) {   // call a method in the DAO
                     cache.add(player.getId());    //adds players id to the cache
+                }
+
+                 List<Arena> arenas =IArenaDao.findAllArenas();
+                for(Arena arena:arenas){
+                      cacheArena.add(arena.getArena_ID());
                 }
 
 
@@ -224,7 +229,6 @@ public class App {
                                             float addPPG = keyboard.nextFloat();
                                             System.out.println("Enter the Players Weight in Kg (int):");
                                             int addWeight = keyboard.nextInt();
-
                                             IPlayerDao.insertPlayer(addFName, addLName, addTeam, addHeight, addPPG, addWeight);// adds the users chosen atributes to player
                                             System.out.println("NEW PLAYER First Name:" + addFName + ",Last Name:" + addLName + ", Team:" + addTeam + ", Height:" + addHeight + ", Points per game:" + addPPG + ", Weight:" + addWeight);// displaying added player
 
@@ -330,7 +334,7 @@ public class App {
                                             System.out.println("Enter the team name youd like to delete");
                                             String DeleteId = keyboard.next();
                                             ITeamsDao.deleteTeamByName(DeleteId);              //deleting chosen player
-                                            System.out.println("Player has been Deleted ");
+                                            System.out.println("Team has been Deleted ");
 
                                 } catch (DaoException e) {
                                     e.printStackTrace();
@@ -339,21 +343,21 @@ public class App {
                                     case 3:
 
                                         try {
-                                            System.out.println("\nCall: ARENA PLAYER\n");
+                                            System.out.println("\nCall: DELETE ARENA\n");
 
                                             System.out.println("Enter a ARENA ID that you would like to delete");
                                             int DeleteId = keyboard.nextInt();
 
 
-                                            if (cache.contains(DeleteId)) // checking if the id exists
+                                            if (cacheArena.contains(DeleteId)) // checking if the id exists
                                             {
                                                 IArenaDao.deleteArenaByArenaID(DeleteId);              //deleting chosen player
 
-                                                System.out.println("Player has been Deleted ");
+                                                System.out.println("Arena has been Deleted ");
 
                                             }
                                             else {
-                                                System.out.println("Player with this ID does not exist");
+                                                System.out.println("Arena with this ID does not exist");
                                             }
                                         } catch (DaoException e) {
                                             e.printStackTrace();
@@ -415,8 +419,8 @@ public class App {
                             try {
 
                                 System.out.println("\nCall: Cache()\n");
-                                System.out.println("\nPlayer IDS in cache" + cache + "\n");// showing what is in cache
-
+                                System.out.println("\nPlayer IDS in cache" + cache);// showing what is in cache
+                                      System.out.println("\nArenas IDS in cache" + cacheArena + "\n");
 
 
 

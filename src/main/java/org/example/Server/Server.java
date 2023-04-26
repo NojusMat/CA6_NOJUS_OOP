@@ -189,27 +189,27 @@ public class Server
                             double  addHeight = Double.parseDouble(splitMessage[4]);
                             float  addPPG = Float.parseFloat(splitMessage[5]);
                             int  addWeight = Integer.parseInt(splitMessage[6]);
-
+                            System.out.println(addFirstName+addLastName+addTeam+addHeight+addPPG+addWeight);
 
                             Player player = serverDao.insertPlayer(addFirstName, addLastName, addTeam, addHeight, addPPG, addWeight);
+                            socketWriter.println(player);
                             if(player == null){
                                 socketWriter.println("Player was not able to be added");
                             }
-                            else{
-                                System.out.println(player.toString());
-                                String addPlayerJson = gson.toJson(player);
+//                            else{
+//                                System.out.println(player.toString());
+//                                String addPlayerJson = gson.toJson(player);
+//
+//                                socketWriter.println(addPlayerJson);
+//
 
-                                socketWriter.println(addPlayerJson);
-
-
-                            }
+//                           }
                         }
 
                         else if (message.startsWith("DELETE_PLAYER")) {
                             String[] splitMessage = message.split(" ");
                             int deletePlayer = Integer.parseInt(splitMessage[1]);
                             serverDao.deletePlayerById(deletePlayer);
-//                            System.out.println("The player with the ID:"+deletePlayer);
                             socketWriter.println("The player with the ID:"+deletePlayer);
                         }
                         else if (message.startsWith("EXIT"))

@@ -11,7 +11,7 @@ public class MySqlDao {
     public Connection getConnection() throws DaoException
     {
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/player";// NOT MADE YET
+        String url = "jdbc:mysql://localhost:3306/nba";//
         String username = "root";
         String password = "";
         Connection connection = null;

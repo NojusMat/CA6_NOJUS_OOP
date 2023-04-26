@@ -34,10 +34,10 @@ public class Player implements Comparable<Player> {
         return id;
     }       //setters and getters
 
-//    public void setId(int id)
-//    {
-//        this.id = id;
-//    }
+    public void setId(int id)
+    {
+        this.id = id;
+    }
 
 
     public String getFirstName()

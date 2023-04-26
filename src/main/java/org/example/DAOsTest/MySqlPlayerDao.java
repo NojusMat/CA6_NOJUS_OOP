@@ -107,7 +107,6 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             ps.setDouble(4, height_in_Cm);
             ps.setFloat(5, points_Per_Game);
             ps.setInt(6, weight_in_Kg);
-//            player = new Player(firstName, lastName, team, height_in_Cm, weight_in_Kg, points_Per_Game);
 
             ps.executeUpdate();
 
