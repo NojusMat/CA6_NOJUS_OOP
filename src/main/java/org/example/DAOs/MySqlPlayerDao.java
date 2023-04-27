@@ -1,7 +1,7 @@
-package org.example.DAOsTest;
+package org.example.DAOs;
 
 import com.google.gson.Gson;
-import org.example.DTOsTest.Player;
+import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
 import org.example.Filters.IFilter;
 
@@ -98,7 +98,6 @@ public class MySqlPlayerDao extends MySqlDao implements PlayerDaoInterface {
             connection = this.getConnection();
 
             String query = "INSERT INTO PLAYER (FIRST_NAME,LAST_NAME,TEAM,HEIGHT_IN_CM,WEIGHT_IN_KG,POINTS_PER_GAME) VALUES (?, ?, ?, ?, ?, ?)";
-            String query2 ="SELECT * FROM PLAYER ORDER BY ID DESC LIMIT1 "; // trying to show the last player added using descending order
             ps = connection.prepareStatement(query);
 
             ps.setString(1, firstName);
@@ -135,22 +134,13 @@ catch (SQLException e) {
             ps = connection.prepareStatement(query);
 
             ps.setInt(1, id);
-//            resultSet = ps.executeQuery();
-
             ps.executeUpdate();
-//
-//            if (resultSet.next()) {
-//
-//
-//                //Check This Works
-//            }
         } catch (SQLException e) {
             throw new DaoException("deletePlayerById() " + e.getMessage());
         }
 
     }@Override
-    public List<Player> filterPlayer(IFilter filter) throws DaoException
-    {
+    public List<Player> filterPlayer(IFilter filter) {
         List<Player> filteredList = new ArrayList<>();
 
         try
@@ -202,7 +192,6 @@ catch (SQLException e) {
 
 
         System.out.println("findPlayerByIdJson()");
-//       System.out.println(findPlayerJson);
 
         return findPlayerJson;
     }

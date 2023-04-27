@@ -1,4 +1,4 @@
-package org.example.DTOsTest;
+package org.example.DTOs;
 
 import java.util.Objects;
 import java.util.Set;
@@ -19,7 +19,7 @@ public class Player implements Comparable<Player> {
 
     public Player(int id, String firstName, String lastName,String team, double height_in_Cm, int weight_in_Kg,float points_Per_Game)
     {
-        this.id = id;
+        this.id = id;                       // constructor player class
         this.firstName = firstName;
         this.lastName = lastName;
         this.team=team;
@@ -109,8 +109,8 @@ public class Player implements Comparable<Player> {
     public String toString()
     {
 
-        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
-        return "{" + "ID=" + id + ",| First Name=" + firstName + ",| Last Name=" + lastName+",| Team=" + team + ",| Height in Cm=" + height_in_Cm +",| Weight in  Kg=" +weight_in_Kg+ ",| Points Per Game=" + points_Per_Game+'}';
+        System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
+        return "[" + "ID=" + id + ",| First Name=" + firstName + ",| Last Name=" + lastName+",| Team=" + team + ",| Height in Cm=" + height_in_Cm +",| Weight in  Kg=" +weight_in_Kg+ ",| Points Per Game=" + points_Per_Game+']';
     }
 
 

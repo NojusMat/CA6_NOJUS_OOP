@@ -1,9 +1,8 @@
-package org.example.DAOsTest;
+package org.example.DAOs;
 
 import com.google.gson.Gson;
-import org.example.DTOsTest.Arena;
-import org.example.DTOsTest.Player;
-import org.example.DTOsTest.Teams;
+import org.example.DTOs.Arena;
+import org.example.DTOs.Teams;
 import org.example.Exceptions.DaoException;
 import org.example.Filters.IFilter;
 
@@ -88,16 +87,16 @@ public class MySqlArenaDao extends MySqlDao implements ArenaDaoInterface {
     @Override
     public List<Arena> filterArenaCapacity(IFilter filter) throws DaoException
     {
-        List<Arena> filteredList = new ArrayList<>();
+        List<Arena> filteredList = new ArrayList<>();  // gets list of arenas and adds it to a array list of filters
 
         try
         {
             List<Arena> allArenas = findAllArenas();
-            for(Arena arena : allArenas)
+            for(Arena arena : allArenas)  // advanced for loop itterating through all arenas
             {
                 if(filter.matches(arena))
                 {
-                    filteredList.add(arena);
+                    filteredList.add(arena); // checking if the filter that was chosen matches and adds it to list (filtered list)
                 }
             }
         }

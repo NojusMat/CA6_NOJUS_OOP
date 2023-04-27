@@ -3,10 +3,9 @@ CREATE TABLE Player ( id int NOT NULL AUTO_INCREMENT,
     last_Name VARCHAR(50) NOT NULL,
     team VARCHAR(50) ,
     height_in_Cm DECIMAL(13, 2) NOT NULL,
-	 weight_in_Kg INT NOT NULL,
+	weight_in_Kg INT NOT NULL,
     points_Per_Game FLOAT  NOT NULL,
     PRIMARY KEY(id)
---   	FOREIGN KEY(team) REFERENCES Teams(team)
 );
 
 INSERT INTO Player VALUES

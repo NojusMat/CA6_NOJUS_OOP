@@ -1,6 +1,6 @@
-package org.example.DAOsTest;
+package org.example.DAOs;
 
-import org.example.DTOsTest.Teams;
+import org.example.DTOs.Teams;
 import org.example.Exceptions.DaoException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -125,7 +125,6 @@ public class MySqlTeamsDao extends MySqlDao implements TeamsDaoInterface {
             ps = connection.prepareStatement(query);
 
             ps.setString(1, team);
-//            resultSet = ps.executeQuery();
 
             ps.executeUpdate();
         } catch (SQLException e) {

@@ -1,15 +1,13 @@
-package org.example.DAOsTest;
+package org.example.DAOs;
 
-import org.example.DTOsTest.Player;
 import org.example.Exceptions.DaoException;
-import org.example.Filters.IFilter;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-import org.example.DTOsTest.Arena;
+import org.example.DTOs.Arena;
 
 import java.util.List;
 

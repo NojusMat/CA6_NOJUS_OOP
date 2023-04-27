@@ -1,6 +1,6 @@
 package org.example.Filters;
 
-import org.example.DTOsTest.Player;
+import org.example.DTOs.Player;
 
 /**
  * This interface defines a method named matches(), and we can add classes that implement this
@@ -12,7 +12,7 @@ import org.example.DTOsTest.Player;
  */
 
 
-public interface IFilter
+public interface IFilter  // filter interface
 {
 
     boolean matches(Object other);

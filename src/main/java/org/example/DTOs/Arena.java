@@ -1,11 +1,11 @@
-package org.example.DTOsTest;
+package org.example.DTOs;
 
 public class Arena implements Comparable<Arena>{
-    private int arena_ID;
+    private int arena_ID;//declaring veriables
     private String arena_name;
     private int capacity;
 
-    public Arena(int arena_ID, String arena_name, int capacity)
+    public Arena(int arena_ID, String arena_name, int capacity)  // constructor arena class
     {
         this.arena_ID = arena_ID;
         this.arena_name = arena_name;
@@ -43,7 +43,7 @@ public class Arena implements Comparable<Arena>{
     public String toString()
     {
 
-        System.out.println("------------------------------------------------------------------------------------------------");
+        System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
         return "Arena{" + "Arena ID=" + arena_ID + ", Arena Name=" + arena_name +
                   ", Capacity=" + capacity +'}';
     }

@@ -1,4 +1,4 @@
-package org.example.DTOsTest;
+package org.example.DTOs;
 
 import static org.junit.Assert.assertEquals;
 

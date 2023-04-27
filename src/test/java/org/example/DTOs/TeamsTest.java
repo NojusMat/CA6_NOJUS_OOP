@@ -1,4 +1,4 @@
-package org.example.DTOsTest;
+package org.example.DTOs;
 
 import org.junit.jupiter.api.Test;
 
