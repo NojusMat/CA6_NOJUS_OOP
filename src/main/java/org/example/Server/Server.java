@@ -124,10 +124,10 @@ public class Server {
             String[] splitMessage = message.split(" ");
             int deletePlayerID = Integer.parseInt(splitMessage[1]);
 
-            serverDao.deletePlayerById(deletePlayerID);
             try {
                 if (cache.contains(deletePlayerID)) {
                     // null returned if userid and password not valid
+                    serverDao.deletePlayerById(deletePlayerID);
                     socketWriter.println("The player with the ID:" + deletePlayerID+" has been deleted");
                 } else  {
                     socketWriter.println("Sorry ID:"+deletePlayerID+" is not valid.");
