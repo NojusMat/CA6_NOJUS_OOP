@@ -43,8 +43,7 @@ public class PlayerTest {
     @Test
     public void testGetHeight_in_Cm() {
         assertEquals(185.4, player.getHeight_in_Cm(), 0.001);
-    }
-
+    } // the 0.001 provides the tolerance allowed in this case it can be 0.001 either way of 185.4
     @Test
     public void testGetWeight_in_Kg() {
         assertEquals(80, player.getWeight_in_Kg());
@@ -55,16 +54,16 @@ public class PlayerTest {
         assertEquals(20.5f, player.getPoints_Per_Game(), 0.001);
     }
 
-//    @Test
-//    public void testSetId() {
-//        player.setId(2);
-//        assertEquals(2, player.getId());
-//    }
+    @Test
+    public void testSetId() {
+        player.setId(1);
+        assertEquals(1, player.getId());
+    }
 
     @Test
     public void testSetFirstName() {
-        player.setFirstName("Jane");
-        assertEquals("Jane", player.getFirstName());
+        player.setFirstName("John");
+        assertEquals("John", player.getFirstName());
     }
 
     @Test

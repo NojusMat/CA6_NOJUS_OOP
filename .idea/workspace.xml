@@ -4,33 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Feature 11 - 11.2 add working on client still problem with server">
-      <change afterPath="$PROJECT_DIR$/src/main/Diagram.png" afterDir="false" />
+    <list default="true" id="66b125a5-7f52-44cb-9199-3120c0dbd361" name="Changes" comment="Diagram added + more comments and reworked client menu">
+      <change afterPath="$PROJECT_DIR$/src/main/SequenceDiagram.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/SQL code for tables/Player.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL code for tables/Player.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ArchitectureDiagram.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/ArenaDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/ArenaDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlArenaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlArenaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlPlayerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlPlayerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/MySqlTeamsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlTeamsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/PlayerDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/PlayerDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOsTest/TeamsDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOsTest/Teams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Teams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Filters/ComparatorPlayersLastName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Filters/FilterPlayerByHeight.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Filters/IFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Filters/IFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/ArenaDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/ArenaDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlArenaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/MySqlArenaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DAOs/TeamsDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Teams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DTOs/Teams.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/NBAObjectsTest/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlArenaDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlArenaDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlPlayerDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlPlayerDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DAOsTest/MySqlTeamsDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlTeamsDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/ArenaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOs/ArenaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOs/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DTOsTest/TeamsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOs/TeamsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ClientTest/ClientTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlArenaDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlArenaDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlPlayerDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlPlayerDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlTeamsDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DAOs/MySqlTeamsDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DTOs/ArenaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOs/ArenaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DTOs/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DTOs/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DTOs/TeamsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/NBAObjectsTest/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/Server/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/Server/ServerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,19 +102,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Client">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.NBAObjectsTest.App" />
-      <module name="CA6_NOJUS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.NBAObjectsTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Client.Client" />
       <module name="CA6_NOJUS" />
@@ -158,17 +141,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MySqlPlayerDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Server (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
       <module name="CA6_NOJUS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.DAOs.*" />
+          <option name="PATTERN" value="org.example.Server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.DAOsTest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.DAOs.MySqlPlayerDaoTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Server.Server" />
+      <module name="CA6_NOJUS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,10 +170,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server (1)" />
-        <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.MySqlPlayerDaoTest" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Server (3)" />
         <item itemvalue="Application.Server (2)" />
+        <item itemvalue="Application.Server (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -191,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679426483936</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Feature 5 5.5 Switched back to height used a simpler way of calling it">
-      <created>1680033525264</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1680033525264</updated>
     </task>
     <task id="LOCAL-00029" summary="Feature 6 6.1 created Cache Class">
       <created>1680036272319</created>
@@ -535,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682517111598</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Diagram added + more comments and reworked client menu">
+      <created>1682616598152</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1682616598152</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,7 +559,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding team working" />
     <MESSAGE value="Deleting teams works needs set to check if exists" />
     <MESSAGE value="Added forigne keys to sql tables" />
     <MESSAGE value="Displaying all arenas find team using arena id still broken" />
@@ -590,7 +583,8 @@
     <MESSAGE value="Feature 12 -12.1 delete added to server" />
     <MESSAGE value="Feature 12 -12.2 delete added to client and working" />
     <MESSAGE value="Feature 11 - 11.2 add working on client still problem with server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feature 11 - 11.2 add working on client still problem with server" />
+    <MESSAGE value="Diagram added + more comments and reworked client menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Diagram added + more comments and reworked client menu" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CA6_NOJUS$AppTest_insertPlayer.ic" NAME="AppTest.insertPlayer Coverage Results" MODIFIED="1681820723516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -137,7 +137,7 @@ public class MySqlPlayerDaoTest {
             int player_id=2;
             String playerJson = PlayerDao.findPlayerByIdJson(player_id);
             assertNotNull(playerJson);
-            assertEquals(player_id,playerJson);
+            assertEquals("{\"id\":2,\"firstName\":\"Anthony\",\"lastName\":\"Davis\",\"team\":\"Los_Angeles_Lakers\",\"height_in_Cm\":220.75,\"weight_in_Kg\":110,\"points_Per_Game\":23.3}",playerJson);
             System.out.println("Success");
 
         } catch (DaoException e) {

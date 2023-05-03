@@ -47,7 +47,7 @@ public class MySqlArenaDao extends MySqlDao implements ArenaDaoInterface {
     }
 
     @Override
-    public String findTeamsByArena(int arena_ID) throws DaoException {
+    public String findTeamsInArena(int arena_ID) throws DaoException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -58,7 +58,7 @@ public class MySqlArenaDao extends MySqlDao implements ArenaDaoInterface {
 
 
             String query = "SELECT * FROM TEAMS WHERE arena_ID = ?"+
-                    "JOIN TEAMS ON ARENA_ID = TEAMS.ARENA_ID"+
+                    "JOIN TEAMS ON ARENA_ID = TEAMS.ARENA_ID"+     // attempt to join two tables
                     "JOIN ARENA ON ARENA_ID = ARENA.ARENA_ID"+
                     "WHERE TEAMS.ARENA_ID IN(SELECT team FROM TEAMS WHERE arena_ID = ?) ";
             preparedStatement = connection.prepareStatement(query);
@@ -176,21 +176,5 @@ public class MySqlArenaDao extends MySqlDao implements ArenaDaoInterface {
         return allArenasJson;
 
     }
-
-//    @Override
-//    public String findArenaByJsonArenaID(int arena_ID) throws DaoException {
-//
-//        Gson gsonParser = new Gson();
-//        Arena arena = findTeamsByArena(arena_ID);
-//
-//        gsonParser = new Gson();
-//        String findArenaJson = gsonParser.toJson(arena);
-//
-//
-//        System.out.println("findArenaByJsonArenaID()");
-//
-//        return findArenaJson;
-//    }
-
 
 }

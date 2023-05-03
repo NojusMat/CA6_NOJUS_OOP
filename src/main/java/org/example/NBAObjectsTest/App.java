@@ -26,7 +26,6 @@ public class App {
 
 
         PlayerDaoInterface IPlayerDao = new MySqlPlayerDao();
-
         TeamsDaoInterface ITeamsDao = new MySqlTeamsDao();
         ArenaDaoInterface IArenaDao = new MySqlArenaDao();
 
@@ -49,8 +48,9 @@ public class App {
             int choice;   // users menu choice
             int filterchoice;
             do {
-
-                System.out.println("\nNBA MENU");               //menu options
+                System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
+                System.out.println("              NBA MENU");               //menu options
+                System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
                 System.out.println("1.SEE ALL INFORMATION");
                 System.out.println("2.FIND ");
                 System.out.println("3.ADD");
@@ -59,13 +59,11 @@ public class App {
                 System.out.println("6.CACHE");
                 System.out.println("7.JSON ALL PLAYERS");
                 System.out.println("8.JSON FIND PLAYER BY ID");
-                System.out.println("10.EXIT\n");
-
+                System.out.println("10.EXIT");
+                System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
                 System.out.print("CHOICE:");
-
-
                 choice = keyboard.nextInt();
-
+                System.out.println("\n");
                 switch (choice) {
 
 //-------------------------------FIND ALL USERS
@@ -75,8 +73,8 @@ public class App {
                             System.out.println("1.PLAYERS");
                             System.out.println("2.TEAMS");
                             System.out.println("3.ARENAS");
-                            System.out.println("10.EXIT\n");
-
+                            System.out.println("10.EXIT");
+                            System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
                             System.out.print("CHOICE:");
 
 
@@ -126,10 +124,10 @@ public class App {
                         do {
                             System.out.println("\nFIND INFORMATION USING THE FOLLOWING:");
                             System.out.println("1.PLAYERS BY ID");
-                            System.out.println("2.TEAMS BY DIVISION");
+                            System.out.println("2.TEAMS BY CITY");
                             System.out.println("3.USING ARENA ID FIND TEAM");
-                            System.out.println("10.EXIT\n");
-
+                            System.out.println("10.EXIT");
+                            System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
                             System.out.print("CHOICE:");
 
                             filterchoice = keyboard.nextInt();
@@ -171,7 +169,7 @@ public class App {
                                 case 3:
                                     System.out.print("Enter Arena ID to display what team plays in it : ");
                                     int findByArenaID = keyboard.nextInt();
-                                    String teamArena = IArenaDao.findTeamsByArena(findByArenaID);
+                                    String teamArena = IArenaDao.findTeamsInArena(findByArenaID);
 
                                     if (teamArena != null)
                                         System.out.println("Team with the arena id " + findByArenaID + ": " + teamArena);//display player
@@ -195,8 +193,8 @@ public class App {
                             System.out.println("1.PLAYER");
                             System.out.println("2.TEAM");
                             System.out.println("3.ARENA");
-                            System.out.println("10.EXIT\n");
-
+                            System.out.println("10.EXIT");
+                            System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
                             System.out.print("CHOICE:");
 
 
@@ -211,7 +209,7 @@ public class App {
                                         String addFName = keyboard.next();
                                         System.out.println("Enter the Players Last Name (string):");
                                         String addLName = keyboard.next();
-                                        System.out.println("Enter the Players Team (string)");
+                                        System.out.println("Enter the Players Team (string) please use ' _ 'for the space");
                                         String addTeam = keyboard.next();
                                         System.out.println("Enter the Players Height in Cm (double):");
                                         double addHeight = keyboard.nextDouble();
@@ -284,8 +282,8 @@ public class App {
                             System.out.println("1.PLAYER");
                             System.out.println("2.TEAM");
                             System.out.println("3.ARENA");
-                            System.out.println("10.EXIT\n");
-
+                            System.out.println("10.EXIT");
+                            System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
                             System.out.print("CHOICE:");
 
 
@@ -364,8 +362,8 @@ public class App {
                             System.out.println("\nFILTER MENU");
                             System.out.println("1.FILTER BY HEIGHT");
                             System.out.println("2.SORT BY CAPACITY");
-                            System.out.println("10.EXIT\n");
-
+                            System.out.println("10.EXIT");
+                            System.out.println("⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯");
                             System.out.print("CHOICE:");
 
 
@@ -404,7 +402,7 @@ public class App {
                     case 6:
                         try {
 
-                            System.out.println("\nCall: Cache()\n");
+                            System.out.println("\nCACHE");
                             System.out.println("\nPlayer IDS in cache" + cache);// showing what is in cache
                             System.out.println("\nArenas IDS in cache" + cacheArena + "\n");
 
@@ -417,8 +415,7 @@ public class App {
                     case 7:
                         try {
 
-                            System.out.println("\nCall: JSON ALL PLAYERS()\n");
-
+                            System.out.println("\nJSON ALL PLAYERS\n");
                             IPlayerDao.findAllPlayersJson();
 
 
@@ -430,7 +427,7 @@ public class App {
                     //------------------------------ JSON FIND PLAYER BY ID
                     case 8:
                         try {
-                            System.out.println("\nCall: FIND PLAYER BY ID()\n");
+                            System.out.println("\n FIND PLAYER BY ID\n");
                             System.out.print("Enter a players ID who you would like to find: ");
                             int findIdjson = keyboard.nextInt();
 
@@ -460,10 +457,15 @@ public class App {
                 System.out.println("\n");
             } while (choice != 10); // exiting menu
             return null;
+        } catch (InputMismatchException e) {
+            System.out.println("Please use a menu option only");
         } catch (DaoException e) {
             throw new RuntimeException(e);
         }
+
+        return null;
     }
 }
+
 
 

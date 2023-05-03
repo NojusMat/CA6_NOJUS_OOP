@@ -17,12 +17,5 @@ public interface TeamsDaoInterface
 
     void deleteTeamByName(String team)throws DaoException; // deletes team by team name
 
-
-
-//    public String findAllPlayersJson()throws DaoException;
-//
-//    public String findPlayerByIdJson(int id)throws DaoException;
-
-
 }
 

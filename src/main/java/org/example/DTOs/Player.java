@@ -96,12 +96,12 @@ public class Player implements Comparable<Player> {
 
     public void setPoints_Per_Game(float points_Per_Game) {this.points_Per_Game = points_Per_Game;}
 
-    public void displayPlayer()
-    {
-        String leftAlignFormat = "| %-14i| %-14s| %-14s| %-14s| %-14i| %-14f| %-14d|%n";
-        System.out.format( leftAlignFormat, id, firstName, lastName, team, height_in_Cm,weight_in_Kg,points_Per_Game);
-
-    }
+//    public void displayPlayer()
+//    {
+//        String leftAlignFormat = "| %-14i| %-14s| %-14s| %-14s| %-14i| %-14f| %-14d|%n";
+//        System.out.format( leftAlignFormat, id, firstName, lastName, team, height_in_Cm,weight_in_Kg,points_Per_Game);
+//
+//    }
 
 
 

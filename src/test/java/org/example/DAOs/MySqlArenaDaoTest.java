@@ -1,5 +1,6 @@
 package org.example.DAOs;
 
+import org.example.DTOs.Player;
 import org.example.Exceptions.DaoException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -37,49 +38,38 @@ public class MySqlArenaDaoTest {
         }
     }
 
-//    @Test
-//    void testfindTeamsByArena() {
-//        System.out.println("TEST findTeamsByArena");
-//        try {
-//            Arena arena = ArenaDao.findTeamsByArena();
-//            assertNotNull(player);
-//            assertEquals(player_id, player.getId());
-//            System.out.println("Success");
-//        } catch (DaoException e) {
-//            fail("testFindPlayer has Failed:" + e.getMessage());
-//        }
-//
-//    }
-
-
     @Test
-    void testfilterArenaCapacity() {
-//        System.out.println("Test filterArenaCapacity");
-//        try {
-//            List<Arena> arenaList = ArenaDao.filterArenaCapacity(new IFilter() {
-//
-//                @Override
-//                public boolean matches(Object other) {
-//                    return false;
-//                }
-//
-//
-//                @Override
-//                public boolean matches(Arena arena) {
-//                    return arena.getCapacity().equals("Test Capacity");
-//                }
-//            });
-//            assertNotNull(arenaList);
-//        }catch (DaoException e) {
-//            fail("Filter has Failed:" + e.getMessage());
-//        }
-//    }
+    void testfindTeamsInArena() {
+        System.out.println("TEST findTeamsByArena");
+        try {
+            int arenaID=12345;
+            String arena = ArenaDao.findTeamsInArena(arenaID);
+            assertNotNull(arena);
+            assertEquals(arenaID, arena);
+            System.out.println("Success");
+        } catch (DaoException e) {
+            fail("testfindTeamsInArena has Failed:" + e.getMessage());
+        }
+
     }
-
-
     @Test
     void testinsertArena() {
+        System.out.println("TEST insertArena");
+        try {
+            int arena_ID = 94848;
+            String arena_name = "Bobbingtong";
+            int capacity = 7654323;
+            Arena arena = ArenaDao.insertArena(arena_ID, arena_name, capacity);
+            assertNotNull(arena);
+            assertEquals(arena_ID, arena.getArena_ID());
+            assertEquals(arena_name, arena.getArena_name());
+            assertEquals(capacity, arena.getCapacity());
+            System.out.println("Success");
+        } catch (DaoException e) {
+            fail("InsertArena has Failed:" + e.getMessage());
+        }
     }
+
 
     @Test
     void testdeleteArenaByArenaID() {
