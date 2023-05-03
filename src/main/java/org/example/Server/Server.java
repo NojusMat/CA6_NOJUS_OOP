@@ -130,7 +130,7 @@ public class Server {
                     serverDao.deletePlayerById(deletePlayerID);
                     socketWriter.println("The player with the ID:" + deletePlayerID+" has been deleted");
                 } else  {
-                    socketWriter.println("Sorry ID:"+deletePlayerID+" is not valid.");
+                    socketWriter.println("Sorry The ID:"+deletePlayerID+" is not valid.");
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);
